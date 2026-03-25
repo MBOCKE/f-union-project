@@ -24,3 +24,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ── Infinite carousel animations ── */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 28s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 28s linear infinite;
+}
+
+/* Pause the track when hovering the outer container */
+.carousel-track:hover .animate-scroll-left,
+.carousel-track:hover .animate-scroll-right {
+  animation-play-state: paused;
+}
