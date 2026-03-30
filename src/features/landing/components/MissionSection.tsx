@@ -35,14 +35,14 @@ export const MissionSection = () => {
 
             {/* Right Content - Overlapping Images */}
             <div className="relative h-[380px] md:h-[480px] w-full mt-10 md:mt-0">
-              <div className="absolute top-0 left-0 w-3/5 md:w-[60%] lg:w-[55%] aspect-video z-10 shadow-xl overflow-hidden rounded-sm transition-transform hover:scale-[1.02]">
+              <div className="absolute top-0 left-0 w-3/5 md:w-[60%] lg:w-[55%] aspect-video z-10 overflow-hidden transition-transform hover:scale-[1.02]">
                 <img
                   src={notremissionimage1.src}
                   alt="Mission interaction"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute top-[25%] md:top-[20%] right-0 md:right-[5%] lg:right-[10%] w-[55%] md:w-[50%] aspect-[4/3] z-20 shadow-2xl overflow-hidden border-[16px] border-white transition-transform hover:scale-[1.02]">
+              <div className="absolute top-[25%] md:top-[20%] right-0 md:right-[5%] lg:right-[10%] w-[55%] md:w-[50%] aspect-[4/3] z-20 overflow-hidden border-[16px] border-white transition-transform hover:scale-[1.02]">
                 <img
                   src={notremissionimage2.src}
                   alt="Mission event"

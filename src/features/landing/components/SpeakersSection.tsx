@@ -75,13 +75,15 @@ export const SpeakersSection = () => {
           <img src={dotMap.src} alt="" className="w-full h-full object-cover md:object-contain object-center scale-150 md:scale-100 mix-blend-overlay" />
         </div>
 
-        <Container className="relative z-10 text-center">
+        <Container className="relative z-10 text-center flex flex-col items-center justify-center">
           <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-6 tracking-tight drop-shadow-md">
             ILS ONT PRIS LA PAROLE
           </h2>
-          <h3 className="text-2xl md:text-3xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-md">
-
-          </h3>
+          <p className="text-xl md:text-2xl lg:text-[1.35rem] font-bold text-white max-w-4xl px-4 leading-snug">
+            Rencontre, Session d'échanges et Expériences conçues pour
+            prolonger les discussions et transformer les idées en collaborations
+            concrètes.
+          </p>
         </Container>
       </div>
 

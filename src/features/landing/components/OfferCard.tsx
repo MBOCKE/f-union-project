@@ -18,21 +18,21 @@ export const OfferCard = ({ title, price, features, variant, imageUrl, isPopular
       titleColor: "text-white",
       buttonBg: "bg-[#1d0b3b]", // Darker purple button
       buttonText: "text-white",
-      imageOverlay: "bg-[#4a2e87]/80 mix-blend-overlay"
+      imageOverlay: "bg-[#4a2e87]/100 mix-blend-overlay"
     },
     nextgen: {
       bg: "bg-[#a63c33]",
       titleColor: "text-white",
       buttonBg: "bg-[#4a120e]", // Darker red button
       buttonText: "text-white",
-      imageOverlay: "bg-[#a63c33]/80 mix-blend-multiply"
+      imageOverlay: "bg-[#DE3B30]/100 mix-blend-multiply"
     },
     vip: {
       bg: "bg-[#185c96]",
       titleColor: "text-white",
       buttonBg: "bg-[#359cf3]", // Bright blue button
       buttonText: "text-white",
-      imageOverlay: "bg-[#185c96]/80 mix-blend-multiply"
+      imageOverlay: "bg-[#185c96]/100 mix-blend-multiply"
     },
   };
 

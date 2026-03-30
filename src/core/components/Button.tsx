@@ -2,7 +2,7 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'purple' | 'blue' | 'red' | 'white' | 'outline';
+  variant?: 'purple' | 'blue' | 'red' | 'white' | 'outline' | 'navy';
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -21,7 +21,8 @@ export const Button = ({
     blue: "bg-summit-blue text-white hover:bg-opacity-90",
     red: "bg-summit-red text-white hover:bg-opacity-90",
     white: "bg-white text-summit-purple hover:bg-gray-100",
-    outline: "border-2 border-white text-white hover:bg-white hover:text-summit-purple"
+    outline: "border-2 border-white text-white hover:bg-white hover:text-summit-purple",
+    navy: "bg-[#151433] text-white hover:bg-opacity-90"
   };
 
   const sizes = {
