@@ -89,7 +89,7 @@ const FlipCard = ({
         <h3 className="text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-8 mt-2 drop-shadow-lg">
           {backTitle}
         </h3>
-        <p className="text-white/90 font-medium text-[30px] leading-relaxed text-center mt-4 text-balance">
+        <p className="text-white/90 font-medium text-[20px] leading-relaxed text-center mt-4 text-balance">
           {backDescription}
         </p>
         <div className="mt-auto pt-6 flex justify-center">

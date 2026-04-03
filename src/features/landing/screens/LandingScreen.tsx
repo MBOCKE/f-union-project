@@ -30,7 +30,6 @@ export const LandingScreen = () => {
       <MissionSection />
       <ProgrammeSection />
       <SpeakersSection />
-      {/* <ExposantsSection /> */}
       <PartnersSection />
       <OffersSection />
 

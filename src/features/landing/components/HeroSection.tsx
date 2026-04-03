@@ -4,7 +4,7 @@ import heroImage from "@/core/assets/heroImage.png"
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[70vh] flex flex-col pt-10 pb-16 bg-summit-dark overflow-hidden">
+    <section className="relative min-h-[70vh] flex flex-col pb-16 bg-summit-dark overflow-hidden">
 
       <div className="absolute inset-0 z-0 bg-black">
         <img src={heroImage.src} alt="heroImage" className="w-full h-full object-cover" />
@@ -13,7 +13,7 @@ export const HeroSection = () => {
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-summit-dark via-summit-dark/90 to-transparent z-10"></div>
       </div>
 
-      <Container className="relative z-20 flex-1 flex flex-col justify-center w-full mt-10">
+      <Container className="relative z-20 flex-1 flex flex-col justify-center w-full mt-2">
         <div className="text-white max-w-4xl">
           <h2 className="text-[#845ec2] font-black uppercase text-xl md:text-2xl mb-4 leading-tight">
             # Next<br />
