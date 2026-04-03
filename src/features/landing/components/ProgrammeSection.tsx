@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { Container } from "@/core/components/Container";
 import dotMap from "@/core/assets/Dot Map.png";
-import offerImage3 from "@/core/assets/offerImage3.png";
-import offerImage4 from "@/core/assets/offerImage4.png";
-import offerImage5 from "@/core/assets/offerImage5.png";
+import day1 from "@/core/assets/day1.jpeg";
+import day2 from "@/core/assets/day2.jpeg";
+import day3 from "@/core/assets/day 3.jpeg";
 
 type FlipCardProps = {
   frontImage: string;
@@ -41,7 +41,7 @@ const FlipCard = ({
         <h3 className="text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-8 mt-2 drop-shadow-lg">
           {backTitle}
         </h3>
-        <p className="text-white/90 font-medium text-[15px] leading-relaxed text-center mt-4">
+        <p className="text-white/90 font-medium text-[30px] leading-relaxed text-center mt-4">
           {backDescription}
         </p>
         <div className="mt-auto pt-6 flex justify-center">
@@ -89,7 +89,7 @@ const FlipCard = ({
         <h3 className="text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-8 mt-2 drop-shadow-lg">
           {backTitle}
         </h3>
-        <p className="text-white/90 font-medium text-[15px] leading-relaxed text-center mt-4 text-balance">
+        <p className="text-white/90 font-medium text-[30px] leading-relaxed text-center mt-4 text-balance">
           {backDescription}
         </p>
         <div className="mt-auto pt-6 flex justify-center">
@@ -140,20 +140,20 @@ export const ProgrammeSection = () => {
         <Container className="px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
             <FlipCard
-              frontImage={offerImage3.src}
-              frontTitle="Breakfast stratégique"
+              frontImage={day1.src}
+              frontTitle="Le rendez-vous du Soft Power"
               dayNumber="Jour 1"
               backTitle={
                 <>
-                  Breakfast<br />
-                  <span className="ml-[2px]">stratégique</span>
+                  Le rendez-vous du Soft Power<br />
+                  <span className="ml-[2px] text-white text-[0.20em]">Sur invitation</span>
                 </>
               }
-              backDescription="Une rencontre confidentielle réunissant leaders, partenaires et décideurs pour ouvrir les premières conversations du momen."
+              backDescription="Dialogue de haut niveau pour des décideurs engagés."
             />
 
             <FlipCard
-              frontImage={offerImage4.src}
+              frontImage={day2.src}
               frontTitle="Summit Day"
               dayNumber="Jour 2"
               backTitle={
@@ -165,7 +165,7 @@ export const ProgrammeSection = () => {
             />
 
             <FlipCard
-              frontImage={offerImage5.src}
+              frontImage={day3.src}
               frontTitle="Expérience & Connexions"
               dayNumber="Jour 3"
               backTitle={

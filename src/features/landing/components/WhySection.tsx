@@ -1,6 +1,6 @@
 import { Container } from "@/core/components/Container";
 import { SectionHeading } from "@/core/components/SectionHeading";
-import whyImage from "@/core/assets/whyImage.png"
+import newWhyImage from "@/core/assets/newWhyImage.png"
 export const WhySection = () => {
   return (
     <section id="vision" className="bg-[#1f5c8c] py-28 text-white relative overflow-hidden">
@@ -8,7 +8,7 @@ export const WhySection = () => {
 
       <div className="absolute inset-0 z-0 text-center flex items-center justify-center opacity-30 text-xs">
 
-        <img src={whyImage.src} alt="Background" className="w-full h-full object-cover" />
+        <img src={newWhyImage.src} alt="Background" className="w-full h-full object-cover" />
       </div>
 
 

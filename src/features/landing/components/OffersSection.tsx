@@ -1,11 +1,11 @@
 import { Container } from "@/core/components/Container";
 import { SectionHeading } from "@/core/components/SectionHeading";
 import { OfferCard } from "./OfferCard";
-import offerImage1 from "@/core/assets/offerImage1.png";
-import offerImage2 from "@/core/assets/offerImage2.png";
-import offerImage3 from "@/core/assets/offerImage3.png";
-import offerImage4 from "@/core/assets/offerImage4.png";
-import offerImage5 from "@/core/assets/offerImage5.png";
+import offer1 from "@/core/assets/offer1.jpeg";
+import offer2 from "@/core/assets/offer2.jpeg";
+import offer3 from "@/core/assets/offer3.jpeg";
+import offer4 from "@/core/assets/offer4.jpeg";
+import offer5 from "@/core/assets/offer5.jpeg";
 import dotMap from "@/core/assets/Dot Map.png";
 
 export const OffersSection = () => {
@@ -13,7 +13,7 @@ export const OffersSection = () => {
     {
       title: "Next Gen",
       price: "5 000",
-      imageUrl: offerImage2.src,
+      imageUrl: offer2.src,
       variant: 'nextgen' as const,
       features: [
         "Étudiantes et jeunes diplômées.", // Idéal pour
@@ -24,9 +24,9 @@ export const OffersSection = () => {
     },
     {
       title: "Talent / Startup", // Displayed as TALENT / STARTUP
-      price: "10 000",
+      price: "15 000",
       variant: 'startup' as const,
-      imageUrl: offerImage3.src,
+      imageUrl: offer3.src,
       features: [
         "Entrepreneures et professionnelles", // Idéal pour
         "Accès panels & ateliers",
@@ -38,7 +38,7 @@ export const OffersSection = () => {
       title: "VIP",
       price: "35 000",
       variant: 'vip' as const,
-      imageUrl: offerImage5.src,
+      imageUrl: offer5.src,
       features: [
         "Dirigeantes, décideuses, partenaires", // Idéal pour
         "Accès lounge VIP",
@@ -83,7 +83,7 @@ export const OffersSection = () => {
 
             <div className="w-full h-64 rounded-[2rem] overflow-hidden bg-[#e5e7eb] relative">
               <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-xs">
-                < img src={offerImage1.src} alt="offerImage 1" className="w-full h-full object-cover" />
+                < img src={offer1.src} alt="offer 1" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -103,7 +103,7 @@ export const OffersSection = () => {
 
             <div className="w-full h-64 rounded-[2rem] overflow-hidden bg-[#e5e7eb] relative">
               <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-xs">
-                < img src={offerImage4.src} alt="offerImage 1" className="w-full h-full object-cover" />
+                < img src={offer4.src} alt="offer 4" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
