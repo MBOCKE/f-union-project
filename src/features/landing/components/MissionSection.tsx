@@ -1,3 +1,4 @@
+"use client"
 import { Container } from "@/core/components/Container";
 import { Button } from "@/core/components/Button";
 import notremissionimage1 from "@/core/assets/notremissionimage1.png";
@@ -5,7 +6,7 @@ import notremissionimage2 from "@/core/assets/notremissionimage2.png";
 
 export const MissionSection = () => {
   return (
-    <section id="mission" className="py-24 bg-white">
+    <section id="mission" className="py-15 bg-white">
       <Container className="max-w-6xl mx-auto px-4">
         {/* Top Header and Grid */}
         <div className="mb-1">
@@ -106,7 +107,7 @@ export const MissionSection = () => {
       </Container>
 
       {/* Full Width Blocks */}
-      <Container className="max-w-6xl mx-auto px-4 mb-20">
+      <Container className="max-w-6xl mx-auto px-4 mb-15">
         <div className="w-full flex-col md:flex-row flex mx-auto shadow-2xl rounded-sm overflow-hidden">
           {/* Block 1 */}
           <div className="flex-[1.2] bg-gradient-to-r from-[#2998e3] to-[#147ec1] flex items-center justify-center cursor-pointer hover:opacity-95 transition-opacity py-16 md:py-24">
@@ -131,10 +132,13 @@ export const MissionSection = () => {
       </Container>
 
       {/* Bottom CTA */}
-      <div className="text-center pb-8">
-        <Button variant="purple" className="px-12 py-5 rounded-full font-bold text-[15px] bg-[#111827] text-white hover:bg-[#1f2937] border-none shadow-lg tracking-wide uppercase">
+      <div className="text-center">
+        <button
+          onClick={() => window.open("https://f-union.genuka.shop/en/collections", "_blank")}
+          className="px-12 py-5 rounded-full font-bold text-[15px] bg-[#111827] text-white hover:bg-[#1f2937] border-none shadow-lg tracking-wide uppercase"
+        >
           Reserver ma place
-        </Button>
+        </button>
       </div>
     </section>
   );

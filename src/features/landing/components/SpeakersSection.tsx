@@ -95,7 +95,7 @@ export const SpeakersSection = () => {
           ))}
         </div>
 
-        <div className="mt-20 flex justify-center pb-10">
+        <div className="mt-15 flex justify-center ">
           <button className="bg-[#1b0a3d] text-white px-10 py-3 rounded-full font-bold text-sm tracking-wide shadow-lg hover:bg-[#2b165d] transition-colors">
             All speakers
           </button>

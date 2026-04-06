@@ -1,3 +1,4 @@
+"use client"
 import { Container } from "@/core/components/Container";
 import { Button } from "@/core/components/Button";
 import heroImage from "@/core/assets/heroImage.png"
@@ -80,6 +81,7 @@ export const HeroSection = () => {
 
           <div className="flex items-center justify-start md:justify-end">
             <button
+              onClick={() => window.open("https://f-union.genuka.shop/en/collections", "_blank")}
               style={{ backgroundColor: "#ffffff", color: "#21004E" }}
               className="px-6 py-3 rounded-full font-bold text-xs shadow-md hover:bg-gray-100 transition-all active:scale-95 inline-flex items-center justify-center"
             >

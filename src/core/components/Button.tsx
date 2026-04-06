@@ -6,16 +6,17 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export const Button = ({ 
-  children, 
-  variant = 'purple', 
-  size = 'md', 
-  className = '', 
-  ...props 
+export const Button = ({
+  children,
+  variant = 'purple',
+
+  size = 'md',
+  className = '',
+  ...props
 }: ButtonProps) => {
-  
+
   const baseStyles = "rounded-full font-bold transition-all active:scale-95 inline-flex items-center justify-center";
-  
+
   const variants = {
     purple: "bg-summit-purple text-white hover:bg-opacity-90",
     blue: "bg-summit-blue text-white hover:bg-opacity-90",
@@ -32,7 +33,7 @@ export const Button = ({
   };
 
   return (
-    <button 
+    <button
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >

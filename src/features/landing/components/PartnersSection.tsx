@@ -130,7 +130,7 @@ export const PartnersSection = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center pb-8">
+          <div className="text-center">
             <Button
               variant="blue"
               className="px-10 py-3 rounded-full font-semibold text-[15px] bg-gradient-to-l from-[#195277] to-[#2E99DD] text-white hover:bg-[#126DB1] border-none shadow-md tracking-wide"
