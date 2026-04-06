@@ -19,7 +19,7 @@ export const HeroSection = () => {
       <Container className="relative z-20 flex-1 flex flex-col justify-center w-full mt-5">
         <div className="text-white max-w-4xl">
           <h2 className="text-[#845ec2] font-black uppercase text-xl md:text-2xl mb-4 leading-tight">
-            # Next Africa 2035
+            #NextAfrica2035
           </h2>
 
           <h1 className="text-5xl md:text-[5.5rem] font-black  leading-[1.05] tracking-tight">

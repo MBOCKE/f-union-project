@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// The favicon is automatically loaded from src/app/favicon.ico
+// To use a PNG/SVG/JPEG as a favicon, you can:
+// 1. Rename your image to 'icon.png', 'icon.svg', etc. and place it in src/app/
+// 2. Or add an 'icons' property to the metadata object below.
 export const metadata: Metadata = {
   title: "F-Union Africa Summit 2026",
   description: "F-Union rassemble talents, entreprises et institutions pour construire l'Afrique de 2026.",

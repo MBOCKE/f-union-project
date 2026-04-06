@@ -1,3 +1,4 @@
+"use client"
 import { Container } from "@/core/components/Container";
 import { SectionHeading } from "@/core/components/SectionHeading";
 import { OfferCard } from "./OfferCard";
