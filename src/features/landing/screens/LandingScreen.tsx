@@ -4,7 +4,6 @@ import { MissionSection } from "@/features/landing/components/MissionSection";
 import { ProgrammeSection } from "@/features/landing/components/ProgrammeSection";
 import { OffersSection } from "@/features/landing/components/OffersSection";
 import { SpeakersSection } from "@/features/landing/components/SpeakersSection";
-import { ExposantsSection } from "@/features/landing/components/ExposantsSection";
 import { PartnersSection } from "@/features/landing/components/PartnersSection";
 
 export const LandingScreen = () => {

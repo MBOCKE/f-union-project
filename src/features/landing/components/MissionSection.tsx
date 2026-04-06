@@ -8,7 +8,7 @@ export const MissionSection = () => {
     <section id="mission" className="py-24 bg-white">
       <Container className="max-w-6xl mx-auto px-4">
         {/* Top Header and Grid */}
-        <div className="mb-16">
+        <div className="mb-1">
           <h2 className="text-[2.75rem] md:text-[3.5rem] font-bold leading-tight mb-12 tracking-tight">
             <span className="text-[#151f2e] border-b-[5px] border-[#2998e3] pb-1 mr-3 inline-block">
               Notre
@@ -34,7 +34,7 @@ export const MissionSection = () => {
             </div>
 
             {/* Right Content - Overlapping Images */}
-            <div className="relative h-[380px] md:h-[480px] w-full mt-10 md:mt-0">
+            <div className="relative h-[180px] md:h-[380px] w-full mt-10 md:mt-0 sm: h-[280px]">
               <div className="absolute top-0 left-0 w-3/5 md:w-[60%] lg:w-[55%] aspect-video z-10 overflow-hidden transition-transform hover:scale-[1.02]">
                 <img
                   src={notremissionimage1.src}
@@ -57,48 +57,48 @@ export const MissionSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 mb-20 mt-12 w-full max-w-5xl mx-auto justify-items-center">
           {/* Stat 1 */}
           <div className="flex items-center gap-5 w-full max-w-[200px]">
-            <div className="w-16 h-16 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
               {/* Users Icon */}
               <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 11a4 4 0 100-8 4 4 0 000 8zm-6.5-1a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM17.5 5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm-5.5 8c-3.59 0-10 1.8-10 5.4V21h20v-2.6c0-3.6-6.41-5.4-10-5.4z" /></svg>
             </div>
             <div className="flex flex-col">
-              <div className="font-serif font-bold text-[3rem] leading-none text-[#333] mb-1">600</div>
+              <div className="font-serif font-bold text-[2.5rem] leading-none text-[#333] mb-1 ">600</div>
               <div className="text-[0.65rem] font-medium text-gray-500 tracking-wider uppercase">Participantes</div>
             </div>
           </div>
 
           {/* Stat 2 */}
           <div className="flex items-center gap-5 w-full max-w-[200px]">
-            <div className="w-16 h-16 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
               {/* Presenter/Speaker Icon */}
               <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9 8h18v-2c0-2.66-5.33-4-9-4s-9 1.34-9 4v2z" /></svg>
             </div>
             <div className="flex flex-col">
-              <div className="font-serif font-bold text-[3rem] leading-none text-[#333] mb-1">30</div>
+              <div className="font-serif font-bold text-[2.5rem] leading-none text-[#333] mb-1">30</div>
               <div className="text-[0.65rem] font-medium text-gray-500 tracking-wider uppercase">Intervenantes</div>
             </div>
           </div>
 
           {/* Stat 3 */}
           <div className="flex items-center gap-5 w-full max-w-[200px]">
-            <div className="w-16 h-16 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
               {/* Calendar Icon */}
               <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zM7 12h5v5H7v-5z" /></svg>
             </div>
             <div className="flex flex-col">
-              <div className="font-serif font-bold text-[3rem] leading-none text-[#333] mb-1">3</div>
+              <div className="font-serif font-bold text-[2.5rem] leading-none text-[#333] mb-1">3</div>
               <div className="text-[0.65rem] font-medium text-gray-500 tracking-wider uppercase">Jours</div>
             </div>
           </div>
 
           {/* Stat 4 */}
           <div className="flex items-center gap-5 w-full max-w-[200px]">
-            <div className="w-16 h-16 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
               {/* Globe Icon */}
               <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" /></svg>
             </div>
             <div className="flex flex-col">
-              <div className="font-serif font-bold text-[3rem] leading-none text-[#333] mb-1">1</div>
+              <div className="font-serif font-bold text-[2.5rem] leading-none text-[#333] mb-1">1</div>
               <div className="text-[0.6rem] font-medium text-gray-500 tracking-wider uppercase mb-1 whitespace-nowrap">écosystème<br />stratégique</div>
             </div>
           </div>

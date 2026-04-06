@@ -88,7 +88,7 @@ export const SpeakersSection = () => {
       </div>
 
 
-      <Container className="pt-16 pb-24">
+      <Container className="pt-16 pb-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 gap-y-12">
           {speakers.map((speaker, index) => (
             <SpeakerCard key={index} {...speaker} />

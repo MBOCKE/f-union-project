@@ -76,11 +76,10 @@ const CarouselRow = ({ title, direction }: RowProps) => {
 
         {/* Animated strip */}
         <div
-          className={`flex w-max py-2 ${
-            direction === "left"
-              ? "animate-scroll-left"
-              : "animate-scroll-right"
-          }`}
+          className={`flex w-max py-2 ${direction === "left"
+            ? "animate-scroll-left"
+            : "animate-scroll-right"
+            }`}
         >
           {loopedLogos.map((src, idx) => (
             <LogoCard key={idx} src={src} />
@@ -134,7 +133,7 @@ export const PartnersSection = () => {
           <div className="text-center pb-8">
             <Button
               variant="blue"
-              className="px-10 py-3 rounded-full font-semibold text-[15px] bg-[#1a7bc0] text-white hover:bg-[#126DB1] border-none shadow-md tracking-wide"
+              className="px-10 py-3 rounded-full font-semibold text-[15px] bg-gradient-to-l from-[#195277] to-[#2E99DD] text-white hover:bg-[#126DB1] border-none shadow-md tracking-wide"
             >
               Reserver ma place
             </Button>

@@ -8,31 +8,35 @@ interface OfferCardProps {
   variant: 'startup' | 'nextgen' | 'vip';
   imageUrl?: string;
   isPopular?: boolean;
+  priceColor?: string;
 }
 
-export const OfferCard = ({ title, price, features, variant, imageUrl, isPopular }: OfferCardProps) => {
+export const OfferCard = ({ title, price, features, variant, imageUrl, priceColor, isPopular }: OfferCardProps) => {
   // Define precise colors and styles for each variant from the design
   const styles = {
-    startup: {
-      bg: "bg-[#4a2e87]",
-      titleColor: "text-white",
-      buttonBg: "bg-[#1d0b3b]", // Darker purple button
-      buttonText: "text-white",
-      imageOverlay: "bg-[#4a2e87]/100 mix-blend-overlay"
-    },
     nextgen: {
       bg: "bg-[#a63c33]",
       titleColor: "text-white",
-      buttonBg: "bg-[#4a120e]", // Darker red button
+      buttonBg: "bg-[#380400]",
+      priceColor: "text-[#380400]",
       buttonText: "text-white",
-      imageOverlay: "bg-[#DE3B30]/100 mix-blend-multiply"
+      imageOverlay: "bg-gradient-to-t from-[#78201A] to-[#DE3B30]/60"
+    },
+    startup: {
+      bg: "bg-[#4a2e87]",
+      titleColor: "text-white",
+      buttonBg: "bg-[#2E99DD]",
+      priceColor: "text-[#BADBFF]",
+      buttonText: "text-white",
+      imageOverlay: "bg-[#024282]/85"
     },
     vip: {
       bg: "bg-[#185c96]",
       titleColor: "text-white",
-      buttonBg: "bg-[#359cf3]", // Bright blue button
+      buttonBg: "bg-[#210250]", // Bright blue button
+      priceColor: "text-[#21004E]",
       buttonText: "text-white",
-      imageOverlay: "bg-[#185c96]/100 mix-blend-multiply"
+      imageOverlay: "bg-gradient-to-t from-[#360978] to-[#8B5DD0]/60"
     },
   };
 
@@ -59,14 +63,12 @@ export const OfferCard = ({ title, price, features, variant, imageUrl, isPopular
 
         {variant === 'vip' && <div className="flex-1 min-h-[100px]"></div>}
 
-        <h4 className={`font-black uppercase mb-1 ${variant === 'vip' ? 'text-4xl' : 'text-2xl text-center md:text-left'} ${currentStyle.titleColor}`}>
-          {variant === 'startup' ? (
-            <>TALENT /<br />STARTUP</>
-          ) : title}
+        <h4 className={`font-black mb-1 ${variant === 'vip' ? 'text-4xl' : 'text-3xl text-center md:text-left'} ${currentStyle.titleColor}`}>
+          {title}
         </h4>
 
-        <div className={`font-black tracking-tight mb-8 ${variant === 'vip' ? 'text-4xl' : 'text-[2.5rem] leading-none text-center md:text-left'} text-white`}>
-          {price}<span className="text-2xl md:text-3xl tracking-normal">FCFA</span>
+        <div className={`font-black tracking-tight mb-8 ${variant === 'vip' ? 'text-5xl' : 'text-[2.5rem] leading-none text-center md:text-left'} ${currentStyle.priceColor}`}>
+          {price}<span className={`text-2xl md:text-3xl tracking-normal ml-1`}>FCFA</span>
         </div>
 
         <div className="mb-3 font-bold text-white text-lg">Idéal pour :</div>
@@ -88,9 +90,9 @@ export const OfferCard = ({ title, price, features, variant, imageUrl, isPopular
         </ul>
 
         <button
-          className={`w-full py-4 rounded-full font-bold text-sm transition-opacity hover:opacity-90 ${currentStyle.buttonBg} ${currentStyle.buttonText} mt-auto shadow-md`}
+          className={`w-full py-4 text-lg rounded-full font-bold transition-opacity hover:opacity-90 ${currentStyle.buttonBg} ${currentStyle.buttonText} mt-auto shadow-md`}
         >
-          Reserver
+          Acheter mon pass
         </button>
       </div>
     </div>

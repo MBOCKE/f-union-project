@@ -14,6 +14,7 @@ type FlipCardProps = {
   backTitle: ReactNode;
   backDescription: string;
   isDetailFront?: boolean;
+  innerSpace?: string;
 };
 
 const FlipCard = ({
@@ -21,6 +22,7 @@ const FlipCard = ({
   frontTitle,
   dayNumber,
   backTitle,
+  innerSpace,
   backDescription,
   isDetailFront = false,
 }: FlipCardProps) => {
@@ -87,14 +89,14 @@ const FlipCard = ({
         />
       </div>
       {/* Darker background on back as requested */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/95 z-0 pointer-events-none" />
+      <div className={`absolute inset-0 bg-gradient-to-b from-black/80 to-black/95 z-0 pointer-events-none`} />
       <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 pt-10">
         <div className="mb-4">
           <h4 className="text-white font-black text-2xl tracking-tight">
             {dayNumber}
           </h4>
         </div>
-        <h3 className="text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-8 mt-2 drop-shadow-lg">
+        <h3 className={`text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-${innerSpace} mt-2 drop-shadow-lg`}>
           {backTitle}
         </h3>
         <p className="text-white/90 font-medium text-[20px] leading-relaxed text-center mt-4 text-balance">
@@ -157,6 +159,7 @@ export const ProgrammeSection = () => {
               frontImage={day1.src}
               frontTitle="Le rendez-vous du Soft Power"
               dayNumber="Jour 1"
+              innerSpace="8"
               backTitle={
                 <>
                   Le rendez-vous du Soft Power<br />
@@ -170,6 +173,7 @@ export const ProgrammeSection = () => {
               frontImage={day2.src}
               frontTitle="Summit Day"
               dayNumber="Jour 2"
+              innerSpace="2"
               backTitle={
                 <>
                   SummitDay<br />
@@ -182,6 +186,7 @@ export const ProgrammeSection = () => {
               frontImage={day3.src}
               frontTitle="Expérience & Connexions"
               dayNumber="Jour 3"
+              innerSpace="8"
               backTitle={
                 <>
                   Expériences &<br />

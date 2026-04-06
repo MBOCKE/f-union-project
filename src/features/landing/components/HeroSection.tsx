@@ -22,8 +22,10 @@ export const HeroSection = () => {
             # Next Africa 2035
           </h2>
 
-          <h1 className="text-5xl md:text-[5.5rem] font-black mb-8 leading-[1.05] tracking-tight">
+          <h1 className="text-5xl md:text-[5.5rem] font-black  leading-[1.05] tracking-tight">
             F-UNION AFRICA<br />
+          </h1>
+          <h1 className="text-4xl md:text-[4.5rem] font-black mb-8 leading-[1.05] tracking-tight">
             SUMMIT 2026
           </h1>
 
@@ -48,7 +50,7 @@ export const HeroSection = () => {
             <div className="w-8 h-8 flex items-center justify-center shrink-0">
               <img src={doualaLogo.src} alt="doualaLogo" className="w-6 h-full" />
             </div>
-            <div className="font-bold text-lg leading-tight">
+            <div className="font-bold text-sm md:text-lg leading-tight">
               Douala /<br />
               Cameroun
             </div>
@@ -59,7 +61,7 @@ export const HeroSection = () => {
             <div className="w-8 h-8 flex items-center justify-center shrink-0">
               <img src={dateLogo.src} alt="dateLogo" className="w-full h-full object-cover" />
             </div>
-            <div className="font-bold text-lg leading-tight">
+            <div className="font-bold text-sm md:text-lg leading-tight">
               28 – 30<br />
               mai 2026
             </div>
@@ -70,7 +72,7 @@ export const HeroSection = () => {
             <div className="w-8 h-8 flex items-center justify-center shrink-0">
               <img src={passLogo.src} alt="passLogo" className="w-full h-full object-cover" />
             </div>
-            <div className="font-bold text-lg leading-tight">
+            <div className="font-bold text-sm md:text-lg leading-tight">
               Pass à partir de<br />
               5 000 FCFA
             </div>
@@ -78,8 +80,8 @@ export const HeroSection = () => {
 
           <div className="flex items-center justify-start md:justify-end">
             <button
-              style={{ backgroundColor: "#ffffff", color: "#1a1033" }}
-              className="px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-gray-100 transition-all active:scale-95 inline-flex items-center justify-center"
+              style={{ backgroundColor: "#ffffff", color: "#21004E" }}
+              className="px-6 py-3 rounded-full font-bold text-xs shadow-md hover:bg-gray-100 transition-all active:scale-95 inline-flex items-center justify-center"
             >
               Réserver ma place
             </button>
