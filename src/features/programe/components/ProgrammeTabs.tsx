@@ -10,7 +10,7 @@ export const ProgrammeTabs = ({ halls, activeHall, onHallChange }: ProgrammeTabs
   const allHalls = ["Toutes les salles", ...halls.filter(h => h !== "Toutes les salles")];
 
   return (
-    <div className="flex flex-wrap gap-4 mb-20 px-4 md:px-0" style={{ marginBottom: '80px' }}>
+    <div className="flex flex-wrap gap-4 mb-12 md:mb-20 px-4 md:px-0 justify-center md:justify-start">
       {allHalls.map((hall) => {
         const isActive = activeHall === hall;
         return (

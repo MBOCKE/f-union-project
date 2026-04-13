@@ -65,7 +65,7 @@ export const HeroSectionJour2 = () => {
             #NextAfrica2035
           </h2>
 
-          <h1 className="text-5xl md:text-[5.5rem] font-black  leading-[1.05] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[5.5rem] font-black leading-[1.1] md:leading-[1.05] tracking-tight">
             Summit Day
           </h1>
 
@@ -88,9 +88,9 @@ export const HeroSectionJour2 = () => {
       </Container>
 
       <Container className="relative w-full z-20 mt-0">
-        <div className="flex flex-wrap items-center justify-between px-4 md:px-12 lg:px-20 text-white">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-4 px-4 md:px-12 lg:px-20 text-white">
           {/* Time elements container - stays on the left */}
-          <div className="flex items-center gap-4 md:gap-8 lg:gap-12">
+          <div className="flex items-center justify-center gap-4 md:gap-8 lg:gap-12">
             {/* Days */}
             <div className="flex items-center flex-col gap-1">
               <div className="flex items-center justify-center shrink-0">
@@ -146,8 +146,8 @@ export const HeroSectionJour2 = () => {
             </div>
           </div>
 
-          {/* Button - stays on the right */}
-          <div className="flex items-center mt-4 md:mt-0">
+          {/* Button - stays on the right, moves below on mobile */}
+          <div className="flex items-center justify-center w-full md:w-auto">
             <button
               onClick={() =>
                 window.open(
@@ -156,7 +156,7 @@ export const HeroSectionJour2 = () => {
                 )
               }
               style={{ backgroundColor: "#ffffff", color: "#8B0B0B" }}
-              className="px-8 py-3 md:px-10 md:py-4 rounded-full font-bold text-sm md:text-base shadow-md hover:bg-gray-100 transition-all hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap"
+              className="px-8 py-3 md:px-10 md:py-4 rounded-full font-bold text-sm md:text-base shadow-md hover:bg-gray-100 transition-all hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap w-full md:w-auto"
             >
               Réserver ma place
             </button>

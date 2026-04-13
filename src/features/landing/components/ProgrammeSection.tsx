@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, useState } from "react";
+import Link from "next/link";
 import { Container } from "@/core/components/Container";
 import dotMap from "@/core/assets/Dot Map.png";
 import day1 from "@/core/assets/day1.jpeg";
@@ -15,6 +16,7 @@ type FlipCardProps = {
   backDescription: string;
   isDetailFront?: boolean;
   innerSpace?: string;
+  href: string;
 };
 
 const FlipCard = ({
@@ -24,6 +26,7 @@ const FlipCard = ({
   backTitle,
   innerSpace,
   backDescription,
+  href,
   isDetailFront = false,
 }: FlipCardProps) => {
   const [tapped, setTapped] = useState(false);
@@ -55,9 +58,11 @@ const FlipCard = ({
           {backDescription}
         </p>
         <div className="mt-auto pt-6 flex justify-center">
-          <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
-            Voir le programme complet
-          </button>
+          <Link href={href} onClick={(e) => e.stopPropagation()}>
+            <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
+              Voir le programme complet
+            </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -103,9 +108,11 @@ const FlipCard = ({
           {backDescription}
         </p>
         <div className="mt-auto pt-6 flex justify-center">
-          <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
-            Voir le programme complet
-          </button>
+          <Link href={href} onClick={(e) => e.stopPropagation()}>
+            <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
+              Voir le programme complet
+            </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -160,6 +167,7 @@ export const ProgrammeSection = () => {
               frontTitle="Le rendez-vous du Soft Power"
               dayNumber="Jour 1"
               innerSpace="8"
+              href="/programme/jour1"
               backTitle={
                 <>
                   Le rendez-vous du Soft Power<br />
@@ -174,6 +182,7 @@ export const ProgrammeSection = () => {
               frontTitle="Summit Day"
               dayNumber="Jour 2"
               innerSpace="2"
+              href="/programme/jour2"
               backTitle={
                 <>
                   SummitDay<br />
@@ -187,6 +196,7 @@ export const ProgrammeSection = () => {
               frontTitle="Expérience & Connexions"
               dayNumber="Jour 3"
               innerSpace="8"
+              href="/programme/jour3"
               backTitle={
                 <>
                   Expériences &<br />

@@ -24,7 +24,7 @@ export const ProgrammeView = ({ sessions }: ProgrammeViewProps) => {
   }, [sessions, activeHall]);
 
   return (
-    <div className="bg-white py-20 pb-40">
+    <div className="bg-white py-10 md:py-20 pb-20 md:pb-40">
       <Container>
         <div className="flex flex-col">
           {/* Room Selector Tabs */}

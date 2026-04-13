@@ -130,43 +130,48 @@ export const Navbar = () => {
             <div className="flex flex-col py-10 px-8 gap-1 flex-grow overflow-y-auto">
               {[
                 { href: "#vision", label: "Vision" },
-                { href: "#programme", label: "Programme" },
+                { 
+                  href: "#programme", 
+                  label: "Programme",
+                  subLinks: programmeLinks 
+                },
                 { href: "#speakers", label: "Intervenant(e)s" },
                 { href: "#partenaires", label: "Partenaires" },
                 { href: "#contact", label: "Contact" }
               ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={toggleMobileMenu}
-                  className="text-[#b39ddb] hover:text-white transition-all duration-300 uppercase tracking-widest font-black text-sm py-5 border-b border-white/5 flex items-center justify-between group"
-                >
-                  <span className="relative">
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#845ec2] transition-all duration-300 group-hover:w-full" />
-                  </span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#845ec2] transform group-hover:translate-x-2 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </Link>
-              ))}
-
-              <div className="mt-4 border-t border-white/10 pt-4">
-                <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#b39ddb]">Programme</p>
-                <div className="mt-3 flex flex-col gap-2">
-                  {programmeLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={toggleMobileMenu}
-                      className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-[#d6c2f2] hover:bg-white/10 transition-colors"
-                    >
+                <div key={link.href} className="flex flex-col border-b border-white/5">
+                  <Link
+                    href={link.href}
+                    onClick={toggleMobileMenu}
+                    className="text-[#b39ddb] hover:text-white transition-all duration-300 uppercase tracking-widest font-black text-sm py-5 flex items-center justify-between group"
+                  >
+                    <span className="relative">
                       {link.label}
-                    </Link>
-                  ))}
+                      <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#845ec2] transition-all duration-300 group-hover:w-full" />
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#845ec2] transform group-hover:translate-x-2 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                  
+                  {'subLinks' in link && link.subLinks && (
+                    <div className="flex flex-col gap-1 pb-4 pl-6">
+                      {link.subLinks.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          onClick={toggleMobileMenu}
+                          className="text-[#d6c2f2] hover:text-white transition-all duration-300 font-semibold text-xs py-2 flex items-center gap-2 group/sub"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#845ec2]/40 group-hover/sub:bg-[#845ec2] transition-colors" />
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
+              ))}
             </div>
 
             {/* Footer / Brand Text */}
