@@ -6,26 +6,39 @@ import logo3 from "@/core/assets/dummy-logo-3b.png";
 import logo4 from "@/core/assets/dummy-logo-4b.png";
 import { Button } from "@/core/components/Button";
 
+
 const categories = [
-  { title: "Partenaires Institutionnels" },
-  { title: "Partenaires Institutionnels" },
-  { title: "Partenaires Corporate" },
-  { title: "Partenaires Expériences" },
-  { title: "Partenaires Media" },
+  {
+    title: "Partenaires Officiels",
+    logos: [logo1.src, logo2.src, logo3.src, logo4.src, logo1.src, logo2.src, logo3.src, logo4.src],
+  },
+  {
+    title: "Partenaires Institutionnels",
+    logos: [logo1.src, logo2.src, logo3.src, logo4.src, logo1.src, logo2.src, logo3.src, logo4.src],
+  },
+  {
+    title: "Partenaires Corporate",
+    logos: [logo1.src, logo2.src, logo3.src, logo4.src, logo1.src, logo2.src, logo3.src, logo4.src],
+  },
+  {
+    title: "Partenaires Expériences",
+    logos: [logo1.src, logo2.src, logo3.src, logo4.src, logo1.src, logo2.src, logo3.src, logo4.src],
+  },
+  {
+    title: "Partenaires Associations",
+    logos: [logo1.src, logo2.src, logo3.src, logo4.src, logo1.src, logo2.src, logo3.src, logo4.src],
+  },
+  {
+    title: "Partenaires Academique",
+    logos: [logo1.src, logo2.src, logo3.src, logo4.src, logo1.src, logo2.src, logo3.src, logo4.src],
+  },
+  {
+    title: "Partenaires Media",
+    logos: [logo1.src, logo2.src, logo3.src, logo4.src, logo1.src, logo2.src, logo3.src, logo4.src],
+  },
 ];
 
-const dummyLogos = [
-  logo1.src,
-  logo2.src,
-  logo3.src,
-  logo4.src,
-  logo1.src,
-  logo2.src,
-  logo3.src,
-  logo4.src,
-];
 
-// ─── single logo card ───────────────────────────────────────────────────────
 const LogoCard = ({ src }: { src: string }) => (
   <div
     className="
@@ -50,16 +63,17 @@ const LogoCard = ({ src }: { src: string }) => (
   </div>
 );
 
-// ─── one carousel row ────────────────────────────────────────────────────────
+
 type RowProps = {
   title: string;
+  logos: string[];
   direction: "left" | "right";
 };
 
-const CarouselRow = ({ title, direction }: RowProps) => {
+const CarouselRow = ({ title, logos, direction }: RowProps) => {
   // Duplicate the logos so the animation loops seamlessly.
   // The inner strip is 2× the logo list; the animation translates -50%.
-  const loopedLogos = [...dummyLogos, ...dummyLogos];
+  const loopedLogos = [...logos, ...logos];
 
   return (
     <div className="flex flex-col items-center gap-5 w-full">
@@ -90,7 +104,6 @@ const CarouselRow = ({ title, direction }: RowProps) => {
   );
 };
 
-// ─── section ─────────────────────────────────────────────────────────────────
 export const PartnersSection = () => {
   return (
     <section id="partenaires" className="bg-white">
@@ -124,6 +137,7 @@ export const PartnersSection = () => {
               <CarouselRow
                 key={index}
                 title={category.title}
+                logos={category.logos}
                 direction={index % 2 === 0 ? "left" : "right"}
               />
             ))}

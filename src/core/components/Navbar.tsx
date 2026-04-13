@@ -1,58 +1,104 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container } from './Container';
 import { Button } from './Button';
 import Link from 'next/link';
 import Funion_logo from '@/core/assets/Funion_logo.png'
 
 export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProgrammeOpen, setIsProgrammeOpen] = useState(false);
+
+  const programmeLinks = [
+    { href: "/programme/jour1", label: "Jour 1" },
+    { href: "/programme/jour2", label: "Jour 2" },
+    { href: "/programme/jour3", label: "Jour 3" },
+  ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 left-0 w-full z-50 bg-white py-4 text-summit-dark shadow-sm">
-      <Container className="flex items-center justify-between relative">
-        <Link href="/" className="font-bold text-2xl flex items-center gap-2">
-          <img src={Funion_logo.src} alt='F_Union' className='h-12 w-40 object-contain' />
-        </Link>
+    <>
+      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${isScrolled
+        ? "bg-white/10 backdrop-blur-xl border-white/10 py-3 shadow-lg"
+        : "bg-white/10 backdrop-blur-md border-white/5 py-3"
+        }`}>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-8 text-[15px] font-semibold">
-          <Link href="#vision" className="text-[#333333] hover:text-summit-blue transition-colors uppercase tracking-wide">Vision</Link>
-          <Link href="#programme" className="text-[#333333] hover:text-summit-blue transition-colors uppercase tracking-wide">Programme</Link>
-          <Link href="#speakers" className="text-[#333333] hover:text-summit-blue transition-colors uppercase tracking-wide">Intervenant(e)s</Link>
-          <Link href="#partenaires" className="text-[#333333] hover:text-summit-blue transition-colors uppercase tracking-wide">Partenaires</Link>
-          <Link href="#contact" className="text-[#333333] hover:text-summit-blue transition-colors uppercase tracking-wide">Contact</Link>
-        </div>
+        <Container className="flex items-center justify-between relative">
+          <Link href="/" className="font-bold text-2xl flex items-center gap-2">
+            <img src={Funion_logo.src} alt='F_Union' className="h-12 w-40 object-contain transition-all duration-300" />
+          </Link>
 
-        <div className="flex items-center gap-4">
-          {/* Desktop Button (Hidden on Mobile) */}
-          <div className="hidden lg:block">
-            <Button variant="navy" size="md" className="rounded-full text-xs font-bold px-6">
-              Reserver ma place
-            </Button>
-          </div>
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-8 text-[15px] font-semibold">
+            <Link href="#vision" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Vision</Link>
 
-          {/* Mobile Menu Toggle (Visible ONLY on Mobile) */}
-          <div className="lg:hidden">
-            <button
-              className="flex items-center p-2 text-summit-purple hover:text-summit-blue transition-colors focus:outline-none"
-              onClick={toggleMobileMenu}
-              aria-label="Toggle menu"
+            <div
+              className="relative"
+              onMouseEnter={() => setIsProgrammeOpen(true)}
+              onMouseLeave={() => setIsProgrammeOpen(false)}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            </button>
+              <Link href="#programme" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} inline-flex items-center gap-2 hover:text-gray-600 transition-colors uppercase tracking-wide`}>Programme
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </Link>
+
+              <div className={`absolute left-1/2 top-full z-50 mt-3 w-44 -translate-x-1/2 overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-1.5 shadow-2xl backdrop-blur-xl transition-all duration-200 ${isProgrammeOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 invisible'}`}>
+                {programmeLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-xl px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10 hover:text-white transition-all"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link href="#speakers" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Intervenant(e)s</Link>
+            <Link href="#partenaires" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Partenaires</Link>
+            <Link href="#contact" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Contact</Link>
           </div>
-        </div>
-      </Container>
+
+          <div className="flex items-center gap-4">
+            {/* Desktop Button*/}
+            <div className="hidden lg:block">
+              <Button variant="navy" size="md" className="rounded-full text-xs font-bold px-6">
+                Reserver ma place
+              </Button>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <div className="lg:hidden">
+              <button
+                className="flex items-center p-2 text-white/90 hover:text-white transition-colors focus:outline-none"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle menu"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </Container>
+      </nav>
 
       {/* Mobile Sidebar (Drawer) */}
       <div className={`fixed inset-0 z-[60] lg:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'visible' : 'invisible'}`}>
@@ -67,7 +113,7 @@ export const Navbar = () => {
           <div className="flex flex-col h-full">
             {/* Header with Close Button */}
             <div className="flex items-center justify-between p-6 border-b border-white/10">
-              <img src={Funion_logo.src} alt='F_Union' className='h-8 w-24 object-contain brightness-0 invert' />
+              <img src={Funion_logo.src} alt='F_Union' className='h-8 w-24 object-contain transition-all duration-300' />
               <button
                 onClick={toggleMobileMenu}
                 className="text-white/70 hover:text-white transition-colors p-2 bg-white/5 rounded-full"
@@ -105,6 +151,22 @@ export const Navbar = () => {
                   </svg>
                 </Link>
               ))}
+
+              <div className="mt-4 border-t border-white/10 pt-4">
+                <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#b39ddb]">Programme</p>
+                <div className="mt-3 flex flex-col gap-2">
+                  {programmeLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={toggleMobileMenu}
+                      className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-[#d6c2f2] hover:bg-white/10 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Footer / Brand Text */}
@@ -116,6 +178,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 };

@@ -21,16 +21,27 @@ export const MissionSection = () => {
             {/* Left Content */}
             <div className="text-gray-600 space-y-6 text-sm md:text-base font-medium leading-relaxed max-w-lg pt-4">
               <p>
-                Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus
-                error sit voluptatem accusantium dolore mque laudantium, totam rem
-                aperiam, eaque ipsa quae ab illo invent. Sed ut perspiciatis unde omnis
-                iste natus error sit.
+                F-UNION Africa Summit est né d'une
+                ambition forte : transformer ce défi en
+                opportunité. Nous ne créons pas
+                seulement un événement.
               </p>
               <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo invent. Lorem ipsum dolor sit amet, onsectetur adipiscing
-                cons ectetur nulla. Sed at ullamcorper risus. Teritatis et quasi architecto.
+                nous bâtissons un écosystème où
+                l’autorité institutionnelle rencontre la
+                sororité créative.
+                Notre mission est d'identifier, de former
+                et de connecter ces femmes leaders
+                pour les projeter là où se dessine l'avenir
+                du continent.
+                À Douala, en mai 2026, nous
+                unirons nos forces pour prouver que la
+                visibilité des femmes est le levier straté-
+                gique majeur de la
+                transformation africaine.
+                Ensemble, nous ne changeons pas seule-
+                ment des carrières, nous transformons le
+                destin de l’Afrique.
               </p>
             </div>
 

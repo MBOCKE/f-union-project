@@ -77,12 +77,10 @@ export const SpeakersSection = () => {
 
         <Container className="relative z-10 text-center flex flex-col items-center justify-center">
           <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-6 tracking-tight drop-shadow-md">
-            ILS ONT PRIS LA PAROLE
+            ELLES ONT PRIS LA PAROLE
           </h2>
           <p className="text-xl md:text-2xl lg:text-[1.35rem] font-bold text-white max-w-4xl px-4 leading-snug">
-            Rencontre, Session d'échanges et Expériences conçues pour
-            prolonger les discussions et transformer les idées en collaborations
-            concrètes.
+            Rencontres, sessions d’échanges et expériences conçues pour prolonger les discussions et transformer les idées en collaborations concrètes.
           </p>
         </Container>
       </div>

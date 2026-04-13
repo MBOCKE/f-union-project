@@ -1,6 +1,7 @@
 import { Container } from './Container';
 import Link from 'next/link';
 import dotMap from "@/core/assets/Dot Map.png";
+import Funion_logo from '@/core/assets/Funion_logo.png'
 
 export const Footer = () => {
   return (
@@ -17,9 +18,8 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <div className="mb-2">
               <h3 className="font-extrabold text-[2.5rem] tracking-tight leading-none">
-                <span className="text-[#1A9FFF]">F-</span><span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1A9FFF] to-[#5e3b97]">UNION</span>
+                <img src={Funion_logo.src} alt='F_Union' className="h-20 w-50 object-contain transition-all duration-300" />
               </h3>
-              <p className="text-[#a855f7] font-bold text-[0.85rem] tracking-widest mt-1">AFRICA SUMMIT 2026</p>
             </div>
             <p className="text-gray-400 text-[14px] leading-relaxed max-w-sm mt-3">
               Plateforme panafricaine qui

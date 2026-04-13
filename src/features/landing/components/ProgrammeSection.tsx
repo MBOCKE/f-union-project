@@ -166,7 +166,7 @@ export const ProgrammeSection = () => {
                   <span className="ml-[2px] text-white">Sur invitation</span>
                 </>
               }
-              backDescription="Dialogue de haut niveau pour des décideurs engagés."
+              backDescription="Dialogue de haut niveau pour des décideuses engagés."
             />
 
             <FlipCard

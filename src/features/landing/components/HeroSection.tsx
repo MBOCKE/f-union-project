@@ -17,7 +17,7 @@ export const HeroSection = () => {
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-summit-dark via-summit-dark/90 to-transparent z-10"></div>
       </div>
 
-      <Container className="relative z-20 flex-1 flex flex-col justify-center w-full mt-5">
+      <Container className="relative z-20 flex-1 flex flex-col justify-center w-full pt-32 pb-12">
         <div className="text-white max-w-4xl">
           <h2 className="text-[#845ec2] font-black uppercase text-xl md:text-2xl mb-4 leading-tight">
             #NextAfrica2035
