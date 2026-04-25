@@ -43,8 +43,6 @@ export const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8 text-[15px] font-semibold">
-            <Link href="#vision" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Vision</Link>
-
             <div
               className="relative"
               onMouseEnter={() => setIsProgrammeOpen(true)}
@@ -72,6 +70,7 @@ export const Navbar = () => {
             <Link href="#speakers" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Intervenant(e)s</Link>
             <Link href="#partenaires" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Partenaires</Link>
             <Link href="#contact" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Contact</Link>
+            <Link href="/communique-presse" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Press</Link>
           </div>
 
           <div className="flex items-center gap-4">
@@ -129,7 +128,6 @@ export const Navbar = () => {
             {/* Navigation Links */}
             <div className="flex flex-col py-10 px-8 gap-1 flex-grow overflow-y-auto">
               {[
-                { href: "#vision", label: "Vision" },
                 {
                   href: "#programme",
                   label: "Programme",
@@ -137,7 +135,8 @@ export const Navbar = () => {
                 },
                 { href: "#speakers", label: "Intervenant(e)s" },
                 { href: "#partenaires", label: "Partenaires" },
-                { href: "#contact", label: "Contact" }
+                { href: "#contact", label: "Contact" },
+                { href: "/communique-presse", label: "Press" }
               ].map((link) => (
                 <div key={link.href} className="flex flex-col border-b border-white/5">
                   <Link
