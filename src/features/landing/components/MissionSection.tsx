@@ -54,7 +54,7 @@ export const MissionSection = () => {
         </div>
 
         {/* Statistics Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 mb-20 mt-12 w-full max-w-5xl mx-auto justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 mb-6 mt-6 w-full max-w-5xl mx-auto justify-items-center">
           {/* Stat 1 */}
           <div className="flex items-center gap-5 w-full max-w-[200px]">
             <div className="w-12 h-12 md:w-[72px] md:h-[72px] rounded-full bg-[#2998e3] text-white flex items-center justify-center shrink-0">
@@ -105,30 +105,28 @@ export const MissionSection = () => {
         </div>
       </Container>
 
-      {/* Full Width Blocks */}
-      <Container className="max-w-6xl mx-auto px-4 mb-15">
-        <div className="w-full grid grid-cols-2 gap-2 md:gap-4 md:grid-cols-4 mx-auto shadow-2xl rounded-sm overflow-hidden">
-          {/* Block 1 */}
-          <div className="col-span-1 md:col-span-1 flex-[1.2] m-10 sm:m-10 bg-gradient-to-r from-[#2998e3] to-[#147ec1] flex items-center justify-center cursor-pointer hover:opacity-95 transition-opacity py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
-            <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Identifier</span>
-          </div>
 
-          {/* Block 2 */}
-          <div className="col-span-1 md:col-span-1 m-6 sm:m-10 flex-1 bg-[#0f172a] flex items-center justify-center cursor-pointer hover:bg-[#1e293b] transition-colors py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
-            <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Former</span>
-          </div>
-
-          {/* Block 3 */}
-          <div className="col-span-1 md:col-span-1 m-6 sm:m-10 flex-1 bg-[#2998e3] flex items-center justify-center cursor-pointer hover:bg-[#3ba2e8] transition-colors py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
-            <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Connecter</span>
-          </div>
-
-          {/* Block 4 */}
-          <div className="col-span-1 md:col-span-1 m-6 sm:m-10 flex-1 bg-[#010617] flex items-center justify-center cursor-pointer hover:bg-[#061122] transition-colors py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
-            <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Projeter</span>
-          </div>
+      <div className="w-full grid grid-cols-2 mb-6 p-2 gap-2 md:gap-1 md:grid-cols-4 rounded-sm overflow-hidden">
+        {/* Block 1 */}
+        <div className="col-span-1 md:col-span-1 flex-[1.2] bg-gradient-to-r from-[#2998e3] to-[#147ec1] flex items-center justify-center cursor-pointer hover:opacity-95 transition-opacity py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
+          <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Identifier</span>
         </div>
-      </Container>
+
+        {/* Block 2 */}
+        <div className="col-span-1 md:col-span-1 flex-1 bg-[#0f172a] flex items-center justify-center cursor-pointer hover:bg-[#1e293b] transition-colors py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
+          <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Former</span>
+        </div>
+
+        {/* Block 3 */}
+        <div className="col-span-1 md:col-span-1 flex-1 bg-[#2998e3] flex items-center justify-center cursor-pointer hover:bg-[#3ba2e8] transition-colors py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
+          <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Connecter</span>
+        </div>
+
+        {/* Block 4 */}
+        <div className="col-span-1 md:col-span-1 flex-1 bg-[#010617] flex items-center justify-center cursor-pointer hover:bg-[#061122] transition-colors py-16 md:py-24 rounded-lg border border-transparent sm:border-gray-300">
+          <span className="text-white font-bold text-xl md:text-2xl tracking-wide">Projeter</span>
+        </div>
+      </div>
 
       {/* Bottom CTA */}
       <div className="text-center">
