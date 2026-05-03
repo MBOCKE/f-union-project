@@ -28,8 +28,8 @@ export const LandingScreen = () => {
       <WhySection />
       <MissionSection />
       <ProgrammeSection />
-      {/* <SpeakersSection />
-      <PartnersSection /> */}
+      <SpeakersSection />
+      {/* <PartnersSection /> */}
       <OffersSection />
 
     </main>

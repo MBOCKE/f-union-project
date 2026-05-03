@@ -1,4 +1,6 @@
 import { Session, Speaker } from "../types";
+import { SpeakerProfile } from "@/features/speakers/types";
+import { SPEAKER_PROFILE_MAP } from "@/features/speakers/constants/speakers";
 
 const LocationIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" style={{ fill: '#0F2E4C', flexShrink: 0 }}>
@@ -50,11 +52,13 @@ const SpeakerItem = ({ speaker }: SpeakerInfoProps) => (
 
 interface SessionCardProps {
   session: Session;
+  speakerProfiles?: SpeakerProfile[];
+  onSpeakerClick?: (speaker: SpeakerProfile) => void;
 }
 
-export const SessionCard = ({ session }: SessionCardProps) => {
+export const SessionCard = ({ session, speakerProfiles = [], onSpeakerClick }: SessionCardProps) => {
   return (
-    <div className="py-10 md:py-16" style={{
+    <div id={session.id} className="py-10 md:py-16" style={{
       borderBottom: '1.5px solid #F0F0F0',
     }}>
       {/* Main Layout Flex Container: Responsive stack on mobile */}
@@ -83,15 +87,68 @@ export const SessionCard = ({ session }: SessionCardProps) => {
                 {session.startTime} - {session.endTime}
               </span>
             </div>
+
+            {session.cible && (
+              <div className="rounded-full bg-[#F4F5F7] px-3 py-2 border border-[#E6E9EE]">
+                <span style={{ color: '#0F2E4C', fontWeight: 700, fontSize: '14px' }} className="uppercase tracking-[0.06em]">
+                  Cible : {session.cible}
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
         {/* RIGHT: Speakers Section - Grid Layout */}
         <div className="w-full md:w-auto flex flex-col pt-10 md:pt-0">
           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-x-0 gap-y-10 items-start">
-            {session.speakers.map((speaker) => (
-              <SpeakerItem key={speaker.id} speaker={speaker} />
-            ))}
+            {session.speakers.map((speaker) => {
+              const profile = SPEAKER_PROFILE_MAP[speaker.name.toLowerCase()] || speakerProfiles.find((item) => item.name.toLowerCase() === speaker.name.toLowerCase());
+              const clickAction = profile ? () => onSpeakerClick?.(profile) : undefined;
+
+              return (
+                <div
+                  key={speaker.id}
+                  className={`flex flex-col items-center text-center gap-3 min-w-[72px] ${profile ? 'cursor-pointer group' : 'opacity-70'}`}
+                  onClick={clickAction}
+                  role={profile ? 'button' : undefined}
+                  tabIndex={profile ? 0 : undefined}
+                  onKeyDown={profile ? (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      clickAction?.();
+                    }
+                  } : undefined}
+                >
+                  <div
+                    style={{
+                      width: '72px',
+                      height: '72px',
+                      borderRadius: '16px',
+                      overflow: 'hidden',
+                      flexShrink: 0,
+                      backgroundColor: '#F0F2F5',
+                      border: '1px solid #F0F2F5'
+                    }}
+                    className={`shadow-sm transition-shadow duration-300 ${profile ? 'group-hover:shadow-md' : ''}`}
+                  >
+                    <img
+                      src={profile?.imageUrl || speaker.imageUrl || "https://via.placeholder.com/150"}
+                      alt={speaker.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      className={`transition-transform duration-500 ${profile ? 'group-hover:scale-110' : ''}`}
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span style={{ fontWeight: 800, color: '#0F2E4C', fontSize: '13px', lineHeight: '1.2' }} className="md:text-sm">
+                      {speaker.name}
+                    </span>
+                    <span style={{ color: '#5E7184', fontSize: '11px', fontWeight: 500 }} className="md:text-xs">
+                      {speaker.gender || speaker.role}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 

@@ -17,6 +17,7 @@ type FlipCardProps = {
   isDetailFront?: boolean;
   innerSpace?: string;
   href: string;
+  showButton?: boolean;
 };
 
 const FlipCard = ({
@@ -28,6 +29,7 @@ const FlipCard = ({
   backDescription,
   href,
   isDetailFront = false,
+  showButton = true,
 }: FlipCardProps) => {
   const [tapped, setTapped] = useState(false);
 
@@ -58,11 +60,13 @@ const FlipCard = ({
           {backDescription}
         </p>
         <div className="mt-auto pt-6 flex justify-center">
-          <Link href={href} onClick={(e) => e.stopPropagation()}>
-            <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
-              Voir le programme complet
-            </button>
-          </Link>
+          {showButton && (
+            <Link href={href} onClick={(e) => e.stopPropagation()}>
+              <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
+                Voir le programme complet
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -108,11 +112,13 @@ const FlipCard = ({
           {backDescription}
         </p>
         <div className="mt-auto pt-6 flex justify-center">
-          <Link href={href} onClick={(e) => e.stopPropagation()}>
-            <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
-              Voir le programme complet
-            </button>
-          </Link>
+          {showButton && (
+            <Link href={href} onClick={(e) => e.stopPropagation()}>
+              <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
+                Voir le programme complet
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -165,7 +171,7 @@ export const ProgrammeSection = () => {
             <FlipCard
               frontImage={day1.src}
               frontTitle="Le rendez-vous du Soft Power"
-              dayNumber="Jour 1"
+              dayNumber="28 Mai"
               innerSpace="8"
               href=""
               backTitle={
@@ -175,12 +181,13 @@ export const ProgrammeSection = () => {
                 </>
               }
               backDescription="Dialogue de haut niveau pour des décideuses engagés."
+              showButton={false}
             />
 
             <FlipCard
               frontImage={day2.src}
               frontTitle="Summit Day"
-              dayNumber="Jour 2"
+              dayNumber="Jour 1"
               innerSpace="2"
               href="/programme/jour2"
               backTitle={
@@ -194,7 +201,7 @@ export const ProgrammeSection = () => {
             <FlipCard
               frontImage={day3.src}
               frontTitle="Expérience & Connexions"
-              dayNumber="Jour 3"
+              dayNumber="Jour 2"
               innerSpace="8"
               href="/programme/jour3"
               backTitle={

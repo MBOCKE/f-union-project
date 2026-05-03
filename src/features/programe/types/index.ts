@@ -12,5 +12,6 @@ export interface Session {
   hall: string; // e.g., "Salle 1", "Salle 2"
   startTime: string; // e.g., "09:00"
   endTime: string; // e.g., "10:30"
+  cible?: string;
   speakers: Speaker[];
 }

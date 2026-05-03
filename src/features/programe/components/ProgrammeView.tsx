@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { Container } from "@/core/components/Container";
 import { Session } from "../types";
+import { SpeakerProfile } from "@/features/speakers/types";
 import { ProgrammeTabs } from "./ProgrammeTabs";
 import { SessionCard } from "./SessionCard";
 import { GoogleFormSection } from "./GoogleFormSection";
@@ -10,9 +11,11 @@ import { GoogleFormSection } from "./GoogleFormSection";
 interface ProgrammeViewProps {
   sessions: Session[];
   googleFormUrl?: string;
+  speakerProfiles?: SpeakerProfile[];
+  onSpeakerClick?: (speaker: SpeakerProfile) => void;
 }
 
-export const ProgrammeView = ({ sessions, googleFormUrl }: ProgrammeViewProps) => {
+export const ProgrammeView = ({ sessions, googleFormUrl, speakerProfiles = [], onSpeakerClick }: ProgrammeViewProps) => {
   const [activeHall, setActiveHall] = useState("Toutes les salles");
 
   const halls = useMemo(() => {
@@ -40,7 +43,12 @@ export const ProgrammeView = ({ sessions, googleFormUrl }: ProgrammeViewProps) =
           <div className="flex flex-col mb-20">
             {filteredSessions.length > 0 ? (
               filteredSessions.map((session) => (
-                <SessionCard key={session.id} session={session} />
+                <SessionCard
+                  key={session.id}
+                  session={session}
+                  speakerProfiles={speakerProfiles}
+                  onSpeakerClick={onSpeakerClick}
+                />
               ))
             ) : (
               <div className="py-20 text-center">

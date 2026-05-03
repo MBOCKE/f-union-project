@@ -13,8 +13,8 @@ export const Navbar = () => {
 
   const programmeLinks = [
     // { href: "/programme/jour1", label: "Jour 1" },
-    { href: "/programme/jour2", label: "Jour 2" },
-    { href: "/programme/jour3", label: "Jour 3" },
+    { href: "/programme/jour2", label: "Jour 1" },
+    { href: "/programme/jour3", label: "Jour 2" },
   ];
 
   const toggleMobileMenu = () => {
@@ -67,7 +67,7 @@ export const Navbar = () => {
               </div>
             </div>
 
-            <Link href="#speakers" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Intervenant(e)s</Link>
+            <Link href="/speakers" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Intervenant(e)s</Link>
             <Link href="#partenaires" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Partenaires</Link>
             <Link href="#contact" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Contact</Link>
             <Link href="/communique-presse" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Press</Link>
@@ -133,7 +133,7 @@ export const Navbar = () => {
                   label: "Programme",
                   subLinks: programmeLinks
                 },
-                { href: "#speakers", label: "Intervenant(e)s" },
+                { href: "/speakers", label: "Intervenant(e)s" },
                 { href: "#partenaires", label: "Partenaires" },
                 { href: "#contact", label: "Contact" },
                 { href: "/communique-presse", label: "Press" }
