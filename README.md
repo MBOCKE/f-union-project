@@ -1,108 +1,78 @@
-# F-Union Africa Summit 2026
+# 🌍 F-Union Africa Summit 2026
 
-Professional landing page for the **F-Union Africa Summit 2026** — a pan-African platform connecting women leaders, entrepreneurs, and decision-makers to transform visibility into economic opportunities.
+<div align="center">
+
+<br />
+
+### *« Transformer la visibilité en opportunités économiques et propulser le leadership féminin africain. »*
+
+**Le carrefour stratégique des femmes leaders, entrepreneures, décideuses institutionnelles et investisseurs pour façonner la vision *Next Africa 2035*.**
+
+[🌐 Site Officiel](https://f-union.org) • [🎟️ Billetterie Officielle](https://billeterie.f-union.org/) • [📰 Espace Presse](https://f-union.org/communique-presse)
 
 ---
 
-## 🚀 Getting Started
+</div>
 
-### 📦 Prerequisites
+## 📖 À Propos du Sommet
 
-- **Node.js**: v18+ (tested on v20+)
-- **NPM**: v9+
+Le **F-Union Africa Summit 2026** est une initiative d'envergure panafricaine dédiée à l'accélération du leadership féminin, à la souveraineté économique et à la création de synergies commerciales durables à travers le continent.
 
-### 🛠️ Local Development
+Organisé au cœur de la capitale économique du Cameroun, à **Douala**, cet événement réunit pendant trois jours des dirigeantes de premier plan, des fondatrices d'entreprises à fort impact, des personnalités politiques et des acteurs du capital-investissement.
 
-To run the project in development mode:
+Loin des colloques théoriques, le sommet a été pensé comme un **catalyseur de croissance opérationnelle**, alliant diplomatie d'influence (*Soft Power*), montée en compétences concrète, mentorat stratégique et accès direct aux capitaux.
 
-```bash
-npm run dev
+---
+
+## 🎯 Les 4 Piliers Stratégiques
+
+La mission du F-Union Africa Summit s'articule autour de quatre engagements fondamentaux :
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   IDENTIFIER    │ ──► │     FORMER      │ ──► │    CONNECTER    │ ──► │    PROJETER     │
+│  Mettre en      │     │  Masterclasses  │     │   Networking    │     │  Vision Next    │
+│  lumière les    │     │  & coaching     │     │   stratégique   │     │  Africa 2035    │
+│  talents clés   │     │  sur-mesure     │     │   B2B & Deals   │     │  & Croissance   │
+└─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-> [!IMPORTANT]
-> **Asset Loading**: The project uses a conditional `basePath` in `next.config.ts`. In development (`npm run dev`), assets serve from the root `/`. In production builds, they serve from `/f-union-project/` to support GitHub Pages.
-
----
-
-## 🏗️ Project Architecture
-
-The project follows a **Feature-based Atomic Architecture** within the `src` directory:
-
-- 📂 `src/app`: **Next.js App Router**. Contains the root `layout.tsx`, global styles (`globals.css`), and the main `page.tsx`.
-- 📂 `src/core`: **Shared Core**. Cross-cutting concerns used throughout the entire app.
-  - `components/`: Reusable UI elements (`Button`, `Navbar`, `Footer`, `Container`).
-  - `assets/`: Shared images, logos, and icons.
-- 📂 `src/features`: **Domain-specific Features**.
-  - `landing/`: All components and screens specifically for the landing page (Hero, Speakers, Partners, etc.).
-  - `landing/components/`: Modularized sections of the single-page application.
+1. **Identifier** : Détecter et valoriser les femmes entrepreneures, dirigeantes et innovatrices qui transforment l’écosystème africain.
+2. **Former** : Doter les participantes d’outils pratiques immédiatement exploitables (gouvernance juridique, conformité, gestion agile, intelligence financière et expérience client).
+3. **Connecter** : Créer des ponts solides entre les porteurs de projets, les multinationales et les institutions financières régionales et internationales.
+4. **Projeter** : Inscrire les initiatives féminines dans la trajectoire de transformation économique globale du continent (*Next Africa 2035*).
 
 ---
 
-## 🎨 Design System & Conventions
 
-### Brand Colors (Tailwind Tokens)
+## 🌟 Pourquoi Participer ?
 
-We use a premium, high-contrast color palette defined in `tailwind.config.ts`:
-
-- `summit-purple`: `#2D0A54` (Primary brand color)
-- `summit-red`: `#E33E33` (Accent color)
-- `summit-blue`: `#0070B8` (Informational/Secondary blue)
-- `summit-dark`: `#1A1A1A` (Backgrounds and dark text)
-- **Hero Gradient Palette**: `#3a2051`, `#845ec2`, `#b39ddb`.
-
-### Navigation & Anchor Mapping
-
-The header links correspond to specific section IDs on the landing page:
-
-- **Vision**: `#vision` (Why/Mission section)
-- **Programme**: `#programme` (Event schedule)
-- **Intervenant(e)s**: `#speakers` (Speaker gallery)
-- **Pass**: `#pass` (Pricing/Offers)
-- **Partenaires**: `#partenaires` (Partner carousels)
-- **Contact**: `#contact` (Footer)
+- **🤝 Accéder à un réseau d'influence direct** : Rencontrez plus de 400 actrices et acteurs décisionnels qui façonnent l'économie du continent.
+- **📈 Monter en compétences concrètement** : Participez à des ateliers business, des sessions de mentorat 1:1 et bénéficiez de diagnostics personnalisés.
+- **📢 Développer votre visibilité et votre marque** : Prenez la parole dans les espaces médias dédiés, pitchez devant des investisseurs et affirmez votre leadership.
+- **🌍 Être actrice du changement continental** : Participez à la construction d'une feuille de route collective pour l'autonomisation et le rayonnement de l'Afrique.
 
 ---
 
-## 🏗️ Component Conventions
 
-1.  **Strict Mutually Exclusive Visibility**: Use wrapper `div`s with Tailwind visibility classes (`hidden lg:block` vs `lg:hidden`) for elements that should toggle between mobile and desktop (e.g., Navbar CTA vs Hamburger).
-2.  **Premium Aesthetics**: Prioritize glassmorphism (via `backdrop-blur`) and vibrant gradients for immersive UI elements like the mobile sidebar.
-3.  **Responsive Layouts**: Always test with `max-` and standard Tailwind breakpoints to ensure consistency across distinct viewports.
 
----
+## 🎟️ Formules d'Accès & Participations
 
-## 🌍 Deployment
+Plusieurs formules de pass ont été élaborées pour s'adapter aux différents profils :
 
-### GitHub Pages
-
-This project is configured for automated deployment to GitHub Pages via the `gh-pages` branch.
-
-**To build & deploy manually:**
-
-```bash
-npm run deploy
-```
-
-This script runs a build and pushes the contents of the `out/` directory to the `gh-pages` branch of the origin repository.
+- **Pass Visiteur / Découverte** : Accès aux espaces d'exposition et aux sessions plénières grand public.
+- **Pass Conférence & Masterclass** : Accès complet aux panels thématiques, ateliers de formation et supports exclusifs.
+- **Pass VIP & Expérience Premium** : Accès prioritaire, cocktail de réseautage, session dédiée *The Clinic* et services du *Studio Pro 360*.
+- **Pass Entreprises & Délégations** : Formules sur-mesure pour les organisations accompagnant leurs collaboratrices et partenaires.
 
 ---
 
-## ✍️ Contribution Notes
+## 🤝 Partenaires & Soutiens
 
-- Avoid inline styles; use Tailwind utilities or predefined `core` components.
-- Keep sections decoupled within `src/features/landing/components/` for easy maintenance.
+Le sommet s'appuie sur la collaboration de groupes industriels, institutions financières, médias panafricains et réseaux d'entrepreneuriat engagés pour l'essor du leadership africain.
 
 ---
 
-## 📝 Recent Updates
-
-### UX/UI & Content Edits
-
-- **`WhySection`**: Fixed an import name mismatch ensuring `newWhyImage.png` displays correctly as the new background.
-- **`ProgrammeSection`**:
-  - Assigned correct background images to the flip cards (`day1.jpeg`, `day2.jpeg`, `day 3.jpeg`).
-  - Adjusted the styling of "Sur invitation" on Jour 1 to be white and 65% smaller (`text-[0.20em]`).
-  - Doubled the text size of the back card description (`text-[30px]`) for greater visibility.
-- **`OffersSection`**: Replaced all `offerImage` `.png` imports and usages with the new `.jpeg` format (offer 1 through 5).
+<div align="center">
+  <sub>© 2026 F-Union Africa Summit. Tous droits réservés. Engagés pour l'avenir et l'autonomie économique du continent africain.</sub>
+</div>
