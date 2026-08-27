@@ -22,29 +22,6 @@ Organisé au cœur de la capitale économique du Cameroun, à **Douala**, cet é
 
 Loin des colloques théoriques, le sommet a été pensé comme un **catalyseur de croissance opérationnelle**, alliant diplomatie d'influence (*Soft Power*), montée en compétences concrète, mentorat stratégique et accès direct aux capitaux.
 
----
-
-## 🎯 Les 4 Piliers Stratégiques
-
-La mission du F-Union Africa Summit s'articule autour de quatre engagements fondamentaux :
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   IDENTIFIER    │ ──► │     FORMER      │ ──► │    CONNECTER    │ ──► │    PROJETER     │
-│  Mettre en      │     │  Masterclasses  │     │   Networking    │     │  Vision Next    │
-│  lumière les    │     │  & coaching     │     │   stratégique   │     │  Africa 2035    │
-│  talents clés   │     │  sur-mesure     │     │   B2B & Deals   │     │  & Croissance   │
-└─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
-```
-
-1. **Identifier** : Détecter et valoriser les femmes entrepreneures, dirigeantes et innovatrices qui transforment l’écosystème africain.
-2. **Former** : Doter les participantes d’outils pratiques immédiatement exploitables (gouvernance juridique, conformité, gestion agile, intelligence financière et expérience client).
-3. **Connecter** : Créer des ponts solides entre les porteurs de projets, les multinationales et les institutions financières régionales et internationales.
-4. **Projeter** : Inscrire les initiatives féminines dans la trajectoire de transformation économique globale du continent (*Next Africa 2035*).
-
----
-
-
 ## 🌟 Pourquoi Participer ?
 
 - **🤝 Accéder à un réseau d'influence direct** : Rencontrez plus de 400 actrices et acteurs décisionnels qui façonnent l'économie du continent.
