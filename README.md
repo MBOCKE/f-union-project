@@ -1,4 +1,4 @@
-# 🌍 F-Union Africa Summit 2026
+# F-Union Africa Summit 2026
 
 <div align="center">
 
@@ -14,7 +14,7 @@
 
 </div>
 
-## 📖 À Propos du Sommet
+## À Propos du Sommet
 
 Le **F-Union Africa Summit 2026** est une initiative d'envergure panafricaine dédiée à l'accélération du leadership féminin, à la souveraineté économique et à la création de synergies commerciales durables à travers le continent.
 
@@ -22,18 +22,18 @@ Organisé au cœur de la capitale économique du Cameroun, à **Douala**, cet é
 
 Loin des colloques théoriques, le sommet a été pensé comme un **catalyseur de croissance opérationnelle**, alliant diplomatie d'influence (*Soft Power*), montée en compétences concrète, mentorat stratégique et accès direct aux capitaux.
 
-## 🌟 Pourquoi Participer ?
+## Pourquoi Participer ?
 
-- **🤝 Accéder à un réseau d'influence direct** : Rencontrez plus de 400 actrices et acteurs décisionnels qui façonnent l'économie du continent.
-- **📈 Monter en compétences concrètement** : Participez à des ateliers business, des sessions de mentorat 1:1 et bénéficiez de diagnostics personnalisés.
-- **📢 Développer votre visibilité et votre marque** : Prenez la parole dans les espaces médias dédiés, pitchez devant des investisseurs et affirmez votre leadership.
-- **🌍 Être actrice du changement continental** : Participez à la construction d'une feuille de route collective pour l'autonomisation et le rayonnement de l'Afrique.
+- ** Accéder à un réseau d'influence direct** : Rencontrez plus de 400 actrices et acteurs décisionnels qui façonnent l'économie du continent.
+- ** Monter en compétences concrètement** : Participez à des ateliers business, des sessions de mentorat 1:1 et bénéficiez de diagnostics personnalisés.
+- ** Développer votre visibilité et votre marque** : Prenez la parole dans les espaces médias dédiés, pitchez devant des investisseurs et affirmez votre leadership.
+- ** Être actrice du changement continental** : Participez à la construction d'une feuille de route collective pour l'autonomisation et le rayonnement de l'Afrique.
 
 ---
 
 
 
-## 🎟️ Formules d'Accès & Participations
+##  Formules d'Accès & Participations
 
 Plusieurs formules de pass ont été élaborées pour s'adapter aux différents profils :
 
@@ -44,7 +44,7 @@ Plusieurs formules de pass ont été élaborées pour s'adapter aux différents 
 
 ---
 
-## 🤝 Partenaires & Soutiens
+## Partenaires & Soutiens
 
 Le sommet s'appuie sur la collaboration de groupes industriels, institutions financières, médias panafricains et réseaux d'entrepreneuriat engagés pour l'essor du leadership africain.
 
