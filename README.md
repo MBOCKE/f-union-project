@@ -24,10 +24,10 @@ Loin des colloques théoriques, le sommet a été pensé comme un **catalyseur d
 
 ## Pourquoi Participer ?
 
-- ** Accéder à un réseau d'influence direct** : Rencontrez plus de 400 actrices et acteurs décisionnels qui façonnent l'économie du continent.
-- ** Monter en compétences concrètement** : Participez à des ateliers business, des sessions de mentorat 1:1 et bénéficiez de diagnostics personnalisés.
-- ** Développer votre visibilité et votre marque** : Prenez la parole dans les espaces médias dédiés, pitchez devant des investisseurs et affirmez votre leadership.
-- ** Être actrice du changement continental** : Participez à la construction d'une feuille de route collective pour l'autonomisation et le rayonnement de l'Afrique.
+- **Accéder à un réseau d'influence direct** : Rencontrez plus de 400 actrices et acteurs décisionnels qui façonnent l'économie du continent.
+- **Monter en compétences concrètement** : Participez à des ateliers business, des sessions de mentorat 1:1 et bénéficiez de diagnostics personnalisés.
+- **Développer votre visibilité et votre marque** : Prenez la parole dans les espaces médias dédiés, pitchez devant des investisseurs et affirmez votre leadership.
+- **Être actrice du changement continental** : Participez à la construction d'une feuille de route collective pour l'autonomisation et le rayonnement de l'Afrique.
 
 ---
 
