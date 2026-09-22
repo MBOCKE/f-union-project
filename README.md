@@ -1,108 +1,173 @@
-# F-Union Africa Summit 2026
+# 🌍 F-Union Africa Summit 2026
 
-Professional landing page for the **F-Union Africa Summit 2026** — a pan-African platform connecting women leaders, entrepreneurs, and decision-makers to transform visibility into economic opportunities.
+<div align="center">
+
+![Summit Badge](https://img.shields.io/badge/F--Union-Africa%20Summit%202026-2D0A54?style=for-the-badge&logoColor=white)
+![Edition](https://img.shields.io/badge/Edition-1st%20Pan--African%20Forum-E33E33?style=for-the-badge)
+![Dates](https://img.shields.io/badge/Date-28--30%20Mai%202026-0070B8?style=for-the-badge)
+![Location](https://img.shields.io/badge/Lieu-Douala%2C%20Cameroun-1A1A1A?style=for-the-badge)
+
+<br />
+
+### *« Transformer la visibilité en opportunités économiques et propulser le leadership féminin africain. »*
+
+**Le carrefour stratégique des femmes leaders, entrepreneures, décideuses institutionnelles et investisseurs pour façonner la vision *Next Africa 2035*.**
+
+[🌐 Site Officiel](https://f-union.org) • [🎟️ Billetterie Officielle](https://billeterie.f-union.org/) • [📰 Espace Presse](https://f-union.org/communique-presse)
 
 ---
 
-## 🚀 Getting Started
+</div>
 
-### 📦 Prerequisites
+## 📖 À Propos du Sommet
 
-- **Node.js**: v18+ (tested on v20+)
-- **NPM**: v9+
+Le **F-Union Africa Summit 2026** est une initiative d'envergure panafricaine dédiée à l'accélération du leadership féminin, à la souveraineté économique et à la création de synergies commerciales durables à travers le continent.
 
-### 🛠️ Local Development
+Organisé au cœur de la capitale économique du Cameroun, à **Douala**, cet événement réunit pendant trois jours des dirigeantes de premier plan, des fondatrices d'entreprises à fort impact, des personnalités politiques et des acteurs du capital-investissement.
 
-To run the project in development mode:
+Loin des colloques théoriques, le sommet a été pensé comme un **catalyseur de croissance opérationnelle**, alliant diplomatie d'influence (*Soft Power*), montée en compétences concrète, mentorat stratégique et accès direct aux capitaux.
 
-```bash
-npm run dev
+---
+
+## 🎯 Les 4 Piliers Stratégiques
+
+La mission du F-Union Africa Summit s'articule autour de quatre engagements fondamentaux :
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   IDENTIFIER    │ ──► │     FORMER      │ ──► │    CONNECTER    │ ──► │    PROJETER     │
+│  Mettre en      │     │  Masterclasses  │     │   Networking    │     │  Vision Next    │
+│  lumière les    │     │  & coaching     │     │   stratégique   │     │  Africa 2035    │
+│  talents clés   │     │  sur-mesure     │     │   B2B & Deals   │     │  & Croissance   │
+└─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-> [!IMPORTANT]
-> **Asset Loading**: The project uses a conditional `basePath` in `next.config.ts`. In development (`npm run dev`), assets serve from the root `/`. In production builds, they serve from `/f-union-project/` to support GitHub Pages.
-
----
-
-## 🏗️ Project Architecture
-
-The project follows a **Feature-based Atomic Architecture** within the `src` directory:
-
-- 📂 `src/app`: **Next.js App Router**. Contains the root `layout.tsx`, global styles (`globals.css`), and the main `page.tsx`.
-- 📂 `src/core`: **Shared Core**. Cross-cutting concerns used throughout the entire app.
-  - `components/`: Reusable UI elements (`Button`, `Navbar`, `Footer`, `Container`).
-  - `assets/`: Shared images, logos, and icons.
-- 📂 `src/features`: **Domain-specific Features**.
-  - `landing/`: All components and screens specifically for the landing page (Hero, Speakers, Partners, etc.).
-  - `landing/components/`: Modularized sections of the single-page application.
+1. **Identifier** : Détecter et valoriser les femmes entrepreneures, dirigeantes et innovatrices qui transforment l’écosystème africain.
+2. **Former** : Doter les participantes d’outils pratiques immédiatement exploitables (gouvernance juridique, conformité, gestion agile, intelligence financière et expérience client).
+3. **Connecter** : Créer des ponts solides entre les porteurs de projets, les multinationales et les institutions financières régionales et internationales.
+4. **Projeter** : Inscrire les initiatives féminines dans la trajectoire de transformation économique globale du continent (*Next Africa 2035*).
 
 ---
 
-## 🎨 Design System & Conventions
+## 📊 Le Sommet en Chiffres
 
-### Brand Colors (Tailwind Tokens)
+<div align="center">
 
-We use a premium, high-contrast color palette defined in `tailwind.config.ts`:
+| Chiffre Clé | Indicateur | Impact & Portée |
+| :---: | :--- | :--- |
+| **400+** | **Participantes & Délégués** | Dirigeantes, fondatrices de PME, cadres exécutives et décideuses publiques |
+| **30+** | **Intervenant(e)s d'Élite** | Experts juridiques, directeurs généraux, experts RH et personnalités publiques |
+| **3** | **Journées Immersives** | Du dialogue d'influence restreint à la grande foire d'opportunités |
+| **1** | **Écosystème Stratégique** | Une alliance panafricaine concrète au service de la souveraineté économique |
 
-- `summit-purple`: `#2D0A54` (Primary brand color)
-- `summit-red`: `#E33E33` (Accent color)
-- `summit-blue`: `#0070B8` (Informational/Secondary blue)
-- `summit-dark`: `#1A1A1A` (Backgrounds and dark text)
-- **Hero Gradient Palette**: `#3a2051`, `#845ec2`, `#b39ddb`.
-
-### Navigation & Anchor Mapping
-
-The header links correspond to specific section IDs on the landing page:
-
-- **Vision**: `#vision` (Why/Mission section)
-- **Programme**: `#programme` (Event schedule)
-- **Intervenant(e)s**: `#speakers` (Speaker gallery)
-- **Pass**: `#pass` (Pricing/Offers)
-- **Partenaires**: `#partenaires` (Partner carousels)
-- **Contact**: `#contact` (Footer)
+</div>
 
 ---
 
-## 🏗️ Component Conventions
+## 🌟 Pourquoi Participer ?
 
-1.  **Strict Mutually Exclusive Visibility**: Use wrapper `div`s with Tailwind visibility classes (`hidden lg:block` vs `lg:hidden`) for elements that should toggle between mobile and desktop (e.g., Navbar CTA vs Hamburger).
-2.  **Premium Aesthetics**: Prioritize glassmorphism (via `backdrop-blur`) and vibrant gradients for immersive UI elements like the mobile sidebar.
-3.  **Responsive Layouts**: Always test with `max-` and standard Tailwind breakpoints to ensure consistency across distinct viewports.
+- **🤝 Accéder à un réseau d'influence direct** : Rencontrez plus de 400 actrices et acteurs décisionnels qui façonnent l'économie du continent.
+- **📈 Monter en compétences concrètement** : Participez à des ateliers business, des sessions de mentorat 1:1 et bénéficiez de diagnostics personnalisés.
+- **📢 Développer votre visibilité et votre marque** : Prenez la parole dans les espaces médias dédiés, pitchez devant des investisseurs et affirmez votre leadership.
+- **🌍 Être actrice du changement continental** : Participez à la construction d'une feuille de route collective pour l'autonomisation et le rayonnement de l'Afrique.
 
 ---
 
-## 🌍 Deployment
+## 🗓️ Architecture du Programme (3 Jours)
 
-### GitHub Pages
-
-This project is configured for automated deployment to GitHub Pages via the `gh-pages` branch.
-
-**To build & deploy manually:**
-
-```bash
-npm run deploy
+```mermaid
+journey
+    title Parcours du Sommet
+    section Jour 1 - 28 Mai 2026
+      Le Rendez-vous du Soft Power: 5: Rencontre d'influence sur invitation, dialogue de haut niveau
+    section Jour 2 - 29 Mai 2026
+      Summit Day: 5: Keynotes inspirantes, panels d'experts, ateliers pratiques & masterclasses
+    section Jour 3 - 30 Mai 2026
+      Expériences & Opportunités: 5: Showroom d'investissement, rencontres d'affaires, clôture festive
 ```
 
-This script runs a build and pushes the contents of the `out/` directory to the `gh-pages` branch of the origin repository.
+### 🔹 Jour 1 (28 Mai 2026) : *Le Rendez-vous du Soft Power*
+> **Format** : Session exclusive *(sur invitation)* réunissant un cercle restreint de décideuses, personnalités diplomatiques et chefs d'entreprises.  
+> **Objectif** : Plaidoyer stratégique, leadership d'influence et positionnement des femmes aux tables de négociation institutionnelles.
+
+### 🔹 Jour 2 (29 Mai 2026) : *Summit Day*
+> **Format** : Grande journée plénière ouverte aux congressistes.  
+> **Contenu** :
+> - Conférences magistrales et débats d'actualité économique.
+> - Panels thématiques : Transformation digitale bancaire, conformité & droit OHADA, RSE, excellence opérationnelle et retail.
+> - Ateliers interactifs de formation au management agile et développement commercial.
+
+### 🔹 Jour 3 (30 Mai 2026) : *Expériences & Opportunités*
+> **Format** : Journée orientée business, partenariats et passage à l'échelle.  
+> **Contenu** :
+> - Espaces de networking qualifié et rencontres B2B.
+> - Showroom d'investissement et sessions de pitch projets.
+> - Cérémonie de clôture et célébration des réussites féminines.
 
 ---
 
-## ✍️ Contribution Notes
+## 🏢 Espaces & Dispositifs Innovants
 
-- Avoid inline styles; use Tailwind utilities or predefined `core` components.
-- Keep sections decoupled within `src/features/landing/components/` for easy maintenance.
+- **🩺 The Clinic** : Un centre d'orientation et de consultation individuelle où des experts accompagnent les entrepreneures sur leurs problématiques juridiques, financières, fiscales, RH et organisationnelles.
+- **🎥 Studio Pro 360** : Un espace audiovisuel dédié au personal branding, avec séances de shooting photo professionnel et interviews pour amplifier l'image publique des participantes.
+- **💼 Power Hub & Investment Showroom** : Une arène dédiée à la rencontre entre projets à fort potentiel de croissance et fonds d'investissement, business angels et banques partenaires.
+- **🛍️ Pavillon Exposants & Marketplace** : Vitrine commerciale mettant à l'honneur les produits et services innovants *Made in Africa*.
 
 ---
 
-## 📝 Recent Updates
+## 👥 Intervenant(e)s & Personnalités Réunies
 
-### UX/UI & Content Edits
+Le sommet réunit un collège pluridisciplinaire d'experts et de leaders d'opinion :
 
-- **`WhySection`**: Fixed an import name mismatch ensuring `newWhyImage.png` displays correctly as the new background.
-- **`ProgrammeSection`**:
-  - Assigned correct background images to the flip cards (`day1.jpeg`, `day2.jpeg`, `day 3.jpeg`).
-  - Adjusted the styling of "Sur invitation" on Jour 1 to be white and 65% smaller (`text-[0.20em]`).
-  - Doubled the text size of the back card description (`text-[30px]`) for greater visibility.
-- **`OffersSection`**: Replaced all `offerImage` `.png` imports and usages with the new `.jpeg` format (offer 1 through 5).
+- **Droit des Affaires & Gouvernance** :
+  - **Me Aurélie Chazai** — Avocate aux Barreaux de Paris et du Cameroun, Managing Partner de *Chazai Wamba*.
+  - **Me Gaëlle Ngue** — Avocate aux Barreaux du Cameroun et du Québec, Associée gérante de *Ngue & Associés*.
+- **Banque, Assurance & Finance Digitale** :
+  - **Laetissia Enonga-Dissake** — Directrice Centrale Commerciale & Marketing chez *Afri Insurance & Afrilife Insurance*.
+  - **Christian Tchoupe** — Account Manager chez *SBS Software*, spécialiste de la transformation digitale bancaire.
+  - **Anabelle Koung** — Deputy Manager Corporate & Innovation chez *SanlamAllianz Cameroun*.
+- **Capital Humain, Leadership & Prise de Parole** :
+  - **Linda** — Fondatrice de *2LN Expertise*, ancienne Directrice du Capital Humain (*MTN, Groupe Activa*).
+  - **Honoré Nkouel** — Directeur des Ressources Humaines Afrique Centrale chez *CFAO Infrastructure*.
+  - **Jocelyne Ngassam** — Experte en Management Agile et Développement Commercial International.
+  - **Thierry Ntamack** — Réalisateur, acteur et coach en prise de parole scénique pour dirigeants.
+- **Excellence Opérationnelle, RSE & Santé** :
+  - **Laure Krans Nana** — CEO de *QualityPro Consulting*, experte qualité et conformité.
+  - **Erika Wilson** — Experte RSE certifiée AFNOR / EDHEC Business School.
+  - **Dr. Pechens Pokossy Doumbe** — Docteure en pharmacie, fondatrice de la *Pharmacie du Centre*.
+  - **Edithe Nken Hot** — Directrice Générale de *Univers Internes*, consultante en croissance commerciale.
+  - **Sandra Gagneur** — Experte Retail Premium & Expérience Client (*ex-Sephora, Zara*).
+  - **Prisca Heuya** — Fondatrice de *Kem Care*, valorisation des matières premières locales.
+
+---
+
+## 🎟️ Formules d'Accès & Participations
+
+Plusieurs formules de pass ont été élaborées pour s'adapter aux différents profils :
+
+- **Pass Visiteur / Découverte** : Accès aux espaces d'exposition et aux sessions plénières grand public.
+- **Pass Conférence & Masterclass** : Accès complet aux panels thématiques, ateliers de formation et supports exclusifs.
+- **Pass VIP & Expérience Premium** : Accès prioritaire, cocktail de réseautage, session dédiée *The Clinic* et services du *Studio Pro 360*.
+- **Pass Entreprises & Délégations** : Formules sur-mesure pour les organisations accompagnant leurs collaboratrices et partenaires.
+
+---
+
+## 🤝 Partenaires & Soutiens
+
+Le sommet s'appuie sur la collaboration de groupes industriels, institutions financières, médias panafricains et réseaux d'entrepreneuriat engagés pour l'essor du leadership africain.
+
+---
+
+## 📬 Contact & Informations Utiles
+
+- **Lieu** : Douala, Cameroun
+- **Dates** : 28, 29 et 30 Mai 2026
+- **Billetterie en ligne** : [billeterie.f-union.org](https://billeterie.f-union.org/)
+- **Site web officiel** : [f-union.org](https://f-union.org)
+- **E-mail de contact** : contact@f-union.org
+
+---
+
+<div align="center">
+  <sub>© 2026 F-Union Africa Summit. Tous droits réservés. Engagés pour l'avenir et l'autonomie économique du continent africain.</sub>
+</div>
