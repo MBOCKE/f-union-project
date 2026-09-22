@@ -5,13 +5,28 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
+  BarChart3,
   BriefcaseBusiness,
   CheckCircle2,
+  Clapperboard,
   ChevronDown,
+  ClipboardList,
   Clock3,
+  Globe2,
+  Handshake,
+  Megaphone,
   MapPin,
+  Mic2,
+  Newspaper,
+  Palette,
+  Pencil,
   Search,
+  Scale,
+  ShoppingBag,
+  Sparkles,
+  Truck,
   Users,
+  WalletCards,
 } from "lucide-react";
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
@@ -33,6 +48,24 @@ const categoryStyles: Record<string, string> = {
   Créatif: "bg-[#f0efff] text-[#4b46a2]",
   "Juridique & Conformité": "bg-[#f3f3f3] text-[#363636]",
 };
+
+const roleIcons = {
+  "coordinateur-summit": ClipboardList,
+  "community-manager-animation": Megaphone,
+  "community-manager-strategie-contenu": Pencil,
+  "data-analyst": BarChart3,
+  "relations-exterieures-business-dev": Handshake,
+  "contenu-speakers": Mic2,
+  "activations-experience": Sparkles,
+  "marketing-offres": ShoppingBag,
+  "relations-presse": Newspaper,
+  "logistique-coordination-evenementielle": Truck,
+  "finances-terrain-douala": WalletCards,
+  "graphic-designer-creation-visuelle": Palette,
+  "graphic-designer-motion-digital": Clapperboard,
+  "responsable-juridique": Scale,
+  "plaidoyer-cooperation-internationale": Globe2,
+} as const;
 
 const benefits = [
   "Une expérience terrain sur un événement panafricain à fort impact",
@@ -243,11 +276,16 @@ export const RecruitmentPage = () => {
 
           {filteredRoles.length > 0 ? (
             <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {filteredRoles.map((role) => (
-                <article
+              {filteredRoles.map((role) => {
+                const RoleIcon =
+                  roleIcons[role.slug as keyof typeof roleIcons] ||
+                  BriefcaseBusiness;
+
+                return (
+                  <article
                   key={role.slug}
                   className="group flex h-full flex-col rounded-[1.75rem] bg-white p-6 shadow-[0_12px_40px_rgba(45,10,84,0.07)] ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(45,10,84,0.14)]"
-                >
+                  >
                   <div className="flex items-start justify-between gap-4">
                     <span
                       className={`rounded-full px-3 py-1 text-xs font-black ${
@@ -257,7 +295,7 @@ export const RecruitmentPage = () => {
                     >
                       {role.category}
                     </span>
-                    <BriefcaseBusiness className="h-5 w-5 text-[#845ec2]" />
+                    <RoleIcon className="h-5 w-5 text-[#845ec2]" />
                   </div>
                   <h3 className="mt-6 text-2xl font-black leading-tight text-summit-dark">
                     {role.title}
@@ -284,8 +322,9 @@ export const RecruitmentPage = () => {
                     Voir la fiche complète
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           ) : (
             <div className="mt-8 rounded-3xl bg-white p-12 text-center ring-1 ring-gray-200">
