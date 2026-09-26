@@ -5,6 +5,7 @@ import { ProgrammeSection } from "@/features/landing/components/ProgrammeSection
 import { OffersSection } from "@/features/landing/components/OffersSection";
 import { SpeakersSection } from "@/features/landing/components/SpeakersSection";
 import { PartnersSection } from "@/features/landing/components/PartnersSection";
+import { RecruitmentSection } from "@/features/landing/components/RecruitmentSection";
 
 export const LandingScreen = () => {
   const articles = [
@@ -29,6 +30,7 @@ export const LandingScreen = () => {
       <MissionSection />
       <ProgrammeSection />
       <SpeakersSection />
+      <RecruitmentSection />
       <PartnersSection />
       <OffersSection />
 

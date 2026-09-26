@@ -7,7 +7,6 @@ import {
   ArrowRight,
   BarChart3,
   BriefcaseBusiness,
-  CheckCircle2,
   Clapperboard,
   ChevronDown,
   ClipboardList,
@@ -67,13 +66,6 @@ const roleIcons = {
   "plaidoyer-cooperation-internationale": Globe2,
 } as const;
 
-const benefits = [
-  "Une expérience terrain sur un événement panafricain à fort impact",
-  "Une lettre de recommandation personnalisée signée de la CEO",
-  "Un accès gratuit au Sommet F-UNION 2027 à Douala",
-  "L'intégration au réseau F-UNION",
-];
-
 const faqs = [
   {
     question: "Les missions sont-elles rémunérées ?",
@@ -131,7 +123,7 @@ export const RecruitmentPage = () => {
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(132,94,194,0.55),transparent_35%)]" />
 
-        <Container className="relative z-10 pb-20 pt-36 md:pb-28 md:pt-44">
+        <Container className="relative z-10 pb-12 pt-28 md:pb-16 md:pt-32">
           <div className="max-w-4xl">
             <p className="mb-5 text-sm font-black uppercase tracking-[0.28em] text-[#d9c8ff]">
               F-UNION AFRICA SUMMIT 2027
@@ -143,18 +135,9 @@ export const RecruitmentPage = () => {
               15 missions bénévoles pour construire un événement panafricain à
               fort impact, à Douala et à distance.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button href="#postes" variant="white" size="lg">
-                Découvrir les postes
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button href="#candidater" variant="outline" size="lg">
-                Comment candidater ?
-              </Button>
-            </div>
           </div>
 
-          <div className="mt-16 grid w-full max-w-none grid-cols-2 gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid w-full max-w-none grid-cols-2 gap-4 sm:grid-cols-3">
             {[
               ["15", "postes ouverts"],
               ["7", "mois de mission"],
@@ -174,40 +157,6 @@ export const RecruitmentPage = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-white py-20 md:py-28" id="pourquoi">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.24em] text-[#845ec2]">
-                Pourquoi rejoindre F-UNION ?
-              </p>
-              <h2 className="mt-4 text-4xl font-black leading-tight text-summit-dark md:text-5xl">
-                Une mission utile, une expérience qui compte.
-              </h2>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
-                Rejoindre la Team F-UNION, c&apos;est participer concrètement à la
-                construction d&apos;un rendez-vous panafricain consacré au leadership
-                féminin et aux opportunités économiques.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {benefits.map((benefit) => (
-                <div
-                  key={benefit}
-                  className="rounded-2xl border border-[#eadff9] bg-[#fcfaff] p-6"
-                >
-                  <CheckCircle2 className="h-7 w-7 text-[#845ec2]" />
-                  <p className="mt-5 font-bold leading-relaxed text-summit-dark">
-                    {benefit}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </Container>
       </section>
