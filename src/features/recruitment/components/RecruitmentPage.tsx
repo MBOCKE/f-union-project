@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   ArrowRight,
   BarChart3,
@@ -29,7 +28,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
-import dotMap from "@/core/assets/Dot Map.png";
+import benevoleImage from "@/core/assets/image-benevole.jpeg";
 import {
   recruitmentCategories,
   recruitmentRoles,
@@ -113,15 +112,12 @@ export const RecruitmentPage = () => {
   return (
     <main className="bg-[#faf9ff] text-summit-dark">
       <section className="relative overflow-hidden bg-[#2d0a54] text-white">
-        <div className="absolute inset-0 opacity-25">
-          <Image
-            src={dotMap}
-            alt=""
-            fill
-            className="object-cover object-center mix-blend-screen"
-          />
+        <div className="absolute inset-0 z-0 bg-black">
+          <img src={benevoleImage.src} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-y-0 right-0 w-[70%] bg-gradient-to-l from-[#3a2051]/40 to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#2d0a54] via-[#2d0a54]/90 to-transparent z-10" />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(132,94,194,0.55),transparent_35%)]" />
 
         <Container className="relative z-10 pb-12 pt-28 md:pb-16 md:pt-32">
           <div className="max-w-4xl">
@@ -235,7 +231,7 @@ export const RecruitmentPage = () => {
                   key={role.slug}
                   className="group flex h-full flex-col rounded-[1.75rem] bg-white p-6 shadow-[0_12px_40px_rgba(45,10,84,0.07)] ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(45,10,84,0.14)]"
                   >
-                  <div className="flex items-start justify-between gap-4">
+                  {/* <div className="flex items-start justify-between gap-4">
                     <span
                       className={`rounded-full px-3 py-1 text-xs font-black ${
                         categoryStyles[role.category] ||
@@ -245,8 +241,8 @@ export const RecruitmentPage = () => {
                       {role.category}
                     </span>
                     <RoleIcon className="h-5 w-5 text-[#845ec2]" />
-                  </div>
-                  <h3 className="mt-6 text-2xl font-black leading-tight text-summit-dark">
+                  </div> */}
+                  <h3 className="mt-0 text-2xl font-black leading-tight text-summit-dark">
                     {role.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600">
@@ -375,8 +371,21 @@ export const RecruitmentPage = () => {
         </Container>
       </section>
 
-      <section className="bg-[#da291c] py-16 text-white md:py-20">
-        <Container className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+      <section
+        className="relative overflow-hidden py-16 text-white md:py-20"
+        style={{ backgroundColor: "#982b8e" }}
+      >
+        {/* Decorative pink-pattern SVG background */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <img
+            src="/pink-pattern.svg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-left"
+          />
+        </div>
+
+        <Container className="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.24em] text-white/75">
               Team F-UNION 2027
