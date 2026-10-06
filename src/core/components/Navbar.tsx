@@ -68,7 +68,7 @@ export const Navbar = () => {
             </div>
 
             <Link href="/speakers" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Intervenant(e)s</Link>
-            <Link href="/recrutement" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Recrutement</Link>
+            <Link href="/recrutement" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Rejoignez-Nous</Link>
             <Link href="#contact" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Contact</Link>
             <Link href="/communique-presse" className={`${isScrolled ? "text-[#0d1f36]" : "text-white/90"} hover:text-gray-600 transition-colors uppercase tracking-wide`}>Presse</Link>
           </div>
@@ -134,7 +134,7 @@ export const Navbar = () => {
                   subLinks: programmeLinks
                 },
                 { href: "/speakers", label: "Intervenant(e)s" },
-                { href: "/recrutement", label: "Recrutement" },
+                { href: "/recrutement", label: "Rejoignez-Nous" },
                 { href: "#contact", label: "Contact" },
                 { href: "/communique-presse", label: "Presse" }
               ].map((link) => (

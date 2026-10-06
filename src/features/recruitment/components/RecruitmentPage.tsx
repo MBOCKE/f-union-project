@@ -65,6 +65,9 @@ const roleIcons = {
   "plaidoyer-cooperation-internationale": Globe2,
 } as const;
 
+import { ApplicationModal } from "./ApplicationModal";
+import { RecruitmentRole } from "../types"; // Assuming this is where the type is
+
 const faqs = [
   {
     question: "Les missions sont-elles rémunérées ?",
@@ -91,6 +94,7 @@ const faqs = [
 export const RecruitmentPage = () => {
   const [activeCategory, setActiveCategory] = useState("Tous les postes");
   const [search, setSearch] = useState("");
+  const [selectedRole, setSelectedRole] = useState<any | null>(null);
 
   const filteredRoles = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
@@ -220,56 +224,32 @@ export const RecruitmentPage = () => {
           </div>
 
           {filteredRoles.length > 0 ? (
-            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {filteredRoles.map((role) => {
-                const RoleIcon =
-                  roleIcons[role.slug as keyof typeof roleIcons] ||
-                  BriefcaseBusiness;
-
-                return (
-                  <article
+            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {filteredRoles.map((role) => (
+                <article
                   key={role.slug}
-                  className="group flex h-full flex-col rounded-[1.75rem] bg-white p-6 shadow-[0_12px_40px_rgba(45,10,84,0.07)] ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(45,10,84,0.14)]"
-                  >
-                  {/* <div className="flex items-start justify-between gap-4">
-                    <span
-                      className={`rounded-full px-3 py-1 text-xs font-black ${
-                        categoryStyles[role.category] ||
-                        "bg-gray-100 text-gray-700"
-                      }`}
-                    >
-                      {role.category}
-                    </span>
-                    <RoleIcon className="h-5 w-5 text-[#845ec2]" />
-                  </div> */}
-                  <h3 className="mt-0 text-2xl font-black leading-tight text-summit-dark">
-                    {role.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600">
-                    {role.tagline}
-                  </p>
-
-                  <div className="mt-6 space-y-3 border-t border-gray-100 pt-5 text-sm text-gray-600">
-                    <div className="flex items-start gap-3">
-                      <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-[#845ec2]" />
-                      <span>{role.commitment}</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#845ec2]" />
-                      <span>{role.format}</span>
+                  className="flex flex-col rounded-xl bg-white border border-gray-100 overflow-hidden shadow-sm"
+                >
+                  <div className="h-[280px] w-full bg-gray-200"></div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-lg font-bold leading-snug text-summit-dark">
+                      {role.title}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm text-gray-500">
+                      {role.tagline}
+                    </p>
+                    <div className="mt-6 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedRole(role)}
+                        className="inline-block w-full rounded-md border border-gray-100 py-2.5 text-xs font-bold text-summit-dark transition-colors hover:bg-gray-50"
+                      >
+                        Join Us
+                      </button>
                     </div>
                   </div>
-
-                  <Link
-                    href={`/recrutement/${role.slug}`}
-                    className="mt-7 inline-flex items-center font-black text-[#6f45aa] transition-colors hover:text-[#2d0a54]"
-                  >
-                    Voir la fiche complète
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  </article>
-                );
-              })}
+                </article>
+              ))}
             </div>
           ) : (
             <div className="mt-8 rounded-3xl bg-white p-12 text-center ring-1 ring-gray-200">
@@ -293,53 +273,40 @@ export const RecruitmentPage = () => {
 
       <section className="bg-white py-20 md:py-28" id="candidater">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.24em] text-[#845ec2]">
-                Comment candidater ?
-              </p>
-              <h2 className="mt-4 text-4xl font-black leading-tight text-summit-dark md:text-5xl">
-                Trois étapes pour nous rejoindre.
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-gray-600">
-                Le formulaire officiel sera relié à cette page dès que l&apos;outil
-                de candidature et la date limite auront été confirmés.
-              </p>
-              <Button
-                href="mailto:contact@f-union.org?subject=Candidature%20b%C3%A9n%C3%A9vole%20F-UNION%202027"
-                variant="purple"
-                size="lg"
-                className="mt-8"
-              >
-                Contacter l&apos;équipe
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-gray-400">
+              Comment candidater ?
+            </p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-summit-dark md:text-4xl">
+              Trois étapes pour nous rejoindre.
+            </h2>
+            <p className="mt-4 text-sm text-gray-500">
+              Le formulaire officiel sera relié à cette page dès que l&apos;outil
+              de candidature et la date limite auront été confirmés.
+            </p>
+          </div>
 
-            <div className="space-y-4">
-              {[
-                ["01", "Candidature", "Choisissez le poste qui correspond le mieux à votre profil et partagez votre motivation."],
-                ["02", "Échange", "L’équipe échange avec vous sur vos expériences, vos disponibilités et votre manière de contribuer."],
-                ["03", "Intégration", "Vous rejoignez votre pôle et recevez les informations utiles pour démarrer votre mission."],
-              ].map(([number, title, description]) => (
-                <div
-                  key={number}
-                  className="flex gap-5 rounded-2xl border border-gray-200 bg-[#fcfbff] p-6"
-                >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-summit-purple text-sm font-black text-white">
-                    {number}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-black text-summit-dark">
-                      {title}
-                    </h3>
-                    <p className="mt-2 leading-relaxed text-gray-600">
-                      {description}
-                    </p>
-                  </div>
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {[
+              { title: "Candidature", description: "Choisissez le poste qui correspond le mieux à votre profil et partagez votre motivation.", Icon: ClipboardList },
+              { title: "Échange", description: "L’équipe échange avec vous sur vos expériences, vos disponibilités et votre manière de contribuer.", Icon: Users },
+              { title: "Intégration", description: "Vous rejoignez votre pôle et recevez les informations utiles pour démarrer votre mission.", Icon: Handshake },
+            ].map(({ title, description, Icon }) => (
+              <div
+                key={title}
+                className="flex flex-col items-center text-center rounded-xl border border-gray-100 p-8 shadow-sm bg-white"
+              >
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1a1a1a] text-white">
+                  <Icon className="h-6 w-6" />
                 </div>
-              ))}
-            </div>
+                <h3 className="text-lg font-bold text-summit-dark">
+                  {title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-500">
+                  {description}
+                </p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -400,6 +367,12 @@ export const RecruitmentPage = () => {
           </Button>
         </Container>
       </section>
+
+      <ApplicationModal
+        isOpen={!!selectedRole}
+        onClose={() => setSelectedRole(null)}
+        roleTitle={selectedRole?.title}
+      />
     </main>
   );
 };
