@@ -228,29 +228,44 @@ export const RecruitmentPage = () => {
               {filteredRoles.map((role) => (
                 <article
                   key={role.slug}
-                  className="flex flex-col rounded-xl bg-white border border-gray-100 overflow-hidden shadow-sm"
+                  className="relative flex flex-col rounded-xl border border-gray-100 overflow-hidden shadow-sm group min-h-[420px]"
                 >
-                  <div className="h-[280px] w-full bg-gray-200 overflow-hidden">
-                    <img 
-                      src={require(`@/core/assets/photo library/photo_${recruitmentRoles.findIndex(r => r.slug === role.slug) + 40}_2026-10-07_15-51-00.jpg`).default.src} 
-                      alt={role.title} 
-                      className="w-full h-full object-cover" 
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-lg font-bold leading-snug text-summit-dark">
-                      {role.title}
-                    </h3>
-                    <p className="mt-2 flex-1 text-sm text-gray-500">
-                      {role.tagline}
-                    </p>
-                    <div className="mt-6 text-center">
+                  {/* Full background image */}
+                  <img 
+                    src={require(`@/core/assets/photo library/photo_${recruitmentRoles.findIndex(r => r.slug === role.slug) + 40}_2026-10-07_15-51-00.jpg`).default.src} 
+                    alt={role.title} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" 
+                  />
+                  
+                  {/* Transparent top spacer */}
+                  <div className="relative z-10 h-[220px] w-full shrink-0"></div>
+                  
+                  {/* Bottom section with white background provided by button shadow */}
+                  <div className="relative z-10 flex flex-1 flex-col overflow-hidden">
+                    <div className="relative z-30 flex flex-1 flex-col px-6 pt-6 pb-4 pointer-events-none">
+                      <h3 className="text-lg font-bold leading-snug text-summit-dark pointer-events-auto">
+                        {role.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-500 line-clamp-2 pointer-events-auto">
+                        {role.tagline}
+                      </p>
+                    </div>
+                    <div className="relative z-20 px-6 pb-6 text-center">
                       <button
                         type="button"
                         onClick={() => setSelectedRole(role)}
-                        className="inline-block w-full rounded-md border border-gray-100 py-2.5 text-xs font-bold text-summit-dark transition-colors hover:bg-gray-50"
+                        className="relative flex w-full items-center justify-center rounded-lg py-2.5 text-xs font-bold text-summit-dark transition-all hover:text-summit-purple"
                       >
-                        Join Us
+                        {/* The solid white surrounding area filling the bottom half */}
+                        <div 
+                          className="absolute inset-0 rounded-lg pointer-events-none -z-20"
+                          style={{ boxShadow: "0 0 0 9999px white" }}
+                        ></div>
+                        
+                        {/* The glass effect for the hole itself */}
+                        <div className="absolute inset-0 rounded-lg bg-white/20 backdrop-blur-sm border border-gray-200 pointer-events-none -z-10"></div>
+                        
+                        <span className="relative z-10 tracking-wide uppercase">Join Us</span>
                       </button>
                     </div>
                   </div>
@@ -294,23 +309,27 @@ export const RecruitmentPage = () => {
 
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             {[
-              { title: "Candidature", description: "Choisissez le poste qui correspond le mieux à votre profil et partagez votre motivation.", Icon: ClipboardList },
-              { title: "Échange", description: "L’équipe échange avec vous sur vos expériences, vos disponibilités et votre manière de contribuer.", Icon: Users },
-              { title: "Intégration", description: "Vous rejoignez votre pôle et recevez les informations utiles pour démarrer votre mission.", Icon: Handshake },
-            ].map(({ title, description, Icon }) => (
+              { title: "Candidature", description: "Choisissez le poste qui correspond le mieux à votre profil et partagez votre motivation.", Icon: ClipboardList, image: require("@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg").default.src },
+              { title: "Échange", description: "L’équipe échange avec vous sur vos expériences, vos disponibilités et votre manière de contribuer.", Icon: Users, image: require("@/core/assets/photo library/photo_44_2026-10-07_15-51-00.jpg").default.src },
+              { title: "Intégration", description: "Vous rejoignez votre pôle et recevez les informations utiles pour démarrer votre mission.", Icon: Handshake, image: require("@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg").default.src },
+            ].map(({ title, description, Icon, image }) => (
               <div
                 key={title}
-                className="flex flex-col items-center text-center rounded-xl border border-gray-100 p-8 shadow-sm bg-white"
+                className="relative flex flex-col items-center text-center rounded-xl overflow-hidden shadow-sm min-h-[320px] justify-end p-8 group"
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1a1a1a] text-white">
-                  <Icon className="h-6 w-6" />
+                <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 z-10" />
+                <div className="relative z-20 flex flex-col items-center">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-md text-white border border-white/30">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/90">
+                    {description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-summit-dark">
-                  {title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-gray-500">
-                  {description}
-                </p>
               </div>
             ))}
           </div>
