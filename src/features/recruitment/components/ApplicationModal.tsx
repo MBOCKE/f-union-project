@@ -2,18 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { ChevronDown, Calendar, Upload } from "lucide-react";
+import { RecruitmentRole } from "../types";
 
 interface ApplicationModalProps {
   isOpen: boolean;
   onClose: () => void;
-  roleTitle?: string;
+  role?: RecruitmentRole | null;
 }
 
-export const ApplicationModal = ({ isOpen, onClose, roleTitle }: ApplicationModalProps) => {
+export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProps) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<Record<string, any>>({});
 
-  // Reset form data and step when modal is closed
   useEffect(() => {
     if (!isOpen) {
       setStep(1);
@@ -21,7 +21,7 @@ export const ApplicationModal = ({ isOpen, onClose, roleTitle }: ApplicationModa
     }
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !role) return null;
 
   const handleChange = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -47,23 +47,23 @@ export const ApplicationModal = ({ isOpen, onClose, roleTitle }: ApplicationModa
         <div className="max-h-[95vh] overflow-y-auto px-6 py-5 md:px-8" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mt-2 text-xl font-bold tracking-tight text-gray-900 md:text-2xl">
-              {step === 1 && "Start Your Journey With Us"}
-              {step === 2 && "Your Professional Experience"}
-              {step === 3 && "Verify Identity & Agree to Terms"}
+              {step === 1 && "Ce qui est attendu de vous"}
+              {step === 2 && "Ce que vous y gagnez"}
+              {step === 3 && "Vos informations"}
             </h2>
 
             <p className="mt-1 text-xs text-gray-500">
-              {step === 1 && "Complete your personal details to start joining our team."}
-              {step === 2 && "Share your professional experience by completing the information below."}
-              {step === 3 && "Upload your identity documents and agree to our terms."}
+              {step === 1 && "Découvrez les missions et le profil recherché pour ce poste."}
+              {step === 2 && "Voici ce que F-UNION s'engage à vous offrir en retour."}
+              {step === 3 && "Remplissez ce formulaire pour soumettre votre candidature."}
             </p>
           </div>
 
           <div className="mt-4 flex flex-col md:flex-row justify-between gap-2 border-b border-gray-200 pb-0 text-xs">
             {[
-              { num: 1, label: "1. Personal Information" },
-              { num: 2, label: "2. Professional Information" },
-              { num: 3, label: "3. Identity Verification" },
+              { num: 1, label: "1. Attentes" },
+              { num: 2, label: "2. Avantages" },
+              { num: 3, label: "3. Informations" },
             ].map((s) => (
               <div
                 key={s.num}
@@ -88,44 +88,53 @@ export const ApplicationModal = ({ isOpen, onClose, roleTitle }: ApplicationModa
             </div>
 
             <div className="flex flex-col justify-between">
-              <div className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
+              <div className="h-full flex flex-col gap-4">
                 {step === 1 && (
-                  <>
-                    <InputField label="First Name" placeholder="Enter first name" value={formData.firstName} onChange={(v: string) => handleChange("firstName", v)} />
-                    <InputField label="Last Name" placeholder="Enter last name" value={formData.lastName} onChange={(v: string) => handleChange("lastName", v)} />
-                    <InputField label="Email Address" placeholder="Enter email address" type="email" value={formData.email} onChange={(v: string) => handleChange("email", v)} />
-                    <InputField label="Phone Number" placeholder="Enter phone number" type="tel" value={formData.phone} onChange={(v: string) => handleChange("phone", v)} />
-                    <InputField label="Date of Birth" placeholder="Enter date of birth" type="date" value={formData.dob} onChange={(v: string) => handleChange("dob", v)} />
-                    <SelectField label="Country" placeholder="Select country" value={formData.country} onChange={(v: string) => handleChange("country", v)} />
-                    <InputField label="City of Domicile" placeholder="Enter city of domicile" value={formData.city} onChange={(v: string) => handleChange("city", v)} />
-                    <InputField label="Address" placeholder="Enter address" value={formData.address} onChange={(v: string) => handleChange("address", v)} />
-                  </>
+                  <div className="space-y-4 text-sm text-gray-700">
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-2">Ce que vous ferez concrètement :</h4>
+                      <ul className="list-disc pl-4 space-y-1">
+                        {role.responsibilities?.map((res, i) => <li key={i}>{res}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-2">Ce qu'on recherche :</h4>
+                      <ul className="list-disc pl-4 space-y-1">
+                        {role.profile?.map((pro, i) => <li key={i}>{pro}</li>)}
+                      </ul>
+                    </div>
+                  </div>
                 )}
 
                 {step === 2 && (
-                  <>
-                    <InputField label="Exp. in Relevant Industry" placeholder="Enter number of years" value={formData.expIndustry} onChange={(v: string) => handleChange("expIndustry", v)} />
-                    <SelectField label="Role Specialization" placeholder="Select specialization" value={formData.roleSpecialization} onChange={(v: string) => handleChange("roleSpecialization", v)} />
-                    <InputField label="Professional License (Optional)" placeholder="Enter license number" value={formData.license} onChange={(v: string) => handleChange("license", v)} />
-                    <InputField label="Previous Company Name" placeholder="Enter company name" value={formData.prevCompany} onChange={(v: string) => handleChange("prevCompany", v)} />
-                    <InputField label="Position at Previous Company" placeholder="Enter position" value={formData.prevPosition} onChange={(v: string) => handleChange("prevPosition", v)} />
-                    <SelectField label="Preferred Operational Areas" placeholder="Select areas" value={formData.prefAreas} onChange={(v: string) => handleChange("prefAreas", v)} />
-                    <InputField label="Specialized Skills" placeholder="Enter your specialty" value={formData.specSkills} onChange={(v: string) => handleChange("specSkills", v)} />
-                    <InputField label="Exp. with Large Projects" placeholder="Enter experience" value={formData.expLargeProjects} onChange={(v: string) => handleChange("expLargeProjects", v)} />
-                  </>
+                  <div className="space-y-4 text-sm text-gray-700">
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-2">Ce que F-UNION vous apporte en retour :</h4>
+                      <p className="mb-2 text-xs italic">Cette mission est bénévole. En contrepartie de votre engagement, F-UNION s'engage à vous offrir :</p>
+                      <ul className="list-disc pl-4 space-y-2">
+                        {role.benefits?.map((ben, i) => <li key={i}>{ben}</li>)}
+                      </ul>
+                    </div>
+                  </div>
                 )}
 
                 {step === 3 && (
-                  <>
-                    <UploadField label="Upload Identity Document" placeholder="Upload File" value={formData.idDoc} onChange={(f: File) => handleChange("idDoc", f)} />
-                    <UploadField label="Upload Professional License" placeholder="Upload File" value={formData.licenseDoc} onChange={(f: File) => handleChange("licenseDoc", f)} />
-                    <UploadField label="Upload Proof of Address" placeholder="Upload File" value={formData.addressDoc} onChange={(f: File) => handleChange("addressDoc", f)} />
-                    <SelectField label="Data Authenticity Statement" placeholder="Select answer" value={formData.authStatement} onChange={(v: string) => handleChange("authStatement", v)} />
-                    <SelectField label="Agree to Terms and Conditions" placeholder="Select answer" value={formData.terms} onChange={(v: string) => handleChange("terms", v)} />
-                    <SelectField label="Agree with Privacy Policy" placeholder="Select answer" value={formData.privacy} onChange={(v: string) => handleChange("privacy", v)} />
-                    <SelectField label="Agree to Comply with Local Law" placeholder="Select answer" value={formData.compliance} onChange={(v: string) => handleChange("compliance", v)} />
-                    <UploadField label="Upload Agreement Documents" placeholder="Upload File" value={formData.agreementDoc} onChange={(f: File) => handleChange("agreementDoc", f)} />
-                  </>
+                  <div className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
+                    <InputField label="Prénom" placeholder="Entrez votre prénom" value={formData.firstName} onChange={(v: string) => handleChange("firstName", v)} />
+                    <InputField label="Nom" placeholder="Entrez votre nom" value={formData.lastName} onChange={(v: string) => handleChange("lastName", v)} />
+                    <InputField label="Email" placeholder="Entrez votre email" type="email" value={formData.email} onChange={(v: string) => handleChange("email", v)} />
+                    <InputField label="Téléphone" placeholder="Entrez votre téléphone" type="tel" value={formData.phone} onChange={(v: string) => handleChange("phone", v)} />
+                    <UploadField label="CV (PDF)" placeholder="Uploader votre CV" value={formData.cv} onChange={(f: File) => handleChange("cv", f)} />
+                    <div className="sm:col-span-2 flex flex-col gap-1">
+                      <label className="text-[11px] font-bold text-gray-900">Motivations</label>
+                      <textarea
+                        placeholder="Parlez-nous brièvement de ce qui vous motive..."
+                        value={formData.motivations || ""}
+                        onChange={(e) => handleChange("motivations", e.target.value)}
+                        className="w-full rounded-md border border-gray-200 px-3 py-2 text-xs outline-none transition-colors focus:border-gray-400 placeholder:text-gray-400 min-h-[60px]"
+                      />
+                    </div>
+                  </div>
                 )}
               </div>
 
@@ -136,7 +145,7 @@ export const ApplicationModal = ({ isOpen, onClose, roleTitle }: ApplicationModa
                     onClick={() => setStep(step - 1)}
                     className="w-24 rounded-lg bg-gray-100 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-200"
                   >
-                    Back
+                    Retour
                   </button>
                 )}
                 <button
@@ -147,7 +156,7 @@ export const ApplicationModal = ({ isOpen, onClose, roleTitle }: ApplicationModa
                   }}
                   className="flex-1 rounded-lg bg-[#222222] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-black"
                 >
-                  {step === 3 ? "Submit" : "Continue"}
+                  {step === 3 ? "Postuler" : "Continuer"}
                 </button>
               </div>
             </div>
@@ -175,28 +184,6 @@ const InputField = ({ label, placeholder, type = "text", icon, value, onChange }
         className="w-full rounded-md border border-gray-200 px-3 py-2 text-xs outline-none transition-colors focus:border-gray-400 placeholder:text-gray-400"
       />
       {icon && <div className="absolute right-3 pointer-events-none">{icon}</div>}
-    </div>
-  </div>
-);
-
-const SelectField = ({ label, placeholder, value, onChange }: any) => (
-  <div className="flex flex-col gap-1">
-    <label className="text-[11px] font-bold text-gray-900">{label}</label>
-    <div className="relative flex items-center">
-      <select
-        value={value || ""}
-        onChange={(e) => onChange?.(e.target.value)}
-        className="w-full appearance-none rounded-md border border-gray-200 px-3 py-2 pr-8 text-xs outline-none transition-colors focus:border-gray-400 text-gray-500"
-      >
-        <option value="" disabled>{placeholder}</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-        <option value="Option 1">Option 1</option>
-        <option value="Option 2">Option 2</option>
-      </select>
-      <div className="absolute right-2 pointer-events-none">
-        <ChevronDown className="h-4 w-4 text-gray-400" />
-      </div>
     </div>
   </div>
 );

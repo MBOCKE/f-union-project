@@ -271,7 +271,7 @@ export const RecruitmentPage = () => {
                       <button
                         type="button"
                         onClick={() => setSelectedRole(role)}
-                        className="relative flex w-full items-center justify-center rounded-lg py-2.5 text-xs font-bold text-summit-dark transition-all hover:text-summit-purple"
+                        className="relative flex w-full items-center justify-center rounded-lg py-2.5 text-xs font-bold transition-all hover:scale-[1.02]"
                       >
                         {/* The solid white surrounding area filling the bottom half */}
                         <div 
@@ -279,10 +279,10 @@ export const RecruitmentPage = () => {
                           style={{ boxShadow: "0 0 0 9999px white" }}
                         ></div>
                         
-                        {/* The glass effect for the hole itself */}
-                        <div className="absolute inset-0 rounded-lg bg-white/20 backdrop-blur-sm border border-gray-200 pointer-events-none -z-10"></div>
+                        {/* The purple glass effect for the hole itself */}
+                        <div className="absolute inset-0 rounded-lg bg-summit-purple/85 backdrop-blur-md border border-summit-purple/20 pointer-events-none -z-10"></div>
                         
-                        <span className="relative z-10 tracking-wide uppercase">Join Us</span>
+                        <span className="relative z-10 tracking-wide uppercase text-white">Postuler</span>
                       </button>
                     </div>
                   </div>
@@ -413,7 +413,7 @@ export const RecruitmentPage = () => {
       <ApplicationModal
         isOpen={!!selectedRole}
         onClose={() => setSelectedRole(null)}
-        roleTitle={selectedRole?.title}
+        role={selectedRole}
       />
     </main>
   );
