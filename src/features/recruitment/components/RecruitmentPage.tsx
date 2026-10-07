@@ -91,6 +91,24 @@ const faqs = [
   },
 ];
 
+const roleImageMapping: Record<string, any> = {
+  "coordinateur-summit": require("@/core/assets/photo library/photo_40_2026-10-07_15-51-00.jpg"),
+  "community-manager-animation": require("@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg"),
+  "community-manager-strategie-contenu": require("@/core/assets/photo library/photo_42_2026-10-07_15-51-00.jpg"),
+  "data-analyst": require("@/core/assets/photo library/photo_49_2026-10-07_15-51-00.jpg"),
+  "relations-exterieures-business-dev": require("@/core/assets/photo library/photo_51_2026-10-07_15-51-00.jpg"),
+  "contenu-speakers": require("@/core/assets/photo library/photo_45_2026-10-07_15-51-00.jpg"),
+  "activations-experience": require("@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg"),
+  "marketing-offres": require("@/core/assets/photo library/photo_47_2026-10-07_15-51-00.jpg"),
+  "relations-presse": require("@/core/assets/photo library/photo_46_2026-10-07_15-51-00.jpg"),
+  "logistique-coordination-evenementielle": require("@/core/assets/photo library/photo_53_2026-10-07_15-51-00.jpg"),
+  "finances-terrain-douala": require("@/core/assets/photo library/photo_50_2026-10-07_15-51-00.jpg"),
+  "graphic-designer-creation-visuelle": require("@/core/assets/photo library/photo_44_2026-10-07_15-51-00.jpg"),
+  "graphic-designer-motion-digital": require("@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg"),
+  "responsable-juridique": require("@/core/assets/photo library/photo_43_2026-10-07_15-51-00.jpg"),
+  "plaidoyer-cooperation-internationale": require("@/core/assets/photo library/photo_54_2026-10-07_15-51-00.jpg"),
+};
+
 export const RecruitmentPage = () => {
   const [activeCategory, setActiveCategory] = useState("Tous les postes");
   const [search, setSearch] = useState("");
@@ -230,9 +248,8 @@ export const RecruitmentPage = () => {
                   key={role.slug}
                   className="relative flex flex-col rounded-xl border border-gray-100 overflow-hidden shadow-sm group min-h-[420px]"
                 >
-                  {/* Full background image */}
                   <img 
-                    src={require(`@/core/assets/photo library/photo_${recruitmentRoles.findIndex(r => r.slug === role.slug) + 40}_2026-10-07_15-51-00.jpg`).default.src} 
+                    src={roleImageMapping[role.slug]?.default?.src || require("@/core/assets/photo library/photo_40_2026-10-07_15-51-00.jpg").default.src} 
                     alt={role.title} 
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" 
                   />
@@ -310,7 +327,7 @@ export const RecruitmentPage = () => {
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             {[
               { title: "Candidature", description: "Choisissez le poste qui correspond le mieux à votre profil et partagez votre motivation.", Icon: ClipboardList, image: require("@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg").default.src },
-              { title: "Échange", description: "L’équipe échange avec vous sur vos expériences, vos disponibilités et votre manière de contribuer.", Icon: Users, image: require("@/core/assets/photo library/photo_44_2026-10-07_15-51-00.jpg").default.src },
+              { title: "Échange", description: "L’équipe échange avec vous sur vos expériences, vos disponibilités et votre manière de contribuer.", Icon: Users, image: require("@/core/assets/photo library/photo_55_2026-10-07_15-51-00.jpg").default.src },
               { title: "Intégration", description: "Vous rejoignez votre pôle et recevez les informations utiles pour démarrer votre mission.", Icon: Handshake, image: require("@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg").default.src },
             ].map(({ title, description, Icon, image }) => (
               <div
