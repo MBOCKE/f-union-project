@@ -230,7 +230,13 @@ export const RecruitmentPage = () => {
                   key={role.slug}
                   className="flex flex-col rounded-xl bg-white border border-gray-100 overflow-hidden shadow-sm"
                 >
-                  <div className="h-[280px] w-full bg-gray-200"></div>
+                  <div className="h-[280px] w-full bg-gray-200 overflow-hidden">
+                    <img 
+                      src={require(`@/core/assets/photo library/photo_${recruitmentRoles.findIndex(r => r.slug === role.slug) + 40}_2026-10-07_15-51-00.jpg`).default.src} 
+                      alt={role.title} 
+                      className="w-full h-full object-cover" 
+                    />
+                  </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="text-lg font-bold leading-snug text-summit-dark">
                       {role.title}

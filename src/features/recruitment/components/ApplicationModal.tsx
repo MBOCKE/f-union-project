@@ -79,7 +79,13 @@ export const ApplicationModal = ({ isOpen, onClose, roleTitle }: ApplicationModa
           </div>
 
           <div className="mt-4 grid gap-5 md:grid-cols-[1fr_2.5fr]">
-            <div className="hidden md:block h-full min-h-[250px] w-full rounded-xl bg-gray-100"></div>
+            <div className="hidden md:block h-full min-h-[250px] w-full rounded-xl bg-gray-100 overflow-hidden">
+              <img 
+                src={step === 1 ? require("@/core/assets/photo library/photo_50_2026-10-07_15-51-00.jpg").default.src : step === 2 ? require("@/core/assets/photo library/photo_51_2026-10-07_15-51-00.jpg").default.src : require("@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg").default.src} 
+                alt="Application step" 
+                className="w-full h-full object-cover" 
+              />
+            </div>
 
             <div className="flex flex-col justify-between">
               <div className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
