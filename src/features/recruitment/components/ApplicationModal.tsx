@@ -92,14 +92,14 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
                 {step === 1 && (
                   <div className="space-y-4 text-sm text-gray-700">
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Ce que vous ferez concrètement :</h4>
-                      <ul className="list-disc pl-4 space-y-1">
+                      <h4 className="mb-2 font-bold text-gray-900">Ce que vous ferez concrètement :</h4>
+                      <ul className="list-disc space-y-1 pl-4 text-justify">
                         {role.responsibilities?.map((res, i) => <li key={i}>{res}</li>)}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Ce qu'on recherche :</h4>
-                      <ul className="list-disc pl-4 space-y-1">
+                      <h4 className="mb-2 font-bold text-gray-900">Ce qu'on recherche :</h4>
+                      <ul className="list-disc space-y-1 pl-4 text-justify">
                         {role.profile?.map((pro, i) => <li key={i}>{pro}</li>)}
                       </ul>
                     </div>
@@ -109,9 +109,9 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
                 {step === 2 && (
                   <div className="space-y-4 text-sm text-gray-700">
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Ce que F-UNION vous apporte en retour :</h4>
-                      <p className="mb-2 text-xs italic">Cette mission est bénévole. En contrepartie de votre engagement, F-UNION s'engage à vous offrir :</p>
-                      <ul className="list-disc pl-4 space-y-2">
+                      <h4 className="mb-2 font-bold text-gray-900">Ce que F-UNION vous apporte en retour :</h4>
+                      <p className="mb-2 text-xs italic text-justify">Cette mission est bénévole. En contrepartie de votre engagement, F-UNION s'engage à vous offrir :</p>
+                      <ul className="list-disc space-y-2 pl-4 text-justify">
                         {role.benefits?.map((ben, i) => <li key={i}>{ben}</li>)}
                       </ul>
                     </div>

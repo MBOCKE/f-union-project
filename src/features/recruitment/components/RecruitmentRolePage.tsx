@@ -57,10 +57,10 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
 
       <Container className="py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-          <div>
+          <div className="max-w-[760px]">
             <section>
               <SectionTitle>En une phrase</SectionTitle>
-              <p className="mt-5 text-xl leading-relaxed text-gray-700">
+              <p className="mt-5 text-justify text-xl leading-relaxed text-gray-700">
                 {role.summary}
               </p>
             </section>
@@ -69,7 +69,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
               <SectionTitle>Ce que vous ferez concrètement</SectionTitle>
               <ul className="mt-6 space-y-4">
                 {role.responsibilities.map((item) => (
-                  <li key={item} className="flex gap-3 leading-relaxed text-gray-700">
+                  <li key={item} className="flex gap-3 text-justify leading-relaxed text-gray-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#845ec2]" />
                     <span>{item}</span>
                   </li>
@@ -81,7 +81,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
               <SectionTitle>Ce qu'on recherche</SectionTitle>
               <ul className="mt-6 space-y-4">
                 {role.profile.map((item) => (
-                  <li key={item} className="flex gap-3 leading-relaxed text-gray-700">
+                  <li key={item} className="flex gap-3 text-justify leading-relaxed text-gray-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#126db1]" />
                     <span>{item}</span>
                   </li>
@@ -93,7 +93,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
               <SectionTitle>Ce poste n'est probablement pas pour vous si...</SectionTitle>
               <ul className="mt-6 space-y-4">
                 {role.notFor.map((item) => (
-                  <li key={item} className="flex gap-3 leading-relaxed text-gray-700">
+                  <li key={item} className="flex gap-3 text-justify leading-relaxed text-gray-700">
                     <XCircle className="mt-1 h-5 w-5 shrink-0 text-[#da291c]" />
                     <span>{item}</span>
                   </li>
