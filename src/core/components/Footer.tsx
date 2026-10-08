@@ -33,13 +33,13 @@ export const Footer = () => {
           {/* Column 2: Contact Info */}
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2 mb-2">
-              <h4 className="text-[#a855f7] font-semibold text-sm tracking-wider uppercase">
+              <h4 className="text-[#a855f7] font-semibold text-base tracking-wider uppercase">
                 Nos coordonnées
               </h4>
               <div className="w-8 h-0.5 bg-[#a855f7]/60 rounded-full"></div>
             </div>
 
-            <ul className="space-y-5 text-[13px] text-gray-300">
+            <ul className="space-y-5 text-[15px] text-gray-300">
               <li className="flex items-start gap-4">
                 <svg className="w-5 h-5 text-white shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 2a6 6 0 00-6 6c0 4.418 6 10 6 10s6-5.582 6-10a6 6 0 00-6-6zm0 8.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" clipRule="evenodd" />

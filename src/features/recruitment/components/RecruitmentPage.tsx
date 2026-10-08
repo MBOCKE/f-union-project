@@ -149,7 +149,7 @@ export const RecruitmentPage = () => {
             <h1 className="max-w-4xl text-5xl font-black leading-[0.98] tracking-tight md:text-7xl lg:text-[6.5rem]">
               Rejoignez la Team F-UNION 2027
             </h1>
-            <p className="mt-8 max-w-2xl text-xl leading-relaxed text-white/80 md:text-2xl">
+            <p className="mt-4 max-w-2xl text-xl leading-[1.2] text-white/80 md:text-2xl">
               15 missions bénévoles pour construire un événement panafricain à
               fort impact, à Douala et à distance.
             </p>
@@ -187,7 +187,7 @@ export const RecruitmentPage = () => {
                 Les postes ouverts
               </p>
               <h2 className="mt-4 text-4xl font-black leading-tight text-summit-dark md:text-5xl">
-                Trouvez votre place dans l&apos;équipe.
+                Trouvez votre place dans l&apos;<span className="text-[#845ec2]">équipe</span>.
               </h2>
             </div>
             <div className="flex items-center gap-3 rounded-full bg-white px-4 py-3 shadow-sm ring-1 ring-gray-200 lg:w-80">
@@ -315,7 +315,7 @@ export const RecruitmentPage = () => {
             <p className="text-xs font-bold uppercase tracking-wider text-gray-400">
               Comment candidater ?
             </p>
-            <h2 className="mt-4 text-3xl font-bold leading-tight text-summit-dark md:text-4xl">
+            <h2 className="mt-4 text-3xl font-black uppercase leading-tight tracking-tight text-summit-dark md:text-4xl">
               Trois étapes pour nous rejoindre.
             </h2>
             <p className="mt-4 text-sm text-gray-500">
@@ -403,7 +403,12 @@ export const RecruitmentPage = () => {
               Prêt·e à faire partie de l&apos;aventure ?
             </h2>
           </div>
-          <Button href="#postes" variant="white" size="lg">
+          <Button
+            href="#postes"
+            variant="white"
+            size="lg"
+            className="!bg-[#982b8e] !text-white border border-[#982b8e] shadow-[0_10px_30px_rgba(76,12,63,0.25)] hover:!bg-white hover:!text-[#982b8e] hover:border-[#982b8e]"
+          >
             Choisir une mission
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
