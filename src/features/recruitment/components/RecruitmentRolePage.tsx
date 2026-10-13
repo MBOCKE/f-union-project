@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import type { ReactNode } from "react";
 import {
   ArrowLeft,
@@ -12,6 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
+import { ApplicationModal } from "./ApplicationModal";
 import type { RecruitmentRole } from "../types";
 
 type RecruitmentRolePageProps = {
@@ -19,6 +23,8 @@ type RecruitmentRolePageProps = {
 };
 
 export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="bg-[#faf9ff] text-summit-dark">
       <section className="bg-[#2d0a54] pb-16 pt-32 text-white md:pb-24 md:pt-40">
@@ -128,7 +134,8 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
                 </p>
               )}
               <Button
-                href="mailto:contact@f-union.org?subject=Candidature%20b%C3%A9n%C3%A9vole%20F-UNION%202027"
+                type="button"
+                onClick={() => setIsModalOpen(true)}
                 variant="white"
                 size="lg"
                 className="mt-8 w-full"
@@ -154,6 +161,11 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
           </aside>
         </div>
       </Container>
+      <ApplicationModal
+        isOpen={isModalOpen}
+        role={role}
+        onClose={() => setIsModalOpen(false)}
+      />
     </main>
   );
 };
