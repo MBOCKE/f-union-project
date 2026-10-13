@@ -232,27 +232,55 @@ export const RecruitmentPage = () => {
               Comment candidater ?
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase leading-tight tracking-tight text-summit-dark md:text-4xl">
-              Trois étapes pour nous rejoindre.
+              Quatre étapes pour nous rejoindre.
             </h2>
-            <p className="mt-4 text-sm text-gray-500">
-              Le formulaire officiel sera relié à cette page dès que l&apos;outil
-              de candidature et la date limite auront été confirmés.
-            </p>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {[
-              { title: "Candidature", description: "Choisissez le poste qui correspond le mieux à votre profil et partagez votre motivation.", Icon: ClipboardList, image: require("@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg").default.src },
-              { title: "Échange", description: "L’équipe échange avec vous sur vos expériences, vos disponibilités et votre manière de contribuer.", Icon: Users, image: require("@/core/assets/photo library/photo_55_2026-10-07_15-51-00.jpg").default.src },
-              { title: "Intégration", description: "Vous rejoignez votre pôle et recevez les informations utiles pour démarrer votre mission.", Icon: Handshake, image: require("@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg").default.src },
-            ].map(({ title, description, Icon, image }) => (
+              {
+                number: "01",
+                title: "Choisissez votre mission",
+                description:
+                  "Parcourez les postes ouverts et identifiez celui qui correspond à vos compétences, vos envies et votre disponibilité.",
+                Icon: ClipboardList,
+                image: require("@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg").default.src,
+              },
+              {
+                number: "02",
+                title: "Remplissez le formulaire",
+                description:
+                  "Chaque poste dispose d'un formulaire de candidature en trois étapes : découvrez la mission, le profil recherché, puis renseignez vos informations. Vous pouvez joindre votre CV (PDF).",
+                Icon: Users,
+                image: require("@/core/assets/photo library/photo_55_2026-10-07_15-51-00.jpg").default.src,
+              },
+              {
+                number: "03",
+                title: "Échangeons",
+                description:
+                  "Si votre candidature retient notre attention, nous vous contactons pour un entretien de présentation. C'est l'occasion de faire connaissance et de valider ensemble que la mission vous convient.",
+                Icon: Handshake,
+                image: require("@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg").default.src,
+              },
+              {
+                number: "04",
+                title: "Bienvenue dans l'équipe",
+                description:
+                  "Une fois votre candidature confirmée, vous êtes intégré·e à la Team F-UNION 2027 et accompagné·e dans votre prise de fonction.",
+                Icon: Handshake,
+                image: require("@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg").default.src,
+              },
+            ].map(({ number, title, description, Icon, image }) => (
               <div
-                key={title}
+                key={number}
                 className="relative flex flex-col items-center text-center rounded-xl overflow-hidden shadow-sm min-h-[320px] justify-end p-8 group"
               >
                 <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 z-10" />
                 <div className="relative z-20 flex flex-col items-center">
+                  <span className="mb-3 text-sm font-black tracking-[0.2em] text-white/75">
+                    {number}
+                  </span>
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-md text-white border border-white/30">
                     <Icon className="h-6 w-6" />
                   </div>
