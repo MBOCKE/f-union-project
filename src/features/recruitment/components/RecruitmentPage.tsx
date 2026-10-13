@@ -1,30 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import {
   ArrowRight,
-  BarChart3,
-  BriefcaseBusiness,
-  Clapperboard,
   ChevronDown,
   ClipboardList,
-  Clock3,
-  Globe2,
   Handshake,
-  Megaphone,
-  MapPin,
-  Mic2,
-  Newspaper,
-  Palette,
-  Pencil,
   Search,
-  Scale,
-  ShoppingBag,
-  Sparkles,
-  Truck,
   Users,
-  WalletCards,
 } from "lucide-react";
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
@@ -33,41 +16,10 @@ import {
   recruitmentCategories,
   recruitmentRoles,
 } from "../constants/roles";
-import RecruitmentRoleCard from "./RecruitmentRoleCard";
-
-const categoryStyles: Record<string, string> = {
-  Opérationnel: "bg-[#fff0ed] text-[#b52b1e]",
-  Communication: "bg-[#f2ecff] text-[#6840a5]",
-  Stratégique: "bg-[#e8f5ff] text-[#126db1]",
-  "Relations Extérieures": "bg-[#fff6dc] text-[#9a6b00]",
-  "Contenu & Programme": "bg-[#e8f7f0] text-[#14734d]",
-  "Expérience & Animation": "bg-[#f9eafa] text-[#8d3b9a]",
-  Marketing: "bg-[#fff0f7] text-[#a22763]",
-  Finance: "bg-[#edf7ff] text-[#14698b]",
-  Créatif: "bg-[#f0efff] text-[#4b46a2]",
-  "Juridique & Conformité": "bg-[#f3f3f3] text-[#363636]",
-};
-
-const roleIcons = {
-  "coordinateur-operationnel-summit": ClipboardList,
-  "community-manager-animation": Megaphone,
-  "community-manager-strategie-contenu": Pencil,
-  "data-analyst": BarChart3,
-  "charge-relations-exterieures": Handshake,
-  "chef-projet-contenu-speakers": Mic2,
-  "chef-projet-activations-experience": Sparkles,
-  "chef-projet-marketing-offres": ShoppingBag,
-  "charge-relations-presse": Newspaper,
-  "responsable-logistique": Truck,
-  "charge-finances-douala": WalletCards,
-  "graphic-designer-creation-visuelle": Palette,
-  "graphic-designer-motion-digital": Clapperboard,
-  "responsable-juridique": Scale,
-  "charge-plaidoyer-cooperation": Globe2,
-} as const;
 
 import { ApplicationModal } from "./ApplicationModal";
-import { RecruitmentRole } from "../types"; // Assuming this is where the type is
+import { recruitmentSections } from "../constants/sections";
+import SectionAccordion from "./SectionAccordion";
 
 const faqs = [
   {
@@ -113,9 +65,14 @@ export const RecruitmentPage = () => {
       return matchesCategory && matchesSearch;
     });
   }, [activeCategory, search]);
+  const filtersActive =
+    activeCategory !== "Tous les postes" || search.trim().length > 0;
 
   return (
-    <main className="bg-[#faf9ff] text-summit-dark">
+    <main
+      className="bg-[#faf9ff] text-summit-dark"
+      data-recruitment-page
+    >
       <section className="relative overflow-hidden bg-[#2d0a54] text-white">
         <div className="absolute inset-0 z-0 bg-black">
           <img src={benevoleImage.src} alt="" className="w-full h-full object-cover" />
@@ -225,14 +182,28 @@ export const RecruitmentPage = () => {
           </div>
 
           {filteredRoles.length > 0 ? (
-            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {filteredRoles.map((role) => (
-                <RecruitmentRoleCard
-                  key={role.slug}
-                  role={role}
-                  onApply={setSelectedRole}
-                />
-              ))}
+            <div className="mt-8 space-y-4">
+              {[...recruitmentSections]
+                .sort((first, second) => first.order - second.order)
+                .map((section) => {
+                  const sectionRoles = filteredRoles.filter(
+                    (role) => role.sectionId === section.id,
+                  );
+
+                  if (filtersActive && sectionRoles.length === 0) {
+                    return null;
+                  }
+
+                  return (
+                    <SectionAccordion
+                      key={section.id}
+                      section={section}
+                      roles={sectionRoles}
+                      onApply={setSelectedRole}
+                      defaultOpen={filtersActive && sectionRoles.length > 0}
+                    />
+                  );
+                })}
             </div>
           ) : (
             <div className="mt-8 rounded-3xl bg-white p-12 text-center ring-1 ring-gray-200">
@@ -365,6 +336,11 @@ export const RecruitmentPage = () => {
         onClose={() => setSelectedRole(null)}
         role={selectedRole}
       />
+      <style jsx global>{`
+        html:has([data-recruitment-page]) {
+          scroll-behavior: smooth;
+        }
+      `}</style>
     </main>
   );
 };

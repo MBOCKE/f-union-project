@@ -8,14 +8,20 @@ type SectionAccordionProps = {
   section: RecruitmentSection;
   roles: RecruitmentRole[];
   onApply: (role: RecruitmentRole) => void;
+  defaultOpen?: boolean;
 };
 
 const SectionAccordion = ({
   section,
   roles,
   onApply,
+  defaultOpen = false,
 }: SectionAccordionProps) => (
-  <details className="group rounded-2xl border border-slate-200 bg-white shadow-sm transition-colors duration-200 [&[open]]:border-[#fd982e]">
+  <details
+    id={section.id}
+    open={defaultOpen || undefined}
+    className="group scroll-mt-24 rounded-2xl border border-slate-200 bg-white shadow-sm transition-colors duration-200 [&[open]]:border-[#fd982e]"
+  >
     <summary className="flex cursor-pointer list-none items-center gap-4 rounded-2xl px-5 py-5 text-slate-800 marker:hidden transition-colors hover:text-slate-950 [&::-webkit-details-marker]:hidden sm:px-7">
       <span className="flex-1 text-left text-lg font-bold sm:text-xl">
         {section.label}
