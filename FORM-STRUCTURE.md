@@ -103,9 +103,11 @@ from reaching the backdrop.
 
 The three steps are:
 
-1. **Attentes** — shows the selected role's responsibilities and profile.
-2. **Avantages** — shows the selected role's benefits.
-3. **Informations** — shows applicant inputs:
+1. **Mission** — shows `role.summary` under “Votre contribution” and
+   `role.responsibilities` under “Concrètement, votre mission”.
+2. **Profil** — shows `role.profile` under “Le profil que nous recherchons”
+   and `role.engagement` under “Votre engagement”.
+3. **Informations** — shows `role.benefits` and applicant inputs:
    - `firstName`: first name
    - `lastName`: last name
    - `email`: email (`type="email"`)
@@ -118,11 +120,12 @@ and `handleChange(field, value)` updates one entry while retaining the other
 entries. `InputField` wraps the text/email/phone inputs; `UploadField` wraps a
 file input and displays the selected file's name. The controls are controlled
 by React state, so navigating between steps keeps the typed values while the
-modal remains open.
-
-“Retour” decrements the step. “Continuer” increments it until step 3. When
-closed, an effect resets `step` to 1 and clears `formData`; reopening starts
-with a fresh application.
+modal remains open. The step indicators are keyboard-accessible buttons that
+can jump directly to any step; the active step is identified with
+`aria-current="step"`. “Continuer” advances one step and is replaced by
+“Postuler” on the final step. There is no “Retour” button. When closed, an
+effect resets `step` to 1 and clears `formData`; reopening starts with a fresh
+application.
 
 ## Current submission and validation status
 
@@ -131,8 +134,10 @@ currently render a `<form>`, submit to an endpoint, call Web3Forms, or persist
 or email applicant data. The final “Postuler” button simply calls `onClose`.
 There is no success/error state or submission loading state.
 
-There is also no required-field validation. `type="email"` selects an
-email-oriented browser input but is not being used as a form constraint here.
+The first name, last name, email, and motivations controls have `required`
+attributes, but the modal does not currently render a `<form>`; consequently,
+those attributes do not trigger browser form validation on submission.
+`type="email"` selects an email-oriented browser input.
 The CV label says “PDF,” but the file input has no `accept` restriction,
 required check, size/type validation, or upload behavior. The `File` only stays
 in client-side React state until the modal closes. The role-detail page's
