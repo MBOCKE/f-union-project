@@ -33,6 +33,7 @@ import {
   recruitmentCategories,
   recruitmentRoles,
 } from "../constants/roles";
+import RecruitmentRoleCard from "./RecruitmentRoleCard";
 
 const categoryStyles: Record<string, string> = {
   Opérationnel: "bg-[#fff0ed] text-[#b52b1e]",
@@ -48,21 +49,21 @@ const categoryStyles: Record<string, string> = {
 };
 
 const roleIcons = {
-  "coordinateur-summit": ClipboardList,
+  "coordinateur-operationnel-summit": ClipboardList,
   "community-manager-animation": Megaphone,
   "community-manager-strategie-contenu": Pencil,
   "data-analyst": BarChart3,
-  "relations-exterieures-business-dev": Handshake,
-  "contenu-speakers": Mic2,
-  "activations-experience": Sparkles,
-  "marketing-offres": ShoppingBag,
-  "relations-presse": Newspaper,
-  "logistique-coordination-evenementielle": Truck,
-  "finances-terrain-douala": WalletCards,
+  "charge-relations-exterieures": Handshake,
+  "chef-projet-contenu-speakers": Mic2,
+  "chef-projet-activations-experience": Sparkles,
+  "chef-projet-marketing-offres": ShoppingBag,
+  "charge-relations-presse": Newspaper,
+  "responsable-logistique": Truck,
+  "charge-finances-douala": WalletCards,
   "graphic-designer-creation-visuelle": Palette,
   "graphic-designer-motion-digital": Clapperboard,
   "responsable-juridique": Scale,
-  "plaidoyer-cooperation-internationale": Globe2,
+  "charge-plaidoyer-cooperation": Globe2,
 } as const;
 
 import { ApplicationModal } from "./ApplicationModal";
@@ -90,24 +91,6 @@ const faqs = [
       "Le processus prévu est simple : candidature, échange avec l'équipe, puis intégration au pôle correspondant. Le formulaire officiel sera relié à cette page dès validation de l'outil de candidature.",
   },
 ];
-
-const roleImageMapping: Record<string, any> = {
-  "coordinateur-summit": require("@/core/assets/photo library/photo_40_2026-10-07_15-51-00.jpg"),
-  "community-manager-animation": require("@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg"),
-  "community-manager-strategie-contenu": require("@/core/assets/photo library/photo_42_2026-10-07_15-51-00.jpg"),
-  "data-analyst": require("@/core/assets/photo library/photo_49_2026-10-07_15-51-00.jpg"),
-  "relations-exterieures-business-dev": require("@/core/assets/photo library/photo_51_2026-10-07_15-51-00.jpg"),
-  "contenu-speakers": require("@/core/assets/photo library/photo_45_2026-10-07_15-51-00.jpg"),
-  "activations-experience": require("@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg"),
-  "marketing-offres": require("@/core/assets/photo library/photo_47_2026-10-07_15-51-00.jpg"),
-  "relations-presse": require("@/core/assets/photo library/photo_46_2026-10-07_15-51-00.jpg"),
-  "logistique-coordination-evenementielle": require("@/core/assets/photo library/photo_53_2026-10-07_15-51-00.jpg"),
-  "finances-terrain-douala": require("@/core/assets/photo library/photo_50_2026-10-07_15-51-00.jpg"),
-  "graphic-designer-creation-visuelle": require("@/core/assets/photo library/photo_44_2026-10-07_15-51-00.jpg"),
-  "graphic-designer-motion-digital": require("@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg"),
-  "responsable-juridique": require("@/core/assets/photo library/photo_43_2026-10-07_15-51-00.jpg"),
-  "plaidoyer-cooperation-internationale": require("@/core/assets/photo library/photo_54_2026-10-07_15-51-00.jpg"),
-};
 
 export const RecruitmentPage = () => {
   const [activeCategory, setActiveCategory] = useState("Tous les postes");
@@ -244,49 +227,11 @@ export const RecruitmentPage = () => {
           {filteredRoles.length > 0 ? (
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {filteredRoles.map((role) => (
-                <article
+                <RecruitmentRoleCard
                   key={role.slug}
-                  className="relative flex flex-col rounded-xl border border-gray-100 overflow-hidden shadow-sm group min-h-[420px]"
-                >
-                  <img 
-                    src={roleImageMapping[role.slug]?.default?.src || require("@/core/assets/photo library/photo_40_2026-10-07_15-51-00.jpg").default.src} 
-                    alt={role.title} 
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" 
-                  />
-                  
-                  {/* Transparent top spacer */}
-                  <div className="relative z-10 h-[220px] w-full shrink-0"></div>
-                  
-                  {/* Bottom section with white background provided by button shadow */}
-                  <div className="relative z-10 flex flex-1 flex-col overflow-hidden">
-                    <div className="relative z-30 flex flex-1 flex-col px-6 pt-6 pb-4 pointer-events-none">
-                      <h3 className="text-lg font-bold leading-snug text-summit-dark pointer-events-auto">
-                        {role.title}
-                      </h3>
-                      <p className="mt-2 text-sm text-gray-500 line-clamp-2 pointer-events-auto">
-                        {role.tagline}
-                      </p>
-                    </div>
-                    <div className="relative z-20 px-6 pb-6 text-center">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedRole(role)}
-                        className="relative flex w-full items-center justify-center rounded-lg py-2.5 text-xs font-bold transition-all hover:scale-[1.02]"
-                      >
-                        {/* The solid white surrounding area filling the bottom half */}
-                        <div 
-                          className="absolute inset-0 rounded-lg pointer-events-none -z-20"
-                          style={{ boxShadow: "0 0 0 9999px white" }}
-                        ></div>
-                        
-                        {/* The purple glass effect for the hole itself */}
-                        <div className="absolute inset-0 rounded-lg bg-summit-purple/85 backdrop-blur-md border border-summit-purple/20 pointer-events-none -z-10"></div>
-                        
-                        <span className="relative z-10 tracking-wide uppercase text-white">Postuler</span>
-                      </button>
-                    </div>
-                  </div>
-                </article>
+                  role={role}
+                  onApply={setSelectedRole}
+                />
               ))}
             </div>
           ) : (

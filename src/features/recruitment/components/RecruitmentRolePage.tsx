@@ -89,17 +89,24 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
               </ul>
             </section>
 
-            <section className="mt-14">
-              <SectionTitle>Ce poste n'est probablement pas pour vous si...</SectionTitle>
-              <ul className="mt-6 space-y-4">
-                {role.notFor.map((item) => (
-                  <li key={item} className="flex gap-3 text-justify leading-relaxed text-gray-700">
-                    <XCircle className="mt-1 h-5 w-5 shrink-0 text-[#da291c]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
+            {role.notFor && role.notFor.length > 0 && (
+              <section className="mt-14">
+                <SectionTitle>
+                  Ce poste n&apos;est probablement pas pour vous si...
+                </SectionTitle>
+                <ul className="mt-6 space-y-4">
+                  {role.notFor.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 text-justify leading-relaxed text-gray-700"
+                    >
+                      <XCircle className="mt-1 h-5 w-5 shrink-0 text-[#da291c]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">

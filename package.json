@@ -31,5 +31,8 @@
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.11.1": true
   }
 }
