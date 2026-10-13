@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown, Calendar, Upload } from "lucide-react";
-import { RecruitmentRole } from "../types";
+import { Upload } from "lucide-react";
+import type { RecruitmentRole } from "../types";
 
 interface ApplicationModalProps {
   isOpen: boolean;
@@ -47,22 +47,22 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
         <div className="max-h-[95vh] overflow-y-auto px-6 py-5 md:px-8" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mt-2 text-xl font-bold tracking-tight text-gray-900 md:text-2xl">
-              {step === 1 && "Ce qui est attendu de vous"}
-              {step === 2 && "Ce que vous y gagnez"}
+              {step === 1 && "Mission"}
+              {step === 2 && "Profil"}
               {step === 3 && "Vos informations"}
             </h2>
 
             <p className="mt-1 text-xs text-gray-500">
-              {step === 1 && "Découvrez les missions et le profil recherché pour ce poste."}
-              {step === 2 && "Voici ce que F-UNION s'engage à vous offrir en retour."}
-              {step === 3 && "Remplissez ce formulaire pour soumettre votre candidature."}
+              {step === 1 && "Découvrez votre contribution et les missions du poste."}
+              {step === 2 && "Découvrez le profil recherché et l'engagement attendu."}
+              {step === 3 && "Découvrez les bénéfices et renseignez vos informations."}
             </p>
           </div>
 
           <div className="mt-4 flex flex-col md:flex-row justify-between gap-2 border-b border-gray-200 pb-0 text-xs">
             {[
-              { num: 1, label: "1. Attentes" },
-              { num: 2, label: "2. Avantages" },
+              { num: 1, label: "1. Mission" },
+              { num: 2, label: "2. Profil" },
               { num: 3, label: "3. Informations" },
             ].map((s) => (
               <div
@@ -92,15 +92,15 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
                 {step === 1 && (
                   <div className="space-y-4 text-sm text-gray-700">
                     <div>
-                      <h4 className="mb-2 font-bold text-gray-900">Ce que vous ferez concrètement :</h4>
-                      <ul className="list-disc space-y-1 pl-4 text-justify">
-                        {role.responsibilities?.map((res, i) => <li key={i}>{res}</li>)}
-                      </ul>
+                      <h4 className="mb-2 font-bold text-gray-900">Votre contribution</h4>
+                      <p className="text-justify leading-relaxed">{role.summary}</p>
                     </div>
                     <div>
-                      <h4 className="mb-2 font-bold text-gray-900">Ce qu'on recherche :</h4>
+                      <h4 className="mb-2 font-bold text-gray-900">Concrètement, votre mission</h4>
                       <ul className="list-disc space-y-1 pl-4 text-justify">
-                        {role.profile?.map((pro, i) => <li key={i}>{pro}</li>)}
+                        {role.responsibilities.map((responsibility) => (
+                          <li key={responsibility}>{responsibility}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -109,30 +109,52 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
                 {step === 2 && (
                   <div className="space-y-4 text-sm text-gray-700">
                     <div>
-                      <h4 className="mb-2 font-bold text-gray-900">Ce que F-UNION vous apporte en retour :</h4>
-                      <p className="mb-2 text-xs italic text-justify">Cette mission est bénévole. En contrepartie de votre engagement, F-UNION s'engage à vous offrir :</p>
-                      <ul className="list-disc space-y-2 pl-4 text-justify">
-                        {role.benefits?.map((ben, i) => <li key={i}>{ben}</li>)}
+                      <h4 className="mb-2 font-bold text-gray-900">Le profil que nous recherchons</h4>
+                      <ul className="list-disc space-y-1 pl-4 text-justify">
+                        {role.profile.map((profileItem) => (
+                          <li key={profileItem}>{profileItem}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="mb-2 font-bold text-gray-900">Votre engagement</h4>
+                      <ul className="list-disc space-y-1 pl-4 text-justify">
+                        {role.engagement.map((engagementItem) => (
+                          <li key={engagementItem}>{engagementItem}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
                 )}
 
                 {step === 3 && (
-                  <div className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
-                    <InputField label="Prénom" placeholder="Entrez votre prénom" value={formData.firstName} onChange={(v: string) => handleChange("firstName", v)} />
-                    <InputField label="Nom" placeholder="Entrez votre nom" value={formData.lastName} onChange={(v: string) => handleChange("lastName", v)} />
-                    <InputField label="Email" placeholder="Entrez votre email" type="email" value={formData.email} onChange={(v: string) => handleChange("email", v)} />
-                    <InputField label="Téléphone" placeholder="Entrez votre téléphone" type="tel" value={formData.phone} onChange={(v: string) => handleChange("phone", v)} />
-                    <UploadField label="CV (PDF)" placeholder="Uploader votre CV" value={formData.cv} onChange={(f: File) => handleChange("cv", f)} />
-                    <div className="sm:col-span-2 flex flex-col gap-1">
-                      <label className="text-[11px] font-bold text-gray-900">Motivations</label>
-                      <textarea
-                        placeholder="Parlez-nous brièvement de ce qui vous motive..."
-                        value={formData.motivations || ""}
-                        onChange={(e) => handleChange("motivations", e.target.value)}
-                        className="w-full rounded-md border border-gray-200 px-3 py-2 text-xs outline-none transition-colors focus:border-gray-400 placeholder:text-gray-400 min-h-[60px]"
-                      />
+                  <div className="space-y-4">
+                    <div className="text-sm text-gray-700">
+                      <h4 className="mb-2 font-bold text-gray-900">
+                        Ce que cette expérience peut vous apporter
+                      </h4>
+                      <ul className="list-disc space-y-1 pl-4 text-justify">
+                        {role.benefits.map((benefit) => (
+                          <li key={benefit}>{benefit}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
+                      <InputField label="Prénom" placeholder="Entrez votre prénom" value={formData.firstName} onChange={(v: string) => handleChange("firstName", v)} required />
+                      <InputField label="Nom" placeholder="Entrez votre nom" value={formData.lastName} onChange={(v: string) => handleChange("lastName", v)} required />
+                      <InputField label="Email" placeholder="Entrez votre email" type="email" value={formData.email} onChange={(v: string) => handleChange("email", v)} required />
+                      <InputField label="Téléphone" placeholder="Entrez votre téléphone" type="tel" value={formData.phone} onChange={(v: string) => handleChange("phone", v)} />
+                      <UploadField label="CV (PDF)" placeholder="Uploader votre CV" value={formData.cv} onChange={(f: File) => handleChange("cv", f)} />
+                      <div className="sm:col-span-2 flex flex-col gap-1">
+                        <label className="text-[11px] font-bold text-gray-900">Motivations</label>
+                        <textarea
+                          placeholder="Parlez-nous brièvement de ce qui vous motive..."
+                          value={formData.motivations || ""}
+                          onChange={(e) => handleChange("motivations", e.target.value)}
+                          required
+                          className="w-full rounded-md border border-gray-200 px-3 py-2 text-xs outline-none transition-colors focus:border-gray-400 placeholder:text-gray-400 min-h-[60px]"
+                        />
+                      </div>
                     </div>
                   </div>
                 )}
@@ -172,7 +194,25 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
   );
 };
 
-const InputField = ({ label, placeholder, type = "text", icon, value, onChange }: any) => (
+type InputFieldProps = {
+  label: string;
+  placeholder: string;
+  type?: string;
+  icon?: React.ReactNode;
+  value?: string;
+  onChange?: (value: string) => void;
+  required?: boolean;
+};
+
+const InputField = ({
+  label,
+  placeholder,
+  type = "text",
+  icon,
+  value,
+  onChange,
+  required = false,
+}: InputFieldProps) => (
   <div className="flex flex-col gap-1">
     <label className="text-[11px] font-bold text-gray-900">{label}</label>
     <div className="relative flex items-center">
@@ -180,6 +220,7 @@ const InputField = ({ label, placeholder, type = "text", icon, value, onChange }
         type={type}
         placeholder={placeholder}
         value={value || ""}
+        required={required}
         onChange={(e) => onChange?.(e.target.value)}
         className="w-full rounded-md border border-gray-200 px-3 py-2 text-xs outline-none transition-colors focus:border-gray-400 placeholder:text-gray-400"
       />
@@ -188,7 +229,14 @@ const InputField = ({ label, placeholder, type = "text", icon, value, onChange }
   </div>
 );
 
-const UploadField = ({ label, placeholder, value, onChange }: any) => (
+type UploadFieldProps = {
+  label: string;
+  placeholder: string;
+  value?: File | null;
+  onChange?: (file: File) => void;
+};
+
+const UploadField = ({ label, placeholder, value, onChange }: UploadFieldProps) => (
   <div className="flex flex-col gap-1">
     <label className="text-[11px] font-bold text-gray-900">{label}</label>
     <div className="relative flex items-center">
@@ -197,6 +245,7 @@ const UploadField = ({ label, placeholder, value, onChange }: any) => (
         <Upload className="h-3.5 w-3.5 text-gray-400 shrink-0" />
         <input
           type="file"
+          accept=".pdf"
           className="hidden"
           onChange={(e) => {
             if (e.target.files && e.target.files.length > 0) {
