@@ -84,7 +84,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
             </section>
 
             <section className="mt-14">
-              <SectionTitle>Ce qu'on recherche</SectionTitle>
+              <SectionTitle>Ce qu&apos;on recherche</SectionTitle>
               <ul className="mt-6 space-y-4">
                 {role.profile.map((item) => (
                   <li key={item} className="flex gap-3 text-justify leading-relaxed text-gray-700">
@@ -148,7 +148,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
             <div className="rounded-3xl border border-[#eadff9] bg-white p-7">
               <p className="font-black text-summit-dark">Vous hésitez entre plusieurs rôles ?</p>
               <p className="mt-3 text-sm leading-relaxed text-gray-600">
-                Consultez les autres fiches ou écrivez à l'équipe pour être orienté·e vers le pôle le plus adapté.
+                Consultez les autres fiches ou écrivez à l&apos;équipe pour être orienté·e vers le pôle le plus adapté.
               </p>
               <Link
                 href="/recrutement#postes"
@@ -162,6 +162,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
         </div>
       </Container>
       <ApplicationModal
+        key={isModalOpen ? role.slug : "closed"}
         isOpen={isModalOpen}
         role={role}
         onClose={() => setIsModalOpen(false)}

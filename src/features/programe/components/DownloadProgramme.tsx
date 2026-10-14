@@ -14,7 +14,7 @@ export const DownloadProgramme = ({ pdfUrl, pdfFileName }: DownloadProgrammeProp
     setIsDownloading(true);
     try {
       // Logic for download, similar to communique DownloadButton
-      let apiUrl = pdfUrl;
+      const apiUrl = pdfUrl;
       
       // If it's a relative path starting with /pdfs/, we assume it's in public/pdfs
       // We can use the existing /api/download if available or just direct link

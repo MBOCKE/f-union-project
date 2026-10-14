@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client';
-import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
 
@@ -15,6 +15,19 @@ export interface CommuniqueContent {
   paragraphs: string[];
   hasPdf: boolean;
 }
+
+const getHeadingText = (block: BlockObjectResponse): string | null => {
+  switch (block.type) {
+    case 'heading_1':
+      return block.heading_1.rich_text.map((text) => text.plain_text).join('');
+    case 'heading_2':
+      return block.heading_2.rich_text.map((text) => text.plain_text).join('');
+    case 'heading_3':
+      return block.heading_3.rich_text.map((text) => text.plain_text).join('');
+    default:
+      return null;
+  }
+};
 
 export async function getCommuniqueContent(): Promise<CommuniqueContent> {
   if (!NOTION_PAGE_ID) {
@@ -35,14 +48,14 @@ export async function getCommuniqueContent(): Promise<CommuniqueContent> {
 
     for (const block of blocks) {
       if (block.type === 'heading_1' || block.type === 'heading_2' || block.type === 'heading_3') {
-        const textArr = (block as any)[block.type].rich_text;
-        if (textArr && textArr.length > 0 && header === 'Communiqué de Presse') {
-          header = textArr.map((t: any) => t.plain_text).join('');
+        const text = getHeadingText(block);
+        if (text && header === 'Communiqué de Presse') {
+          header = text;
         }
       } else if (block.type === 'paragraph') {
         const textArr = block.paragraph.rich_text;
         if (textArr && textArr.length > 0) {
-          paragraphs.push(textArr.map((t: any) => t.plain_text).join(''));
+          paragraphs.push(textArr.map((text) => text.plain_text).join(''));
         }
       } else if (block.type === 'file') {
         const url = block.file.type === 'file' ? block.file.file.url : block.file.external.url;

@@ -1,9 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Upload } from "lucide-react";
 import { upload } from "@vercel/blob/client";
-import type { RecruitmentRole } from "../types";
+import photo50 from "@/core/assets/photo library/photo_50_2026-10-07_15-51-00.jpg";
+import photo51 from "@/core/assets/photo library/photo_51_2026-10-07_15-51-00.jpg";
+import photo52 from "@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg";
+import type { ApplicationFormData, RecruitmentRole } from "../types";
+
+const applicationStepImages = [photo50.src, photo51.src, photo52.src];
 
 interface ApplicationModalProps {
   isOpen: boolean;
@@ -13,26 +18,25 @@ interface ApplicationModalProps {
 
 export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProps) => {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<Record<string, any>>({});
+  const [formData, setFormData] = useState<ApplicationFormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    cv: null,
+    motivations: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  useEffect(() => {
-    if (!isOpen) {
-      setStep(1);
-      setFormData({});
-      setIsSubmitting(false);
-      setIsUploading(false);
-      setSubmitError(null);
-      setSubmitSuccess(false);
-    }
-  }, [isOpen]);
-
   if (!isOpen || !role) return null;
 
-  const handleChange = (field: string, value: any) => {
+  const handleChange = <K extends keyof ApplicationFormData>(
+    field: K,
+    value: ApplicationFormData[K],
+  ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -178,7 +182,7 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
           <div className="mt-4 grid gap-5 md:grid-cols-[1fr_2.5fr]">
             <div className="hidden md:block h-full min-h-[250px] w-full rounded-xl bg-gray-100 overflow-hidden">
               <img 
-                src={step === 1 ? require("@/core/assets/photo library/photo_50_2026-10-07_15-51-00.jpg").default.src : step === 2 ? require("@/core/assets/photo library/photo_51_2026-10-07_15-51-00.jpg").default.src : require("@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg").default.src} 
+                src={applicationStepImages[step - 1]}
                 alt="Application step" 
                 className="w-full h-full object-cover" 
               />

@@ -18,6 +18,11 @@ import {
 } from "../constants/roles";
 
 import { ApplicationModal } from "./ApplicationModal";
+import type { RecruitmentRole } from "../types";
+import photo41 from "@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg";
+import photo48 from "@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg";
+import photo52 from "@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg";
+import photo55 from "@/core/assets/photo library/photo_55_2026-10-07_15-51-00.jpg";
 import { recruitmentSections } from "../constants/sections";
 import SectionAccordion from "./SectionAccordion";
 
@@ -47,7 +52,7 @@ const faqs = [
 export const RecruitmentPage = () => {
   const [activeCategory, setActiveCategory] = useState("Tous les postes");
   const [search, setSearch] = useState("");
-  const [selectedRole, setSelectedRole] = useState<any | null>(null);
+  const [selectedRole, setSelectedRole] = useState<RecruitmentRole | null>(null);
 
   const filteredRoles = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
@@ -244,7 +249,7 @@ export const RecruitmentPage = () => {
                 description:
                   "Parcourez les postes ouverts et identifiez celui qui correspond à vos compétences, vos envies et votre disponibilité.",
                 Icon: ClipboardList,
-                image: require("@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg").default.src,
+                image: photo41.src,
               },
               {
                 number: "02",
@@ -252,7 +257,7 @@ export const RecruitmentPage = () => {
                 description:
                   "Chaque poste dispose d'un formulaire de candidature en trois étapes : découvrez la mission, le profil recherché, puis renseignez vos informations. Vous pouvez joindre votre CV (PDF).",
                 Icon: Users,
-                image: require("@/core/assets/photo library/photo_55_2026-10-07_15-51-00.jpg").default.src,
+                image: photo55.src,
               },
               {
                 number: "03",
@@ -260,7 +265,7 @@ export const RecruitmentPage = () => {
                 description:
                   "Si votre candidature retient notre attention, nous vous contactons pour un entretien de présentation. C'est l'occasion de faire connaissance et de valider ensemble que la mission vous convient.",
                 Icon: Handshake,
-                image: require("@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg").default.src,
+                image: photo48.src,
               },
               {
                 number: "04",
@@ -268,7 +273,7 @@ export const RecruitmentPage = () => {
                 description:
                   "Une fois votre candidature confirmée, vous êtes intégré·e à la Team F-UNION 2027 et accompagné·e dans votre prise de fonction.",
                 Icon: Handshake,
-                image: require("@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg").default.src,
+                image: photo52.src,
               },
             ].map(({ number, title, description, Icon, image }) => (
               <div
@@ -360,6 +365,7 @@ export const RecruitmentPage = () => {
       </section>
 
       <ApplicationModal
+        key={selectedRole?.slug ?? "closed"}
         isOpen={!!selectedRole}
         onClose={() => setSelectedRole(null)}
         role={selectedRole}

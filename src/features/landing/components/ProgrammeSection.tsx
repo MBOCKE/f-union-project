@@ -20,6 +20,100 @@ type FlipCardProps = {
   showbutton?: boolean;
 };
 
+type FrontDetailProps = Pick<
+  FlipCardProps,
+  "frontImage" | "dayNumber" | "backTitle" | "backDescription" | "href" | "showbutton"
+>;
+
+const FrontDetail = ({
+  frontImage,
+  dayNumber,
+  backTitle,
+  backDescription,
+  href,
+  showbutton = true,
+}: FrontDetailProps) => (
+  <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-[#1c1c1c] flex flex-col [backface-visibility:hidden]">
+    <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
+      <img src={frontImage} alt="Background" className="w-full h-full object-cover" />
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 z-0 pointer-events-none" />
+    <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 pt-10">
+      <div className="mb-4">
+        <h4 className="text-white font-black text-2xl tracking-tight">{dayNumber}</h4>
+      </div>
+      <h3 className="text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-8 mt-2 drop-shadow-lg">
+        {backTitle}
+      </h3>
+      <p className="text-white/90 font-medium text-[30px] leading-relaxed text-center mt-4">
+        {backDescription}
+      </p>
+      {showbutton && (
+        <div className="mt-auto pt-6 flex justify-center">
+          <Link href={href} onClick={(event) => event.stopPropagation()}>
+            <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
+              Voir le programme complet
+            </button>
+          </Link>
+        </div>
+      )}
+    </div>
+  </div>
+);
+
+type FrontImageProps = Pick<FlipCardProps, "frontImage" | "frontTitle">;
+
+const FrontImage = ({ frontImage, frontTitle }: FrontImageProps) => (
+  <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white [backface-visibility:hidden]">
+    <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+    <div className="absolute bottom-0 left-0 right-0 p-8 pt-12">
+      <h3 className="text-white text-3xl md:text-[2rem] font-black tracking-tight leading-none">
+        {frontTitle}
+      </h3>
+    </div>
+  </div>
+);
+
+type BackSideProps = FrontDetailProps & Pick<FlipCardProps, "innerSpace">;
+
+const BackSide = ({
+  frontImage,
+  dayNumber,
+  backTitle,
+  backDescription,
+  href,
+  showbutton = true,
+  innerSpace,
+}: BackSideProps) => (
+  <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-[#1c1c1c] flex flex-col [backface-visibility:hidden] [transform:rotateY(180deg)]">
+    <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
+      <img src={frontImage} alt="Background" className="w-full h-full object-cover" />
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/95 z-0 pointer-events-none" />
+    <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 pt-10">
+      <div className="mb-4">
+        <h4 className="text-white font-black text-2xl tracking-tight">{dayNumber}</h4>
+      </div>
+      <h3 className={`text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-${innerSpace} mt-2 drop-shadow-lg`}>
+        {backTitle}
+      </h3>
+      <p className="text-white/90 font-medium text-[20px] leading-relaxed text-center mt-4 text-balance">
+        {backDescription}
+      </p>
+      {showbutton && (
+        <div className="mt-auto pt-6 flex justify-center">
+          <Link href={href} onClick={(event) => event.stopPropagation()}>
+            <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
+              Voir le programme complet
+            </button>
+          </Link>
+        </div>
+      )}
+    </div>
+  </div>
+);
+
 const FlipCard = ({
   frontImage,
   frontTitle,
@@ -37,96 +131,6 @@ const FlipCard = ({
     setTapped((prev) => !prev);
   };
 
-  const FrontDetail = () => (
-    <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-[#1c1c1c] flex flex-col [backface-visibility:hidden]">
-      <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
-        <img
-          src={frontImage}
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 z-0 pointer-events-none" />
-      <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 pt-10">
-        <div className="mb-4">
-          <h4 className="text-white font-black text-2xl tracking-tight">
-            {dayNumber}
-          </h4>
-        </div>
-        <h3 className="text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-8 mt-2 drop-shadow-lg">
-          {backTitle}
-        </h3>
-        <p className="text-white/90 font-medium text-[30px] leading-relaxed text-center mt-4">
-          {backDescription}
-        </p>
-        {showbutton == true ? <div className="mt-auto pt-6 flex justify-center">
-          <Link href={href} onClick={(e) => e.stopPropagation()}>
-            <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
-              Voir le programme complet
-            </button>
-          </Link>
-        </div>
-          :
-          <></>
-        }
-      </div>
-    </div>
-  );
-
-  const FrontImage = () => (
-    <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white [backface-visibility:hidden]">
-      <img
-        src={frontImage}
-        alt={frontTitle}
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 p-8 pt-12">
-        <h3 className="text-white text-3xl md:text-[2rem] font-black tracking-tight leading-none">
-          {frontTitle}
-        </h3>
-      </div>
-    </div>
-  );
-
-  const BackSide = () => (
-    <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-[#1c1c1c] flex flex-col [backface-visibility:hidden] [transform:rotateY(180deg)]">
-      <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
-        <img
-          src={frontImage}
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      {/* Darker background on back as requested */}
-      <div className={`absolute inset-0 bg-gradient-to-b from-black/80 to-black/95 z-0 pointer-events-none`} />
-      <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 pt-10">
-        <div className="mb-4">
-          <h4 className="text-white font-black text-2xl tracking-tight">
-            {dayNumber}
-          </h4>
-        </div>
-        <h3 className={`text-[#C22323] font-black text-4xl leading-[1.1] tracking-tighter mb-${innerSpace} mt-2 drop-shadow-lg`}>
-          {backTitle}
-        </h3>
-        <p className="text-white/90 font-medium text-[20px] leading-relaxed text-center mt-4 text-balance">
-          {backDescription}
-        </p>
-        {
-          showbutton ? <div className="mt-auto pt-6 flex justify-center">
-            <Link href={href} onClick={(e) => e.stopPropagation()}>
-              <button className="bg-[#4d0c0c] hover:bg-[#6b1313] text-white font-bold py-3 px-6 rounded-full text-sm transition-colors border-2 border-[#2b0505]/30 shadow-xl">
-                Voir le programme complet
-              </button>
-            </Link>
-          </div>
-            :
-            <></>
-        }
-      </div>
-    </div>
-  );
-
   return (
     <div
       className="relative h-[480px] lg:h-[550px] w-full group [perspective:2000px] mt-12 md:mt-0 cursor-pointer"
@@ -136,8 +140,27 @@ const FlipCard = ({
         className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] lg:group-hover:[transform:rotateY(180deg)] ${tapped ? "[transform:rotateY(180deg)] lg:[transform:none]" : ""
           }`}
       >
-        {isDetailFront ? <FrontDetail /> : <FrontImage />}
-        <BackSide />
+        {isDetailFront ? (
+          <FrontDetail
+            frontImage={frontImage}
+            dayNumber={dayNumber}
+            backTitle={backTitle}
+            backDescription={backDescription}
+            href={href}
+            showbutton={showbutton}
+          />
+        ) : (
+          <FrontImage frontImage={frontImage} frontTitle={frontTitle} />
+        )}
+        <BackSide
+          frontImage={frontImage}
+          dayNumber={dayNumber}
+          backTitle={backTitle}
+          backDescription={backDescription}
+          href={href}
+          showbutton={showbutton}
+          innerSpace={innerSpace}
+        />
       </div>
     </div>
   );
