@@ -60,9 +60,19 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
 
     if (formData.cv) {
       setIsUploading(true);
+      const pathname = `cv/${role.slug}/${Date.now()}-${formData.cv.name}`;
+      console.log("[CV-UPLOAD] Starting upload", {
+        fileName: formData.cv.name,
+        fileSize: formData.cv.size,
+        fileType: formData.cv.type,
+        roleSlug: role.slug,
+        pathname,
+        hasBlobToken: !!process.env.NEXT_PUBLIC_BLOB_READ_WRITE_TOKEN,
+      });
+
       try {
         const blob = await upload(
-          `cv/${role.slug}/${Date.now()}-${formData.cv.name}`,
+          pathname,
           formData.cv,
           {
             access: "public",
@@ -70,8 +80,24 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
             clientPayload: role.slug,
           },
         );
+        console.log("[CV-UPLOAD] Upload succeeded", {
+          url: blob.url,
+          pathname: blob.pathname,
+          contentType: blob.contentType,
+          size: formData.cv.size,
+        });
         cvPublicUrl = blob.url;
-      } catch {
+      } catch (uploadError) {
+        console.error("[CV-UPLOAD] Upload failed", {
+          error: uploadError,
+          message:
+            uploadError instanceof Error
+              ? uploadError.message
+              : String(uploadError),
+          stack:
+            uploadError instanceof Error ? uploadError.stack : undefined,
+          name: uploadError instanceof Error ? uploadError.name : undefined,
+        });
         setSubmitError(
           "Le téléchargement du CV a échoué. Veuillez réessayer.",
         );
@@ -101,6 +127,17 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
       payload.append("phone", String(formData.phone || "Non renseigné"));
       payload.append("motivations", String(formData.motivations).trim());
       payload.append("cv_link", cvPublicUrl || "");
+
+      console.log("[CV-UPLOAD] Submitting to Web3Forms with fields:", {
+        access_key_present: !!process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+        role_slug: role.slug,
+        has_cv_link: !!cvPublicUrl,
+        cv_link: cvPublicUrl,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+      });
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",

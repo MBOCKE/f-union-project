@@ -1,23 +1,22 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import {
   ArrowRight,
   ChevronDown,
   ClipboardList,
   Handshake,
-  Search,
   Users,
 } from "lucide-react";
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
 import benevoleImage from "@/core/assets/image-benevole.jpeg";
 import {
-  recruitmentCategories,
   recruitmentRoles,
 } from "../constants/roles";
 
 import { ApplicationModal } from "./ApplicationModal";
+import { ApplicationCountdown } from "./ApplicationCountdown";
 import type { RecruitmentRole } from "../types";
 import photo41 from "@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg";
 import photo48 from "@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg";
@@ -50,28 +49,7 @@ const faqs = [
 ];
 
 export const RecruitmentPage = () => {
-  const [activeCategory, setActiveCategory] = useState("Tous les postes");
-  const [search, setSearch] = useState("");
   const [selectedRole, setSelectedRole] = useState<RecruitmentRole | null>(null);
-
-  const filteredRoles = useMemo(() => {
-    const normalizedSearch = search.trim().toLowerCase();
-
-    return recruitmentRoles.filter((role) => {
-      const matchesCategory =
-        activeCategory === "Tous les postes" || role.category === activeCategory;
-      const matchesSearch =
-        !normalizedSearch ||
-        [role.title, role.category, role.tagline, role.format]
-          .join(" ")
-          .toLowerCase()
-          .includes(normalizedSearch);
-
-      return matchesCategory && matchesSearch;
-    });
-  }, [activeCategory, search]);
-  const filtersActive =
-    activeCategory !== "Tous les postes" || search.trim().length > 0;
 
   return (
     <main
@@ -135,98 +113,24 @@ export const RecruitmentPage = () => {
                 Trouvez votre place dans l&apos;<span className="text-[#845ec2]">équipe</span>.
               </h2>
             </div>
-            <div className="flex items-center gap-3 rounded-full bg-white px-4 py-3 shadow-sm ring-1 ring-gray-200 lg:w-80">
-              <Search className="h-5 w-5 shrink-0 text-gray-400" />
-              <input
-                type="search"
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-                placeholder="Rechercher un poste"
-                aria-label="Rechercher un poste"
-                className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-gray-400"
-              />
-            </div>
           </div>
 
-          <div className="mt-10 md:hidden">
-            <label
-              htmlFor="recruitment-category"
-              className="mb-2 block text-sm font-black text-summit-dark"
-            >
-              Filtrer par catégorie
-            </label>
-            <select
-              id="recruitment-category"
-              value={activeCategory}
-              onChange={(event) => setActiveCategory(event.target.value)}
-              className="w-full appearance-none rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm font-bold text-summit-dark shadow-sm outline-none focus:border-summit-purple focus:ring-2 focus:ring-summit-purple/20"
-            >
-              {recruitmentCategories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </div>
+          <ApplicationCountdown />
 
-          <div className="hide-scrollbar mt-10 hidden gap-2 overflow-x-auto pb-2 md:flex">
-            {recruitmentCategories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-                className={`whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-bold transition-colors ${
-                  activeCategory === category
-                    ? "bg-summit-purple text-white"
-                    : "bg-white text-gray-600 ring-1 ring-gray-200 hover:text-summit-purple"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {filteredRoles.length > 0 ? (
-            <div className="mt-8 space-y-4">
-              {[...recruitmentSections]
-                .sort((first, second) => first.order - second.order)
-                .map((section) => {
-                  const sectionRoles = filteredRoles.filter(
+          <div className="mt-8 space-y-4">
+            {[...recruitmentSections]
+              .sort((first, second) => first.order - second.order)
+              .map((section) => (
+                <SectionAccordion
+                  key={section.id}
+                  section={section}
+                  roles={recruitmentRoles.filter(
                     (role) => role.sectionId === section.id,
-                  );
-
-                  if (filtersActive && sectionRoles.length === 0) {
-                    return null;
-                  }
-
-                  return (
-                    <SectionAccordion
-                      key={section.id}
-                      section={section}
-                      roles={sectionRoles}
-                      onApply={setSelectedRole}
-                      defaultOpen={filtersActive && sectionRoles.length > 0}
-                    />
-                  );
-                })}
-            </div>
-          ) : (
-            <div className="mt-8 rounded-3xl bg-white p-12 text-center ring-1 ring-gray-200">
-              <p className="text-lg font-bold text-summit-dark">
-                Aucun poste ne correspond à votre recherche.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setSearch("");
-                  setActiveCategory("Tous les postes");
-                }}
-                className="mt-4 font-bold text-[#6f45aa] hover:underline"
-              >
-                Réinitialiser les filtres
-              </button>
-            </div>
-          )}
+                  )}
+                  onApply={setSelectedRole}
+                />
+              ))}
+          </div>
         </Container>
       </section>
 
