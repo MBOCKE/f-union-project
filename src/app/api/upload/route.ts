@@ -49,7 +49,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       success: response.type,
     });
 
-    return NextResponse.json({ response });
+    return NextResponse.json(response);
   } catch (error) {
     console.error("[CV-UPLOAD] handleUpload error", {
       error,

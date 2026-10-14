@@ -60,14 +60,17 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
 
     if (formData.cv) {
       setIsUploading(true);
-      const pathname = `cv/${role.slug}/${Date.now()}-${formData.cv.name}`;
+      const fileName = formData.cv.name.endsWith(".pdf")
+        ? formData.cv.name
+        : `${formData.cv.name}.pdf`;
+      const pathname = `cv/${role.slug}/${Date.now()}-${fileName}`;
       console.log("[CV-UPLOAD] Starting upload", {
         fileName: formData.cv.name,
         fileSize: formData.cv.size,
         fileType: formData.cv.type,
         roleSlug: role.slug,
         pathname,
-        hasBlobToken: !!process.env.NEXT_PUBLIC_BLOB_READ_WRITE_TOKEN,
+        usesServerTokenEndpoint: true,
       });
 
       try {
