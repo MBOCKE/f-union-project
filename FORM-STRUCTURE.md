@@ -127,43 +127,26 @@ can jump directly to any step; the active step is identified with
 effect resets `step` to 1 and clears `formData`; reopening starts with a fresh
 application.
 
-## Current submission and validation status
+## Submission and validation status
 
-Despite its “form” appearance and step-three instruction, the modal does not
-currently render a `<form>`, submit to an endpoint, call Web3Forms, or persist
-or email applicant data. The final “Postuler” button simply calls `onClose`.
-There is no success/error state or submission loading state.
+On step 3, “Postuler” validates that first name, last name, email, and
+motivations contain non-whitespace text, then sends a `FormData` POST request
+to `https://api.web3forms.com/submit`. The payload includes the Web3Forms
+access key, role title and slug, applicant name, email, phone (or
+“Non renseigné”), and motivations. The CV remains in client-side form state
+for the applicant's experience but is intentionally not included in the
+request.
 
-The first name, last name, email, and motivations controls have `required`
-attributes, but the modal does not currently render a `<form>`; consequently,
-those attributes do not trigger browser form validation on submission.
-`type="email"` selects an email-oriented browser input.
-The CV label says “PDF,” but the file input has no `accept` restriction,
-required check, size/type validation, or upload behavior. The `File` only stays
-in client-side React state until the modal closes. The role-detail page's
-`mailto:` action is separate and does not submit these modal fields.
+The modal tracks pending, error, and success states. While submitting, the
+button is disabled and reads “Envoi en cours...”. Web3Forms errors and network
+errors are shown above the button; after a successful response, the fields
+and button are replaced by a confirmation message. Closing the modal resets
+the form and submission state. The modal does not currently upload the CV,
+validate email format beyond the email input type, or persist data locally.
 
-## Web3Forms integration points
-
-To connect Web3Forms, the most direct path is to implement submission in
-`ApplicationModal`, where both the applicant state and selected `role` are
-available:
-
-1. Use a real form or an explicit submit handler for step 3. Keep the first
-   two steps as informational navigation.
-2. Add field names and required constraints matching the payload expected by
-   the chosen Web3Forms integration. Include role identity (at least its
-   title and/or slug) from the `role` prop so applications can be associated
-   with the correct opening.
-3. Validate applicant fields and CV type/size before sending. Confirm
-   Web3Forms' current file-upload support and limits; storing a `File` in
-   React state alone does not upload it.
-4. Track pending, success, and failure states. Keep the modal open and retain
-   values if the request fails; reset/close only after a confirmed success.
-5. Decide whether the role-detail page should remain a separate email action or
-   be changed to open/use the same application flow. It currently does not
-   share the modal submission path.
-
-The FAQ's selection-process answer and the “Comment candidater ?” copy should
-also be revisited when a real submission workflow is connected, so the page's
-description matches the actual application experience.
+The browser build reads `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`. Set this variable
+in `.env.local` for local development and in the Vercel project's environment
+variables for deployment. The local placeholder in `.env.local` must be
+replaced with the actual Web3Forms access key. Because the variable is
+prefixed with `NEXT_PUBLIC_`, it is exposed to the client bundle and must be
+a Web3Forms public access key, not a private server secret.

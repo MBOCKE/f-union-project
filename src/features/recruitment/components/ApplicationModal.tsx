@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Upload } from "lucide-react";
+import { upload } from "@vercel/blob/client";
 import type { RecruitmentRole } from "../types";
 
 interface ApplicationModalProps {
@@ -13,11 +14,19 @@ interface ApplicationModalProps {
 export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProps) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<Record<string, any>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
       setStep(1);
       setFormData({});
+      setIsSubmitting(false);
+      setIsUploading(false);
+      setSubmitError(null);
+      setSubmitSuccess(false);
     }
   }, [isOpen]);
 
@@ -25,6 +34,91 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
 
   const handleChange = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    if (
+      !String(formData.firstName ?? "").trim() ||
+      !String(formData.lastName ?? "").trim() ||
+      !String(formData.email ?? "").trim() ||
+      !String(formData.motivations ?? "").trim()
+    ) {
+      setSubmitError("Veuillez remplir tous les champs obligatoires.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    let cvPublicUrl: string | null = null;
+
+    if (formData.cv) {
+      setIsUploading(true);
+      try {
+        const blob = await upload(
+          `cv/${role.slug}/${Date.now()}-${formData.cv.name}`,
+          formData.cv,
+          {
+            access: "public",
+            handleUploadUrl: "/api/upload",
+            clientPayload: role.slug,
+          },
+        );
+        cvPublicUrl = blob.url;
+      } catch {
+        setSubmitError(
+          "Le téléchargement du CV a échoué. Veuillez réessayer.",
+        );
+        setIsSubmitting(false);
+        return;
+      } finally {
+        setIsUploading(false);
+      }
+    }
+
+    try {
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) {
+        setSubmitError("La clé d'accès Web3Forms n'est pas configurée.");
+        return;
+      }
+
+      const payload = new FormData();
+      payload.append("access_key", accessKey);
+      payload.append("subject", `Nouvelle candidature: ${role.title}`);
+      payload.append("from_name", "F-UNION Recruitment");
+      payload.append("role_slug", role.slug);
+      payload.append("role_title", role.title);
+      payload.append("firstName", String(formData.firstName).trim());
+      payload.append("lastName", String(formData.lastName).trim());
+      payload.append("email", String(formData.email).trim());
+      payload.append("phone", String(formData.phone || "Non renseigné"));
+      payload.append("motivations", String(formData.motivations).trim());
+      payload.append("cv_link", cvPublicUrl || "");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+      const result: { success?: boolean; message?: string } =
+        await response.json();
+
+      if (result.success) {
+        setSubmitSuccess(true);
+      } else {
+        setSubmitError(
+          result.message || "Une erreur est survenue lors de l'envoi.",
+        );
+      }
+    } catch {
+      setSubmitError(
+        "Impossible de contacter le serveur. Vérifiez votre connexion.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -142,39 +236,71 @@ export const ApplicationModal = ({ isOpen, onClose, role }: ApplicationModalProp
                         ))}
                       </ul>
                     </div>
-                    <div className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
-                      <InputField label="Prénom" placeholder="Entrez votre prénom" value={formData.firstName} onChange={(v: string) => handleChange("firstName", v)} required />
-                      <InputField label="Nom" placeholder="Entrez votre nom" value={formData.lastName} onChange={(v: string) => handleChange("lastName", v)} required />
-                      <InputField label="Email" placeholder="Entrez votre email" type="email" value={formData.email} onChange={(v: string) => handleChange("email", v)} required />
-                      <InputField label="Téléphone" placeholder="Entrez votre téléphone" type="tel" value={formData.phone} onChange={(v: string) => handleChange("phone", v)} />
-                      <UploadField label="CV (PDF)" placeholder="Uploader votre CV" value={formData.cv} onChange={(f: File) => handleChange("cv", f)} />
-                      <div className="sm:col-span-2 flex flex-col gap-1">
-                        <label className="text-[11px] font-bold text-gray-900">Motivations</label>
-                        <textarea
-                          placeholder="Parlez-nous brièvement de ce qui vous motive..."
-                          value={formData.motivations || ""}
-                          onChange={(e) => handleChange("motivations", e.target.value)}
-                          required
-                          className="w-full rounded-md border border-gray-200 px-3 py-2 text-xs outline-none transition-colors focus:border-gray-400 placeholder:text-gray-400 min-h-[60px]"
-                        />
+                    {submitSuccess ? (
+                      <div
+                        role="status"
+                        className="rounded-xl border border-green-200 bg-green-50 px-5 py-6 text-center text-green-800"
+                      >
+                        <p className="font-bold">
+                          Candidature envoyée avec succès !
+                        </p>
+                        <p className="mt-1 text-sm">Merci de votre intérêt.</p>
                       </div>
-                    </div>
+                    ) : (
+                      <>
+                        <div className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
+                          <InputField label="Prénom" placeholder="Entrez votre prénom" value={formData.firstName} onChange={(v: string) => handleChange("firstName", v)} required />
+                          <InputField label="Nom" placeholder="Entrez votre nom" value={formData.lastName} onChange={(v: string) => handleChange("lastName", v)} required />
+                          <InputField label="Email" placeholder="Entrez votre email" type="email" value={formData.email} onChange={(v: string) => handleChange("email", v)} required />
+                          <InputField label="Téléphone" placeholder="Entrez votre téléphone" type="tel" value={formData.phone} onChange={(v: string) => handleChange("phone", v)} />
+                          <UploadField label="CV (PDF)" placeholder="Uploader votre CV" value={formData.cv} onChange={(f: File) => handleChange("cv", f)} />
+                          <div className="sm:col-span-2 flex flex-col gap-1">
+                            <label className="text-[11px] font-bold text-gray-900">Motivations</label>
+                            <textarea
+                              placeholder="Parlez-nous brièvement de ce qui vous motive..."
+                              value={formData.motivations || ""}
+                              onChange={(e) => handleChange("motivations", e.target.value)}
+                              required
+                              className="w-full rounded-md border border-gray-200 px-3 py-2 text-xs outline-none transition-colors focus:border-gray-400 placeholder:text-gray-400 min-h-[60px]"
+                            />
+                          </div>
+                        </div>
+                        {submitError && (
+                          <p role="alert" className="mt-4 text-sm text-red-600">
+                            {submitError}
+                          </p>
+                        )}
+                        <div className="mt-5 flex justify-end">
+                          <button
+                            type="button"
+                            onClick={handleSubmit}
+                            disabled={isSubmitting}
+                            className="w-full rounded-lg bg-[#222222] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-40"
+                          >
+                            {isUploading
+                              ? "Téléchargement du CV..."
+                              : isSubmitting
+                                ? "Envoi en cours..."
+                                : "Postuler"}
+                          </button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
               </div>
 
-              <div className="mt-5 flex justify-end">
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (step < 3) setStep(step + 1);
-                    else onClose();
-                  }}
-                  className="w-full rounded-lg bg-[#222222] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-black sm:w-auto sm:min-w-40"
-                >
-                  {step === 3 ? "Postuler" : "Continuer"}
-                </button>
-              </div>
+              {step < 3 && (
+                <div className="mt-5 flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setStep(step + 1)}
+                    className="w-full rounded-lg bg-[#222222] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-black sm:w-auto sm:min-w-40"
+                  >
+                    Continuer
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
