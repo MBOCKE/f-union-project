@@ -4,7 +4,6 @@ import {
   CalendarDays,
   ChevronDown,
   Handshake,
-  MapPin,
   UsersRound,
 } from "lucide-react";
 import RecruitmentRoleCard from "./RecruitmentRoleCard";
@@ -30,7 +29,7 @@ const SectionAccordion = ({
     <details
       id={section.id}
       open={defaultOpen || undefined}
-      className="group scroll-mt-24 border-t-2 border-[#845ec2] py-3 first:border-t-0"
+      className="group mx-auto w-full max-w-6xl scroll-mt-24 border-t-2 border-[#845ec2] py-3 first:border-t-0"
     >
       <summary className="grid cursor-pointer list-none grid-cols-1 gap-y-3 text-slate-800 marker:hidden [&::-webkit-details-marker]:hidden">
         <div className="flex min-w-0 flex-wrap items-baseline justify-between gap-x-5 gap-y-2">
@@ -56,17 +55,12 @@ const SectionAccordion = ({
         </div>
 
         {featuredRole && (
-          <dl className="grid w-full grid-cols-2 gap-x-5 gap-y-3 sm:grid-cols-4">
+          <dl className="grid w-full grid-cols-2 gap-x-5 gap-y-3 sm:grid-cols-3">
             {[
               {
                 label: "Durée",
                 value: featuredRole.duration,
                 Icon: CalendarDays,
-              },
-              {
-                label: "Format",
-                value: featuredRole.format,
-                Icon: MapPin,
               },
               {
                 label: "Rattachement",
@@ -75,7 +69,10 @@ const SectionAccordion = ({
               },
               {
                 label: "Collaboration",
-                value: featuredRole.collaborators || "Non précisée",
+                value:
+                  featuredRole.collaborators ||
+                  roles[1]?.collaborators ||
+                  "Non précisée",
                 Icon: Handshake,
               },
             ].map(({ label, value, Icon }) => (
