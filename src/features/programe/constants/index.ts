@@ -233,7 +233,7 @@ export const JOUR_2_SESSIONS: Session[] = [
   },
   {
     id: "j2_s7",
-    title: "WORKSHOP : Face aux Experts — des solutions concrètes pour faire avancer ton business",
+    title: "WORKSHOP : Face aux Experts - des solutions concrètes pour faire avancer ton business",
     hall: "Conference Hall 3",
     startTime: "14:30",
     endTime: "15:30",
@@ -258,7 +258,7 @@ export const JOUR_2_SESSIONS: Session[] = [
   },
   {
     id: "j2_s9",
-    title: "ATELIER : Leadership Styling — Image, présence et posture professionnelle",
+    title: "ATELIER : Leadership Styling - Image, présence et posture professionnelle",
     hall: "Conference Hall 1",
     startTime: "15:30",
     endTime: "16:30",
@@ -283,7 +283,7 @@ export const JOUR_2_SESSIONS: Session[] = [
   },
   {
     id: "j2_s11",
-    title: "F-UNION LOUNGE TALK — Causerie ENTRE NOUS avec Hermines Dolorès Boum & Vanessa Kamé-Domguia",
+    title: "F-UNION LOUNGE TALK - Causerie ENTRE NOUS avec Hermines Dolorès Boum & Vanessa Kamé-Domguia",
     hall: "Conference Hall 2",
     startTime: "17:30",
     endTime: "19:00",
@@ -298,7 +298,7 @@ export const JOUR_2_SESSIONS: Session[] = [
 export const JOUR_3_SESSIONS: Session[] = [
   {
     id: "j3_s1",
-    title: "Accueil des participantes Bootcamp — Enregistrement, badges, installation",
+    title: "Accueil des participantes Bootcamp - Enregistrement, badges, installation",
     hall: "Conference Hall 1",
     startTime: "08:00",
     endTime: "09:00",
@@ -307,7 +307,7 @@ export const JOUR_3_SESSIONS: Session[] = [
   },
   {
     id: "j3_s2",
-    title: "MENTORING 1:1 — Sessions individuelles en continu",
+    title: "MENTORING 1:1 - Sessions individuelles en continu",
     hall: "Conference Hall 1",
     startTime: "08:30",
     endTime: "12:00",
@@ -319,7 +319,7 @@ export const JOUR_3_SESSIONS: Session[] = [
   },
   {
     id: "j3_s3",
-    title: "WOMEN INVESTMENT CORNER — Collaboration Women in Investment",
+    title: "WOMEN INVESTMENT CORNER - Collaboration Women in Investment",
     hall: "Conference Hall 2",
     startTime: "09:00",
     endTime: "10:00",
@@ -330,7 +330,7 @@ export const JOUR_3_SESSIONS: Session[] = [
   },
   {
     id: "j3_s4",
-    title: "FINALE — PITCH YOUR FUTURE",
+    title: "FINALE - PITCH YOUR FUTURE",
     hall: "Conference Hall 3",
     startTime: "09:30",
     endTime: "11:30",
@@ -372,7 +372,7 @@ export const JOUR_3_SESSIONS: Session[] = [
   },
   {
     id: "j3_s8",
-    title: "Career Lab : Réinventer sa carrière — clés et opportunités pour une transition réussie",
+    title: "Career Lab : Réinventer sa carrière - clés et opportunités pour une transition réussie",
     hall: "Conference Hall 2",
     startTime: "13:00",
     endTime: "14:00",
@@ -385,7 +385,7 @@ export const JOUR_3_SESSIONS: Session[] = [
   },
   {
     id: "j3_s9",
-    title: "Table ronde : L'Écosystème Transgénérationnel — construire la prochaine génération de femmes leaders",
+    title: "Table ronde : L'Écosystème Transgénérationnel - construire la prochaine génération de femmes leaders",
     hall: "Conference Hall 1",
     startTime: "14:00",
     endTime: "15:00",
@@ -401,7 +401,7 @@ export const JOUR_3_SESSIONS: Session[] = [
   },
   {
     id: "j3_s10",
-    title: "MASTERCLASS — «Arrête d'attendre les opportunités, crée-les»",
+    title: "MASTERCLASS - «Arrête d'attendre les opportunités, crée-les»",
     hall: "Conference Hall 2",
     startTime: "15:00",
     endTime: "16:00",

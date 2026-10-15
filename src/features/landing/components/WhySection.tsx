@@ -19,7 +19,7 @@ export const WhySection = () => {
 
 
         <h2 className="text-3xl md:text-[2.6rem] lg:text-5xl font-black tracking-tight leading-tight mb-8 max-w-4xl text-white">
-          {/* F-UNION — dark with underline */}
+          {/* F-UNION - dark with underline */}
           <span className="relative inline-block font-black text-[#0d1f36]">
             F-UNION,
             <span className="absolute bottom-[-6px] left-0 w-10 h-[3px] bg-[#0d1f36] rounded-full" />
@@ -27,7 +27,7 @@ export const WhySection = () => {
           <span className="font-bold">la plateforme des femmes</span>
           <br />
           <span className="font-bold">qui façonnent </span>
-          {/* l'Afrique — dark */}
+          {/* l'Afrique - dark */}
           <span className="font-black text-[#0d1f36]">l&apos;Afrique</span>
         </h2>
 

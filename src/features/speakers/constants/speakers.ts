@@ -42,7 +42,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s7",
-        title: "WORKSHOP : Face aux Experts — des solutions concrètes pour faire avancer ton business",
+        title: "WORKSHOP : Face aux Experts - des solutions concrètes pour faire avancer ton business",
         href: "/programme/jour2#j2_s7"
       }
     ]
@@ -55,9 +55,9 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     imageUrl: JocelyneNgassam.src,
     bio: "Jocelyne Ngassam est une experte en management et en stratégie commerciale avec une vaste expérience dans l'accompagnement des entreprises et des talents en Afrique.",
     sessions: [
-      { id: "j3_s1", title: "Accueil des participantes Bootcamp — Enregistrement, badges, installation", href: "/programme/jour3#j3_s1" },
-      { id: "j3_s2", title: "MENTORING 1:1 — Sessions individuelles en continu", href: "/programme/jour3#j3_s2" },
-      { id: "j3_s9", title: "Table ronde : L'Écosystème Transgénérationnel — construire la prochaine génération de femmes leaders", href: "/programme/jour3#j3_s9" }
+      { id: "j3_s1", title: "Accueil des participantes Bootcamp - Enregistrement, badges, installation", href: "/programme/jour3#j3_s1" },
+      { id: "j3_s2", title: "MENTORING 1:1 - Sessions individuelles en continu", href: "/programme/jour3#j3_s2" },
+      { id: "j3_s9", title: "Table ronde : L'Écosystème Transgénérationnel - construire la prochaine génération de femmes leaders", href: "/programme/jour3#j3_s9" }
     ]
   },
   {
@@ -69,7 +69,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     bio: "Hermine-Dolorès BOUM est Administratrice Indépendante Certifiée par l’Institute of Directors (IoD, Royaume-Uni) et le Collège des Administrateurs de Sociétés (Québec). Elle détient également la certification ESG de The Boardroom Africa (TBRA), est Executive Coach accréditée par l’International Coaching Federation (ICF), et depuis septembre 2025, elle est titulaire du Certificat International en Gouvernance des Risques Cyber du DCRO Institute.",
     sessions: [
       { id: "j2_s3", title: "TABLE RONDE 1 : Leadership féminin, talents et performance économique", href: "/programme/jour2#j2_s3" },
-      { id: "j2_s11", title: "F-UNION LOUNGE TALK — Causerie ENTRE NOUS avec Hermines Dolorès Boum & Vanessa Kamé-Domguia", href: "/programme/jour2#j2_s11" }
+      { id: "j2_s11", title: "F-UNION LOUNGE TALK - Causerie ENTRE NOUS avec Hermines Dolorès Boum & Vanessa Kamé-Domguia", href: "/programme/jour2#j2_s11" }
     ]
   },
   {
@@ -82,7 +82,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s8",
-        title: "Career Lab : Réinventer sa carrière — clés et opportunités pour une transition réussie",
+        title: "Career Lab : Réinventer sa carrière - clés et opportunités pour une transition réussie",
         href: "/programme/jour3#j3_s8"
       }
     ]
@@ -98,7 +98,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s9",
-        title: "ATELIER : Leadership Styling — Image, présence et posture professionnelle",
+        title: "ATELIER : Leadership Styling - Image, présence et posture professionnelle",
         href: "/programme/jour2#j2_s9"
       }
     ]
@@ -113,7 +113,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s7",
-        title: "WORKSHOP : Face aux Experts — des solutions concrètes pour faire avancer ton business",
+        title: "WORKSHOP : Face aux Experts - des solutions concrètes pour faire avancer ton business",
         href: "/programme/jour2#j2_s7"
       }
     ]
@@ -195,7 +195,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s9",
-        title: "ATELIER : Leadership Styling — Image, présence et posture professionnelle",
+        title: "ATELIER : Leadership Styling - Image, présence et posture professionnelle",
         href: "/programme/jour2#j2_s9"
       }
     ]
@@ -210,7 +210,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s9",
-        title: "ATELIER : Leadership Styling — Image, présence et posture professionnelle",
+        title: "ATELIER : Leadership Styling - Image, présence et posture professionnelle",
         href: "/programme/jour2#j2_s9"
       }
     ]
@@ -226,7 +226,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s9",
-        title: "Table ronde : L'Écosystème Transgénérationnel — construire la prochaine génération de femmes leaders",
+        title: "Table ronde : L'Écosystème Transgénérationnel - construire la prochaine génération de femmes leaders",
         href: "/programme/jour3#j3_s9"
       }
     ]
@@ -241,7 +241,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s4",
-        title: "FINALE — PITCH YOUR FUTURE",
+        title: "FINALE - PITCH YOUR FUTURE",
         href: "/programme/jour3#j3_s4"
       }
     ]
@@ -256,7 +256,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s11",
-        title: "F-UNION LOUNGE TALK — Causerie ENTRE NOUS avec Hermines Dolorès Boum & Vanessa Kamé-Domguia",
+        title: "F-UNION LOUNGE TALK - Causerie ENTRE NOUS avec Hermines Dolorès Boum & Vanessa Kamé-Domguia",
         href: "/programme/jour2#j2_s11"
       }
     ]
@@ -271,7 +271,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s8",
-        title: "Career Lab : Réinventer sa carrière — clés et opportunités pour une transition réussie",
+        title: "Career Lab : Réinventer sa carrière - clés et opportunités pour une transition réussie",
         href: "/programme/jour3#j3_s8"
       }
     ]
@@ -286,7 +286,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s8",
-        title: "Career Lab : Réinventer sa carrière — clés et opportunités pour une transition réussie",
+        title: "Career Lab : Réinventer sa carrière - clés et opportunités pour une transition réussie",
         href: "/programme/jour3#j3_s8"
       }
     ]
@@ -346,12 +346,12 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s1",
-        title: "Accueil des participantes Bootcamp — Enregistrement, badges, installation",
+        title: "Accueil des participantes Bootcamp - Enregistrement, badges, installation",
         href: "/programme/jour3#j3_s1"
       },
       {
         id: "j3_s2",
-        title: "MENTORING 1:1 — Sessions individuelles en continu",
+        title: "MENTORING 1:1 - Sessions individuelles en continu",
         href: "/programme/jour3#j3_s2"
       }
     ]
@@ -367,7 +367,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s9",
-        title: "Table ronde : L'Écosystème Transgénérationnel — construire la prochaine génération de femmes leaders",
+        title: "Table ronde : L'Écosystème Transgénérationnel - construire la prochaine génération de femmes leaders",
         href: "/programme/jour3#j3_s9"
       }
     ]
@@ -383,7 +383,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s7",
-        title: "WORKSHOP : Face aux Experts — des solutions concrètes pour faire avancer ton business",
+        title: "WORKSHOP : Face aux Experts - des solutions concrètes pour faire avancer ton business",
         href: "/programme/jour2#j2_s7"
       }
     ]  },
@@ -443,7 +443,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j3_s1",
-        title: "Accueil des participantes Bootcamp — Enregistrement, badges, installation",
+        title: "Accueil des participantes Bootcamp - Enregistrement, badges, installation",
         href: "/programme/jour3#j3_s1"
       }
     ]
@@ -473,7 +473,7 @@ export const SPEAKER_PROFILES: SpeakerProfile[] = [
     sessions: [
       {
         id: "j2_s9",
-        title: "ATELIER : Leadership Styling — Image, présence et posture professionnelle",
+        title: "ATELIER : Leadership Styling - Image, présence et posture professionnelle",
         href: "/programme/jour2#j2_s9"
       }
     ]

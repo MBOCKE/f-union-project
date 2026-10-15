@@ -47,7 +47,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "community-manager-animation",
-    title: "Community Manager — Animation",
+    title: "Community Manager - Animation",
     sectionId: "coordination",
     category: "Communication",
     tagline: "Faire vivre la communauté F-UNION au quotidien",
@@ -87,20 +87,20 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "community-manager-strategie-contenu",
-    title: "Community Manager — Stratégie & Contenu",
+    title: "Community Manager - Stratégie & Contenu",
     sectionId: "communication",
     category: "Communication",
     tagline:
       "Donner une direction aux messages. Faire grandir l'influence de F-UNION.",
     manager: "Responsable Marketing & Offres",
     collaborators:
-      "Community Manager — Animation, graphistes et Relations Presse",
+      "Community Manager - Animation, graphistes et Relations Presse",
     duration: "octobre 2026 à mai 2027",
     commitment:
       "4 à 6 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit",
     format: "distanciel et Douala",
     summary:
-      "Une communication efficace ne consiste pas seulement à publier régulièrement : elle repose sur une vision éditoriale claire, des messages cohérents et des campagnes capables de mobiliser les bonnes audiences. En tant que Community Manager — Stratégie & Contenu, vous définissez la ligne éditoriale de F-UNION et concevez les campagnes qui feront connaître le Summit, ses ambitions et les opportunités qu'il porte pour les femmes africaines.",
+      "Une communication efficace ne consiste pas seulement à publier régulièrement : elle repose sur une vision éditoriale claire, des messages cohérents et des campagnes capables de mobiliser les bonnes audiences. En tant que Community Manager - Stratégie & Contenu, vous définissez la ligne éditoriale de F-UNION et concevez les campagnes qui feront connaître le Summit, ses ambitions et les opportunités qu'il porte pour les femmes africaines.",
     responsibilities: [
       "Construire et piloter le calendrier éditorial mensuel des réseaux sociaux et de la newsletter.",
       "Concevoir les campagnes liées aux temps forts du Summit : appels à candidatures, billetterie, partenariats et compte à rebours.",
@@ -118,7 +118,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Disponibilité indicative : 4 à 6 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit.",
       "Format : distanciel et Douala.",
       "Rattachement : Responsable Marketing & Offres.",
-      "Collaboration : Community Manager — Animation, graphistes et Relations Presse.",
+      "Collaboration : Community Manager - Animation, graphistes et Relations Presse.",
     ],
     benefits: [
       "Une expérience en stratégie éditoriale et en pilotage de campagnes digitales, l'opportunité de renforcer votre expertise en communication et la possibilité de contribuer au rayonnement d'une initiative panafricaine.",
@@ -132,7 +132,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
     tagline: "Faire entendre la voix de F-UNION. Porter ses idées dans les médias.",
     manager: "CEO F-UNION",
     collaborators:
-      "Community Manager — Stratégie & Contenu et Relations Extérieures",
+      "Community Manager - Stratégie & Contenu et Relations Extérieures",
     duration: "octobre 2026 à mai 2027",
     commitment:
       "3 à 5 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit",
@@ -156,7 +156,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Disponibilité indicative : 3 à 5 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit.",
       "Format : distanciel et Douala.",
       "Rattachement : CEO F-UNION.",
-      "Collaboration : Community Manager — Stratégie & Contenu et Relations Extérieures.",
+      "Collaboration : Community Manager - Stratégie & Contenu et Relations Extérieures.",
     ],
     benefits: [
       "Une expérience en relations presse et en communication institutionnelle, le développement de votre réseau médiatique et l'opportunité de contribuer à la visibilité d'un événement panafricain à fort impact.",
@@ -164,20 +164,20 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "graphic-designer-creation-visuelle",
-    title: "Graphic Designer — Création Visuelle",
+    title: "Graphic Designer - Création Visuelle",
     sectionId: "creation-visuelle",
     category: "Créatif",
     tagline:
       "Donner une forme aux idées. Faire rayonner l'identité de F-UNION.",
-    manager: "Community Manager — Stratégie & Contenu",
+    manager: "Community Manager - Stratégie & Contenu",
     collaborators:
-      "second·e graphiste et Community Manager — Animation",
+      "seconde graphiste et Community Manager - Animation",
     duration: "octobre 2026 à mai 2027",
     commitment:
       "3 à 5 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit",
     format: "distanciel et Douala",
     summary:
-      "Une identité visuelle forte permet à une initiative d'être reconnue, de transmettre ses valeurs et de marquer les esprits. En tant que Graphic Designer — Création Visuelle, vous donnez vie aux messages de F-UNION à travers des supports créatifs, cohérents et impactants, adaptés aux réseaux sociaux, aux communications institutionnelles et aux espaces du Summit.",
+      "Une identité visuelle forte permet à une initiative d'être reconnue, de transmettre ses valeurs et de marquer les esprits. En tant que Graphic Designer - Création Visuelle, vous donnez vie aux messages de F-UNION à travers des supports créatifs, cohérents et impactants, adaptés aux réseaux sociaux, aux communications institutionnelles et aux espaces du Summit.",
     responsibilities: [
       "Créer les visuels des réseaux sociaux : publications, stories et carrousels.",
       "Concevoir les supports imprimés : affiches, roll-ups, badges et programmes du Summit.",
@@ -195,8 +195,8 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Durée : octobre 2026 à mai 2027.",
       "Disponibilité indicative : 3 à 5 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit.",
       "Format : distanciel et Douala.",
-      "Rattachement : Community Manager — Stratégie & Contenu.",
-      "Collaboration : second·e graphiste et Community Manager — Animation.",
+      "Rattachement : Community Manager - Stratégie & Contenu.",
+      "Collaboration : seconde graphiste et Community Manager - Animation.",
     ],
     benefits: [
       "Une expérience créative sur un événement panafricain, la possibilité d'enrichir votre portfolio avec des réalisations concrètes et l'opportunité de contribuer à la construction d'une identité de marque engagée.",
@@ -204,19 +204,19 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "graphic-designer-motion-digital",
-    title: "Graphic Designer — Motion & Digital",
+    title: "Graphic Designer - Motion & Digital",
     sectionId: "creation-visuelle",
     category: "Créatif",
     tagline: "Mettre les idées en mouvement. Capter l'attention autrement.",
-    manager: "Community Manager — Stratégie & Contenu",
+    manager: "Community Manager - Stratégie & Contenu",
     collaborators:
-      "Graphic Designer — Création Visuelle et Community Manager — Animation",
+      "Graphic Designer - Création Visuelle et Community Manager - Animation",
     duration: "octobre 2026 à mai 2027",
     commitment:
       "3 à 5 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit",
     format: "distanciel et Douala",
     summary:
-      "Dans un environnement numérique où les contenus se succèdent rapidement, le mouvement et l'interactivité sont des leviers puissants pour capter l'attention et faire passer un message. En tant que Graphic Designer — Motion & Digital, vous donnez une nouvelle dimension aux contenus de F-UNION grâce au motion design, aux formats vidéo courts et aux animations qui accompagnent les campagnes et l'expérience du Summit.",
+      "Dans un environnement numérique où les contenus se succèdent rapidement, le mouvement et l'interactivité sont des leviers puissants pour capter l'attention et faire passer un message. En tant que Graphic Designer - Motion & Digital, vous donnez une nouvelle dimension aux contenus de F-UNION grâce au motion design, aux formats vidéo courts et aux animations qui accompagnent les campagnes et l'expérience du Summit.",
     responsibilities: [
       "Créer des animations et motion graphics pour les réseaux sociaux et les écrans du Summit.",
       "Produire des teasers, reels et vidéos courtes pour les campagnes de communication.",
@@ -234,8 +234,8 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Durée : octobre 2026 à mai 2027.",
       "Disponibilité indicative : 3 à 5 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit.",
       "Format : distanciel et Douala.",
-      "Rattachement : Community Manager — Stratégie & Contenu.",
-      "Collaboration : Graphic Designer — Création Visuelle et Community Manager — Animation.",
+      "Rattachement : Community Manager - Stratégie & Contenu.",
+      "Collaboration : Graphic Designer - Création Visuelle et Community Manager - Animation.",
     ],
     benefits: [
       "Une expérience en motion design et en production de contenus digitaux, des réalisations à valoriser dans votre portfolio et l'opportunité de participer à la communication d'un événement panafricain.",
@@ -319,20 +319,20 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "chef-projet-marketing-offres",
-    title: "Chef·fe de Projet Marketing & Offres",
+    title: "Chef de Projet Marketing & Offres",
     sectionId: "donnees-strategie",
     category: "Marketing",
     tagline:
       "Concevoir les bonnes offres. Mobiliser les publics. Transformer l'intérêt en participation.",
     manager: "CEO F-UNION",
     collaborators:
-      "Community Manager — Stratégie & Contenu, Data Analyst et Relations Extérieures",
+      "Community Manager - Stratégie & Contenu, Data Analyst et Relations Extérieures",
     duration: "octobre 2026 à mai 2027",
     commitment:
       "4 à 6 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit",
     format: "distanciel et Douala",
     summary:
-      "Un événement rassemble les bonnes personnes lorsqu'il propose des offres adaptées à leurs besoins et leur donne des raisons concrètes de participer. En tant que Chef·fe de Projet Marketing & Offres, vous pilotez la conception et le déploiement des offres de F-UNION, de la billetterie aux packages partenaires, avec un objectif : faciliter la participation et soutenir le développement du Summit.",
+      "Un événement rassemble les bonnes personnes lorsqu'il propose des offres adaptées à leurs besoins et leur donne des raisons concrètes de participer. En tant que Chef de Projet Marketing & Offres, vous pilotez la conception et le déploiement des offres de F-UNION, de la billetterie aux packages partenaires, avec un objectif : faciliter la participation et soutenir le développement du Summit.",
     responsibilities: [
       "Finaliser la structure des offres de billetterie et leurs argumentaires commerciaux.",
       "Mettre en place et gérer la plateforme d'inscription et de billetterie.",
@@ -350,7 +350,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Disponibilité indicative : 4 à 6 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit.",
       "Format : distanciel et Douala.",
       "Rattachement : CEO F-UNION.",
-      "Collaboration : Community Manager — Stratégie & Contenu, Data Analyst et Relations Extérieures.",
+      "Collaboration : Community Manager - Stratégie & Contenu, Data Analyst et Relations Extérieures.",
     ],
     benefits: [
       "Une expérience en marketing stratégique et opérationnel, en gestion d'offres et en pilotage commercial, au service d'un événement panafricain à impact.",
@@ -358,20 +358,20 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "chef-projet-contenu-speakers",
-    title: "Chef·fe de Projet Contenu & Speakers",
+    title: "Chef de Projet Contenu & Speakers",
     sectionId: "programme",
     category: "Contenu & Programme",
     tagline:
       "Faire émerger les voix qui comptent. Construire un programme qui fait avancer les idées.",
     manager: "PMO Transformation",
     collaborators:
-      "Chef·fe de Projet Activations, CEO et équipe Plaidoyer",
+      "Chef de Projet Activations, CEO et équipe Plaidoyer",
     duration: "octobre 2026 à mai 2027",
     commitment:
       "4 à 6 heures par semaine, avec des pics d'activité lors des phases de confirmation des intervenantes",
     format: "distanciel et Douala",
     summary:
-      "Un programme de qualité ne se limite pas à réunir des intervenantes : il crée des rencontres entre les idées, les expériences et les perspectives qui peuvent faire évoluer les pratiques. En tant que Chef·fe de Projet Contenu & Speakers, vous contribuez à construire le programme intellectuel et humain du Summit, en sélectionnant les bons profils, en préparant les interventions et en donnant une cohérence à l'ensemble des sessions.",
+      "Un programme de qualité ne se limite pas à réunir des intervenantes : il crée des rencontres entre les idées, les expériences et les perspectives qui peuvent faire évoluer les pratiques. En tant que Chef de Projet Contenu & Speakers, vous contribuez à construire le programme intellectuel et humain du Summit, en sélectionnant les bons profils, en préparant les interventions et en donnant une cohérence à l'ensemble des sessions.",
     responsibilities: [
       "Identifier et proposer, en lien avec la CEO, les profils adaptés aux keynotes, panels et Talks VIP.",
       "Gérer les relations avec les intervenantes, de la prise de contact à la confirmation, au briefing et au suivi jusqu'au jour J.",
@@ -393,7 +393,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Format : distanciel et Douala.",
       "Présence requise : de J-3 à J+1 autour du Summit.",
       "Rattachement : PMO Transformation.",
-      "Collaboration : Chef·fe de Projet Activations, CEO et équipe Plaidoyer.",
+      "Collaboration : Chef de Projet Activations, CEO et équipe Plaidoyer.",
     ],
     benefits: [
       "Une expérience en conception de programme, en gestion d'intervenantes et en programmation événementielle, ainsi que la possibilité de contribuer à des échanges qui valorisent les parcours et les idées des femmes africaines.",
@@ -401,25 +401,25 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "chef-projet-activations-experience",
-    title: "Chef·fe de Projet Activations & Expérience",
+    title: "Chef de Projet Activations & Expérience",
     sectionId: "programme",
     category: "Expérience & Animation",
     tagline:
       "Créer les moments qui rapprochent. Faire du Summit une expérience mémorable.",
     manager: "PMO Transformation",
     collaborators:
-      "Chef·fe de Projet Contenu, Community Manager — Animation et Logistique",
+      "Chef de Projet Contenu, Community Manager - Animation et Logistique",
     duration: "novembre 2026 à mai 2027",
     commitment:
       "3 à 5 heures par semaine, avec une présence terrain intensive de J-3 à J+1",
     format: "distanciel et Douala",
     summary:
-      "L'expérience d'un Summit se construit autant dans les échanges informels que sur scène. Les activations, les transitions et les moments de rencontre peuvent transformer une participation en véritable opportunité de connexion. En tant que Chef·fe de Projet Activations & Expérience, vous concevez et coordonnez les temps forts qui donnent vie au Summit, tout en veillant à la fluidité du programme et à l'expérience des participantes du début à la fin.",
+      "L'expérience d'un Summit se construit autant dans les échanges informels que sur scène. Les activations, les transitions et les moments de rencontre peuvent transformer une participation en véritable opportunité de connexion. En tant que Chef de Projet Activations & Expérience, vous concevez et coordonnez les temps forts qui donnent vie au Summit, tout en veillant à la fluidité du programme et à l'expérience des participantes du début à la fin.",
     responsibilities: [
       "Concevoir les quatre activations du Summit : The Influence Wall, Speed Connect, The Pitch Stage et Engagement Cards.",
       "Préparer pour chaque activation un brief opérationnel précisant le déroulé, le matériel, les rôles et le timing.",
       "Briefer et coordonner les personnes chargées de l'animation ainsi que le ou la MC.",
-      "Collaborer avec le Community Manager — Animation pour favoriser la production de contenus visuels partageables.",
+      "Collaborer avec le Community Manager - Animation pour favoriser la production de contenus visuels partageables.",
       "Construire et actualiser le run-of-show, le déroulé détaillé des deux journées.",
       "Prévoir les transitions, les pauses et les temps de networking pour assurer un rythme équilibré.",
       "Coordonner le déroulé avec la personne chargée du Contenu & Speakers.",
@@ -438,7 +438,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Disponibilité indicative : 3 à 5 heures par semaine, avec une présence terrain intensive de J-3 à J+1.",
       "Format : distanciel et Douala.",
       "Rattachement : PMO Transformation.",
-      "Collaboration : Chef·fe de Projet Contenu, Community Manager — Animation et Logistique.",
+      "Collaboration : Chef de Projet Contenu, Community Manager - Animation et Logistique.",
     ],
     benefits: [
       "Une expérience en conception d'activations, en coordination événementielle et en gestion de l'expérience participantes, au cœur d'un événement panafricain consacré au leadership et à la visibilité des femmes.",
@@ -451,8 +451,8 @@ export const recruitmentRoles: RecruitmentRole[] = [
     category: "Opérationnel",
     tagline:
       "Anticiper les besoins. Coordonner les moyens. Rendre l'expérience possible.",
-    manager: "Chef·fe de Projet Événementiel",
-    collaborators: "Finance Douala et Chef·fe de Projet Summit",
+    manager: "Chef de Projet Événementiel",
+    collaborators: "Finance Douala et Chef de Projet Summit",
     duration: "novembre 2026 à mai 2027",
     commitment:
       "3 à 5 heures par semaine, avec une présence terrain requise de J-3 à J+1",
@@ -476,8 +476,8 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Durée : novembre 2026 à mai 2027.",
       "Disponibilité indicative : 3 à 5 heures par semaine, avec une présence terrain requise de J-3 à J+1.",
       "Format : Douala, avec présence sur place pendant les phases finales.",
-      "Rattachement : Chef·fe de Projet Événementiel.",
-      "Collaboration : Finance Douala et Chef·fe de Projet Summit.",
+      "Rattachement : Chef de Projet Événementiel.",
+      "Collaboration : Finance Douala et Chef de Projet Summit.",
     ],
     benefits: [
       "Une expérience en logistique et en coordination événementielle, le développement de vos compétences en gestion des prestataires et la contribution directe à la réussite d'un événement panafricain.",
@@ -485,17 +485,17 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "charge-finances-douala",
-    title: "Chargé·e de Finances — Terrain Douala",
+    title: "Chargé·e de Finances - Terrain Douala",
     sectionId: "logistique-finances",
     category: "Finance",
     tagline: "Suivre les dépenses. Sécuriser les paiements. Garder la maîtrise des chiffres.",
     manager: "CEO F-UNION et Data Analyst",
-    collaborators: "Logistique et Chef·fe de Projet Événementiel",
+    collaborators: "Logistique et Chef de Projet Événementiel",
     duration: "janvier à mai 2027, avec une phase intensive pendant la préparation finale",
     commitment: "5 à 8 heures par semaine",
     format: "présentiel à Douala",
     summary:
-      "La bonne gestion financière d'un événement repose sur un suivi rigoureux des dépenses, des justificatifs et des paiements. Sur le terrain, chaque décision doit pouvoir être suivie et documentée. En tant que Chargé·e de Finances — Terrain Douala, vous assurez le suivi financier opérationnel du Summit et contribuez à maintenir une vision fiable des dépenses engagées pendant sa préparation et son déroulement.",
+      "La bonne gestion financière d'un événement repose sur un suivi rigoureux des dépenses, des justificatifs et des paiements. Sur le terrain, chaque décision doit pouvoir être suivie et documentée. En tant que Chargé·e de Finances - Terrain Douala, vous assurez le suivi financier opérationnel du Summit et contribuez à maintenir une vision fiable des dépenses engagées pendant sa préparation et son déroulement.",
     responsibilities: [
       "Réceptionner, vérifier et archiver les factures ainsi que les pièces justificatives des prestataires.",
       "Effectuer les paiements et règlements conformément aux procédures validées par la CEO.",
@@ -515,7 +515,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Format : présentiel à Douala.",
       "Présence requise : Douala pendant les phases finales.",
       "Rattachement : CEO F-UNION et Data Analyst.",
-      "Collaboration : Logistique et Chef·fe de Projet Événementiel.",
+      "Collaboration : Logistique et Chef de Projet Événementiel.",
     ],
     benefits: [
       "Une expérience pratique en suivi budgétaire et en gestion financière opérationnelle, ainsi que la possibilité de contribuer à la transparence et à la bonne gestion d'un événement panafricain.",

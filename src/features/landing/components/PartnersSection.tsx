@@ -85,7 +85,7 @@ const CarouselRow = ({ title, logos, direction }: RowProps) => {
         {title}
       </h3>
 
-      {/* Scrolling track — overflow hidden, pause animation on hover */}
+      {/* Scrolling track - overflow hidden, pause animation on hover */}
       <div className="carousel-track w-full overflow-hidden relative">
         {/* Fade edges */}
         <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />

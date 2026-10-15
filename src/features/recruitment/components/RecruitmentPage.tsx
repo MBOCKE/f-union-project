@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
   ChevronDown,
@@ -12,7 +12,7 @@ import {
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
 import benevoleImage from "@/core/assets/image-benevole.jpeg";
-import { recruitmentCategories, recruitmentRoles } from "../constants/roles";
+import { recruitmentRoles } from "../constants/roles";
 
 import { ApplicationModal } from "./ApplicationModal";
 import type { RecruitmentRole } from "../types";
@@ -47,16 +47,25 @@ const faqs = [
 ];
 
 export const RecruitmentPage = () => {
-  const [activeCategory, setActiveCategory] = useState("Tous les postes");
   const [search, setSearch] = useState("");
+  const [remainingTime, setRemainingTime] = useState<number | null>(null);
   const [selectedRole, setSelectedRole] = useState<RecruitmentRole | null>(null);
+  const deadline = new Date(2026, 9, 26, 23, 59, 59).getTime();
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      setRemainingTime(Math.max(0, deadline - Date.now()));
+    };
+
+    updateCountdown();
+    const intervalId = window.setInterval(updateCountdown, 1000);
+    return () => window.clearInterval(intervalId);
+  }, [deadline]);
 
   const filteredRoles = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
 
     return recruitmentRoles.filter((role) => {
-      const matchesCategory =
-        activeCategory === "Tous les postes" || role.category === activeCategory;
       const matchesSearch =
         !normalizedSearch ||
         [role.title, role.category, role.tagline, role.format]
@@ -64,11 +73,35 @@ export const RecruitmentPage = () => {
           .toLowerCase()
           .includes(normalizedSearch);
 
-      return matchesCategory && matchesSearch;
+      return matchesSearch;
     });
-  }, [activeCategory, search]);
-  const filtersActive =
-    activeCategory !== "Tous les postes" || search.trim().length > 0;
+  }, [search]);
+  const filtersActive = search.trim().length > 0;
+  const countdownUnits = [
+    {
+      label: "jours",
+      value: remainingTime === null ? "--" : Math.floor(remainingTime / 86_400_000),
+    },
+    {
+      label: "heures",
+      value:
+        remainingTime === null
+          ? "--"
+          : Math.floor((remainingTime % 86_400_000) / 3_600_000),
+    },
+    {
+      label: "minutes",
+      value:
+        remainingTime === null
+          ? "--"
+          : Math.floor((remainingTime % 3_600_000) / 60_000),
+    },
+    {
+      label: "secondes",
+      value:
+        remainingTime === null ? "--" : Math.floor((remainingTime % 60_000) / 1000),
+    },
+  ];
 
   return (
     <main
@@ -145,42 +178,45 @@ export const RecruitmentPage = () => {
             </div>
           </div>
 
-          <div className="mt-10 md:hidden">
-            <label
-              htmlFor="recruitment-category"
-              className="mb-2 block text-sm font-black text-summit-dark"
-            >
-              Filtrer par catégorie
-            </label>
-            <select
-              id="recruitment-category"
-              value={activeCategory}
-              onChange={(event) => setActiveCategory(event.target.value)}
-              className="w-full appearance-none rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm font-bold text-summit-dark shadow-sm outline-none focus:border-summit-purple focus:ring-2 focus:ring-summit-purple/20"
-            >
-              {recruitmentCategories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="hide-scrollbar mt-10 hidden gap-2 overflow-x-auto pb-2 md:flex">
-            {recruitmentCategories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-                className={`whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-bold transition-colors ${
-                  activeCategory === category
-                    ? "bg-summit-purple text-white"
-                    : "bg-white text-gray-600 ring-1 ring-gray-200 hover:text-summit-purple"
-                }`}
+          <div className="mt-8 flex flex-col gap-5 rounded-2xl bg-[#eee8f6] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#6f45aa]">
+                Date limite de candidature
+              </p>
+              <p className="mt-1 text-xl font-black text-summit-dark">
+                26 octobre 2026
+              </p>
+            </div>
+            {remainingTime !== null && remainingTime === 0 ? (
+              <div className="sm:text-right">
+                <p className="font-bold text-summit-dark">
+                  Les candidatures sont désormais closes.
+                </p>
+                <p className="mt-1 text-sm text-gray-600">
+                  Merci pour votre intérêt et votre envie de rejoindre F-UNION.
+                </p>
+              </div>
+            ) : (
+              <div
+                className="grid grid-cols-4 gap-2 sm:gap-3"
+                aria-label="Temps restant avant la date limite de candidature"
+                aria-live="off"
               >
-                {category}
-              </button>
-            ))}
+                {countdownUnits.map(({ label, value }) => (
+                  <div
+                    key={label}
+                    className="min-w-[3.5rem] rounded-lg bg-white px-2 py-2 text-center sm:min-w-[4.5rem]"
+                  >
+                    <div className="text-xl font-black tabular-nums text-summit-dark sm:text-2xl">
+                      {String(value).padStart(2, "0")}
+                    </div>
+                    <div className="text-[10px] font-bold text-gray-500 sm:text-xs">
+                      {label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {filteredRoles.length > 0 ? (
@@ -216,7 +252,6 @@ export const RecruitmentPage = () => {
                 type="button"
                 onClick={() => {
                   setSearch("");
-                  setActiveCategory("Tous les postes");
                 }}
                 className="mt-4 font-bold text-[#6f45aa] hover:underline"
               >

@@ -1,6 +1,12 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
+import {
+  CalendarDays,
+  ChevronDown,
+  Handshake,
+  MapPin,
+  UsersRound,
+} from "lucide-react";
 import RecruitmentRoleCard from "./RecruitmentRoleCard";
 import type { RecruitmentRole, RecruitmentSection } from "../types";
 
@@ -16,40 +22,94 @@ const SectionAccordion = ({
   roles,
   onApply,
   defaultOpen = false,
-}: SectionAccordionProps) => (
-  <details
-    id={section.id}
-    open={defaultOpen || undefined}
-    className="group scroll-mt-24 rounded-2xl border border-slate-200 bg-white shadow-sm transition-colors duration-200 [&[open]]:border-[#fd982e]"
-  >
-    <summary className="flex cursor-pointer list-none items-center gap-4 rounded-2xl px-5 py-5 text-slate-800 marker:hidden transition-colors hover:text-slate-950 [&::-webkit-details-marker]:hidden sm:px-7">
-      <span className="flex-1 text-left text-lg font-bold sm:text-xl">
-        {section.label}
-      </span>
-      <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-[#fd982e]">
-        {roles.length} {roles.length === 1 ? "poste" : "postes"}
-      </span>
-      <ChevronRight
-        aria-hidden="true"
-        className="h-5 w-5 shrink-0 text-[#fd982e] transition-transform duration-200 group-open:rotate-90"
-      />
-    </summary>
+}: SectionAccordionProps) => {
+  const featuredRole = roles[0];
+  const otherRoleCount = Math.max(roles.length - 1, 0);
 
-    <div className="border-t border-slate-100 px-5 pb-6 pt-5 sm:px-7">
-      <p className="mb-6 max-w-4xl text-sm leading-relaxed text-slate-500 sm:text-base">
-        {section.description}
-      </p>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {roles.map((role) => (
-          <RecruitmentRoleCard
-            key={role.slug}
-            role={role}
-            onApply={onApply}
-          />
-        ))}
+  return (
+    <details
+      id={section.id}
+      open={defaultOpen || undefined}
+      className="group scroll-mt-24 border-t-2 border-[#845ec2] py-3 first:border-t-0"
+    >
+      <summary className="grid cursor-pointer list-none grid-cols-1 gap-y-3 text-slate-800 marker:hidden [&::-webkit-details-marker]:hidden">
+        <div className="flex min-w-0 flex-wrap items-baseline justify-between gap-x-5 gap-y-2">
+          <div className="flex min-w-0 flex-wrap items-baseline gap-x-5 gap-y-1">
+            <h3 className="text-lg font-bold sm:text-xl">{section.label}</h3>
+            {/* Temporarily hide the featured role title and its dot.
+            {featuredRole && (
+              <p className="flex items-baseline gap-2 text-sm font-semibold leading-snug text-[#6f45aa]">
+                <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-[#845ec2]" />
+                <span>{featuredRole.title}</span>
+              </p>
+            )}
+            */}
+          </div>
+
+          <span className="inline-flex shrink-0 items-center gap-1.5 pt-1 text-sm font-bold text-[#6f45aa]">
+            + {otherRoleCount} {otherRoleCount === 1 ? "autre" : "autres"}
+            <ChevronDown
+              aria-hidden="true"
+              className="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+            />
+          </span>
+        </div>
+
+        {featuredRole && (
+          <dl className="grid w-full grid-cols-2 gap-x-5 gap-y-3 sm:grid-cols-4">
+            {[
+              {
+                label: "Durée",
+                value: featuredRole.duration,
+                Icon: CalendarDays,
+              },
+              {
+                label: "Format",
+                value: featuredRole.format,
+                Icon: MapPin,
+              },
+              {
+                label: "Rattachement",
+                value: featuredRole.manager,
+                Icon: UsersRound,
+              },
+              {
+                label: "Collaboration",
+                value: featuredRole.collaborators || "Non précisée",
+                Icon: Handshake,
+              },
+            ].map(({ label, value, Icon }) => (
+              <div key={label} className="flex min-w-0 items-start gap-2">
+                <dt title={label} className="mt-0.5 shrink-0">
+                  <Icon aria-hidden="true" className="h-4 w-4 text-[#845ec2]" />
+                  <span className="sr-only">{label}</span>
+                </dt>
+                <dd className="min-w-0 text-xs font-medium leading-snug text-slate-800 sm:text-sm">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
+      </summary>
+
+      <div className="mt-3 border-t border-[#d8c5ee] pt-3">
+        <p className="mb-6 max-w-4xl text-sm leading-relaxed text-slate-500 sm:text-base">
+          {section.description}
+        </p>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {roles.map((role) => (
+            <RecruitmentRoleCard
+              key={role.slug}
+              role={role}
+              onApply={onApply}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  </details>
-);
+    </details>
+  );
+};
 
 export default SectionAccordion;

@@ -103,11 +103,11 @@ from reaching the backdrop.
 
 The three steps are:
 
-1. **Mission** — shows `role.summary` under “Votre contribution” and
+1. **Mission** - shows `role.summary` under “Votre contribution” and
    `role.responsibilities` under “Concrètement, votre mission”.
-2. **Profil** — shows `role.profile` under “Le profil que nous recherchons”
+2. **Profil** - shows `role.profile` under “Le profil que nous recherchons”
    and `role.engagement` under “Votre engagement”.
-3. **Informations** — shows `role.benefits` and applicant inputs:
+3. **Informations** - shows `role.benefits` and applicant inputs:
    - `firstName`: first name
    - `lastName`: last name
    - `email`: email (`type="email"`)
