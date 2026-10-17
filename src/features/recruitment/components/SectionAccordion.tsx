@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  CalendarDays,
-  ChevronDown,
-  Handshake,
-  UsersRound,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import RecruitmentRoleCard from "./RecruitmentRoleCard";
 import type { RecruitmentRole, RecruitmentSection } from "../types";
 
@@ -22,73 +17,33 @@ const SectionAccordion = ({
   onApply,
   defaultOpen = false,
 }: SectionAccordionProps) => {
-  const featuredRole = roles[0];
-  const otherRoleCount = Math.max(roles.length - 1, 0);
-
   return (
     <details
       id={section.id}
       open={defaultOpen || undefined}
       className="group mx-auto w-full max-w-6xl scroll-mt-24 border-t-2 border-[#845ec2] py-3 first:border-t-0"
     >
-      <summary className="grid cursor-pointer list-none grid-cols-1 gap-y-3 text-slate-800 marker:hidden [&::-webkit-details-marker]:hidden">
-        <div className="flex min-w-0 flex-wrap items-baseline justify-between gap-x-5 gap-y-2">
-          <div className="flex min-w-0 flex-wrap items-baseline gap-x-5 gap-y-1">
-            <h3 className="text-lg font-bold sm:text-xl">{section.label}</h3>
-            {/* Temporarily hide the featured role title and its dot.
-            {featuredRole && (
-              <p className="flex items-baseline gap-2 text-sm font-semibold leading-snug text-[#6f45aa]">
-                <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-[#845ec2]" />
-                <span>{featuredRole.title}</span>
-              </p>
-            )}
-            */}
-          </div>
-
-          <span className="inline-flex shrink-0 items-center gap-1.5 pt-1 text-sm font-bold text-[#6f45aa]">
-            + {otherRoleCount} {otherRoleCount === 1 ? "autre" : "autres"}
-            <ChevronDown
-              aria-hidden="true"
-              className="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
-            />
-          </span>
-        </div>
-
-        {featuredRole && (
-          <dl className="grid w-full grid-cols-2 gap-x-5 gap-y-3 sm:grid-cols-3">
-            {[
-              {
-                label: "Durée",
-                value: featuredRole.duration,
-                Icon: CalendarDays,
-              },
-              {
-                label: "Rattachement",
-                value: featuredRole.manager,
-                Icon: UsersRound,
-              },
-              {
-                label: "Collaboration",
-                value:
-                  featuredRole.collaborators ||
-                  roles[1]?.collaborators ||
-                  "Non précisée",
-                Icon: Handshake,
-              },
-            ].map(({ label, value, Icon }) => (
-              <div key={label} className="flex min-w-0 items-start gap-2">
-                <dt title={label} className="mt-0.5 shrink-0">
-                  <Icon aria-hidden="true" className="h-4 w-4 text-[#845ec2]" />
-                  <span className="sr-only">{label}</span>
-                </dt>
-                <dd className="min-w-0 text-xs font-medium leading-snug text-slate-800 sm:text-sm">
-                  {value}
-                </dd>
-              </div>
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-slate-800 marker:hidden [&::-webkit-details-marker]:hidden">
+        <div className="min-w-0 flex-1">
+          <h3 className="text-lg font-bold sm:text-xl">{section.label}</h3>
+          <ul className="mt-2 flex flex-wrap gap-2">
+            {roles.map((role) => (
+              <li
+                key={role.slug}
+                className="rounded-full border border-[#d8c5ee] bg-white/80 px-3 py-1 text-xs font-semibold leading-snug text-[#6f45aa] sm:text-sm"
+              >
+                {role.title}
+              </li>
             ))}
-          </dl>
-        )}
-
+          </ul>
+        </div>
+        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#d8c5ee] bg-white px-3 py-2 text-xs font-bold text-[#6f45aa] sm:text-sm">
+          <span>Voir les postes</span>
+          <ChevronDown
+            aria-hidden="true"
+            className="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+          />
+        </span>
       </summary>
 
       <div className="mt-3 border-t border-[#d8c5ee] pt-3">
