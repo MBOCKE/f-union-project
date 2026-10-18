@@ -1,38 +1,39 @@
 import type { RecruitmentRole } from "../types";
 import Image from "next/image";
 
+import financeImage from "@/core/assets/replacement images/Chargé·e de Finances — Terrain Douala.jpg";
+import externalRelationsImage from "@/core/assets/replacement images/Chargé·e de Relations Extérieures & Business Development.jpg";
+import activationsImage from "@/core/assets/replacement images/Chef·fe de Projet Activations & Expérience.jpg";
+import marketingImage from "@/core/assets/replacement images/Chef·fe de Projet Marketing & Offres.jpg";
+import communityAnimationImage from "@/core/assets/replacement images/CM Animation.jpg";
+import contentSpeakersImage from "@/core/assets/replacement images/contenus et speakers.jpg";
+import coordinatorImage from "@/core/assets/replacement images/Coordinateur·rice Opérationnel·le Summit.jpg";
+import dataAnalystImage from "@/core/assets/replacement images/Data Analyst.jpg";
+import advocacyImage from "@/core/assets/replacement images/plaidoyer.jpg";
+import pressRelationsImage from "@/core/assets/replacement images/Relations presse.jpg";
+import logisticsImage from "@/core/assets/replacement images/Responsable Logistique & Coordination Événementielle.jpg";
 import photo40 from "@/core/assets/photo library/photo_40_2026-10-07_15-51-00.jpg";
-import photo41 from "@/core/assets/photo library/photo_41_2026-10-07_15-51-00.jpg";
 import photo42 from "@/core/assets/photo library/photo_42_2026-10-07_15-51-00.jpg";
 import photo43 from "@/core/assets/photo library/photo_43_2026-10-07_15-51-00.jpg";
 import photo44 from "@/core/assets/photo library/photo_44_2026-10-07_15-51-00.jpg";
-import photo45 from "@/core/assets/photo library/photo_45_2026-10-07_15-51-00.jpg";
-import photo46 from "@/core/assets/photo library/photo_46_2026-10-07_15-51-00.jpg";
-import photo47 from "@/core/assets/photo library/photo_47_2026-10-07_15-51-00.jpg";
-import photo48 from "@/core/assets/photo library/photo_48_2026-10-07_15-51-00.jpg";
-import photo49 from "@/core/assets/photo library/photo_49_2026-10-07_15-51-00.jpg";
-import photo50 from "@/core/assets/photo library/photo_50_2026-10-07_15-51-00.jpg";
-import photo51 from "@/core/assets/photo library/photo_51_2026-10-07_15-51-00.jpg";
 import photo52 from "@/core/assets/photo library/photo_52_2026-10-07_15-51-00.jpg";
-import photo53 from "@/core/assets/photo library/photo_53_2026-10-07_15-51-00.jpg";
-import photo54 from "@/core/assets/photo library/photo_54_2026-10-07_15-51-00.jpg";
 
 const roleImageMapping: Record<string, { src: string }> = {
-  "coordinateur-operationnel-summit": photo40,
-  "community-manager-animation": photo41,
+  "coordinateur-operationnel-summit": coordinatorImage,
+  "community-manager-animation": communityAnimationImage,
   "community-manager-strategie-contenu": photo42,
   "responsable-juridique": photo43,
   "graphic-designer-creation-visuelle": photo44,
-  "chef-projet-contenu-speakers": photo45,
-  "charge-relations-presse": photo46,
-  "chef-projet-marketing-offres": photo47,
-  "chef-projet-activations-experience": photo48,
-  "data-analyst": photo49,
-  "charge-finances-douala": photo50,
-  "charge-relations-exterieures": photo51,
+  "chef-projet-contenu-speakers": contentSpeakersImage,
+  "charge-relations-presse": pressRelationsImage,
+  "chef-projet-marketing-offres": marketingImage,
+  "chef-projet-activations-experience": activationsImage,
+  "data-analyst": dataAnalystImage,
+  "charge-finances-douala": financeImage,
+  "charge-relations-exterieures": externalRelationsImage,
   "graphic-designer-motion-digital": photo52,
-  "responsable-logistique": photo53,
-  "charge-plaidoyer-cooperation": photo54,
+  "responsable-logistique": logisticsImage,
+  "charge-plaidoyer-cooperation": advocacyImage,
 };
 
 type RecruitmentRoleCardProps = {
