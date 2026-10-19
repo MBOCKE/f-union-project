@@ -42,44 +42,33 @@ type RecruitmentRoleCardProps = {
 };
 
 const RecruitmentRoleCard = ({ role, onApply }: RecruitmentRoleCardProps) => (
-  <article className="group relative flex min-h-[420px] flex-col overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-    <Image
-      src={roleImageMapping[role.slug] ? roleImageMapping[role.slug].src : photo40}
-      alt={role.title}
-      fill
-      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-      className="absolute inset-0 z-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-    />
+  <article className="group flex min-h-[420px] flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
+    <div className="relative h-[220px] w-full shrink-0 overflow-hidden">
+      <Image
+        src={roleImageMapping[role.slug] ? roleImageMapping[role.slug].src : photo40}
+        alt={role.title}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
 
-    <div className="relative z-10 h-[220px] w-full shrink-0" />
-
-    <div className="relative z-10 flex flex-1 flex-col overflow-hidden">
-      <div className="pointer-events-none relative z-30 flex flex-1 flex-col px-6 pb-4 pt-6">
-        <h3 className="pointer-events-auto text-lg font-bold leading-snug text-summit-dark">
+    <div className="flex flex-1 flex-col bg-white">
+      <div className="flex-1 px-6 pb-4 pt-6">
+        <h3 className="text-lg font-bold leading-snug text-summit-dark">
           {role.title}
         </h3>
-        <p className="pointer-events-auto mt-2 line-clamp-2 text-sm text-gray-500">
+        <p className="mt-2 line-clamp-2 text-sm text-gray-600">
           {role.tagline}
         </p>
       </div>
-      <div className="relative z-20 px-6 pb-6 text-center">
+      <div className="px-6 pb-6 text-center">
         <button
           type="button"
           onClick={() => onApply(role)}
-          className="relative flex w-full items-center justify-center rounded-lg py-2.5 text-xs font-bold transition-all hover:scale-[1.02]"
+          className="flex w-full items-center justify-center rounded-lg border border-summit-purple/20 bg-summit-purple px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-summit-purple/90"
         >
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-20 rounded-lg"
-            style={{ boxShadow: "0 0 0 9999px white" }}
-          />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-10 rounded-lg border border-summit-purple/20 bg-summit-purple/85 backdrop-blur-md"
-          />
-          <span className="relative z-10 tracking-wide text-white uppercase">
-            Postuler
-          </span>
+          Postuler
         </button>
       </div>
     </div>
