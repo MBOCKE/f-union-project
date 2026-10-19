@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
-  ArrowRight,
   ChevronDown,
   ClipboardList,
   Handshake,
@@ -42,7 +41,7 @@ const faqs = [
   {
     question: "Comment se déroule la sélection ?",
     answer:
-      "Le processus prévu est simple : candidature, échange avec l'équipe, puis intégration au pôle correspondant. Le formulaire officiel sera relié à cette page dès validation de l'outil de candidature.",
+      "Le processus prévu est simple : candidature, échange avec l'équipe, puis intégration au pôle correspondant.",
   },
 ];
 
@@ -125,8 +124,9 @@ export const RecruitmentPage = () => {
               Rejoignez la Team F-UNION 2027
             </h1>
             <p className="mt-4 max-w-2xl text-xl leading-[1.2] text-white/80 md:text-2xl">
-              15 missions bénévoles pour construire un événement panafricain à
-              fort impact, à Douala et à distance.
+              Mettez vos talents au service d’une ambition collective et
+              contribuez à faire de la visibilité des femmes un levier de
+              transformation.
             </p>
           </div>
 
@@ -159,11 +159,16 @@ export const RecruitmentPage = () => {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.24em] text-[#845ec2]">
-                Les postes ouverts
+                LES MISSIONS OUVERTES
               </p>
               <h2 className="mt-4 text-4xl font-black leading-tight text-summit-dark md:text-5xl">
-                Trouvez votre place dans l&apos;<span className="text-[#845ec2]">équipe</span>.
+                Votre talent peut faire la différence.
               </h2>
+              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-gray-600">
+                Chaque compétence compte. Trouvez la mission dans laquelle
+                vous pourrez contribuer, prendre des initiatives et participer
+                à une ambition panafricaine.
+              </p>
             </div>
             <div className="flex items-center gap-3 rounded-full bg-white px-4 py-3 shadow-sm ring-1 ring-gray-200 lg:w-80">
               <Search className="h-5 w-5 shrink-0 text-gray-400" />
@@ -381,8 +386,12 @@ export const RecruitmentPage = () => {
               Team F-UNION 2027
             </p>
             <h2 className="mt-3 max-w-2xl text-3xl font-black leading-tight md:text-5xl">
-              Prêt·e à faire partie de l&apos;aventure ?
+              Et si votre engagement contribuait à faire bouger les lignes ?
             </h2>
+            <p className="mt-3 max-w-2xl text-lg leading-relaxed text-white/85">
+              Rejoignez celles et ceux qui font de la visibilité des femmes un
+              levier de transformation pour l’Afrique.
+            </p>
           </div>
           <Button
             href="#postes"
@@ -390,8 +399,7 @@ export const RecruitmentPage = () => {
             size="lg"
             className="!bg-[#982b8e] !text-white border border-[#982b8e] shadow-[0_10px_30px_rgba(76,12,63,0.25)] hover:!bg-white hover:!text-[#982b8e] hover:border-[#982b8e]"
           >
-            Choisir une mission
-            <ArrowRight className="ml-2 h-5 w-5" />
+            Choisir une mission →
           </Button>
         </Container>
       </section>
