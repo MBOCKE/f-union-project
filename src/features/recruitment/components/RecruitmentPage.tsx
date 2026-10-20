@@ -106,7 +106,7 @@ export const RecruitmentPage = () => {
       className="bg-[#faf9ff] text-summit-dark"
       data-recruitment-page
     >
-      <section className="relative overflow-hidden bg-[linear-gradient(to_right,#2d0a54_0%,#2d0a54_50%,#ffffff_100%)] text-white">
+      <section className="relative overflow-hidden bg-[#2d0a54] text-white">
         <Container className="relative pb-12 pt-28 md:pb-16 md:pt-32">
           <div className="max-w-4xl">
             <p className="mb-5 text-sm font-black uppercase tracking-[0.28em] text-[#d9c8ff]">
