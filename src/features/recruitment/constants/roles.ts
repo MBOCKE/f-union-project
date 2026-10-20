@@ -11,7 +11,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "coordinateur-operationnel-summit",
     title: "Coordinateur·rice Opérationnel·le Summit",
-    sectionId: "coordination",
+    sectionId: "production-summit",
     category: "Opérationnel",
     tagline: "Faire avancer les projets. Garder le cap. Faire réussir le Summit.",
     manager: "PMO Transformation",
@@ -48,7 +48,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "community-manager-animation",
     title: "Community Manager — Animation",
-    sectionId: "coordination",
+    sectionId: "marque-audience",
     category: "Communication",
     tagline: "Créer la conversation. Faire grandir la communauté.",
     manager: "Responsable Marketing & Offres",
@@ -84,7 +84,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "community-manager-strategie-contenu",
     title: "Community Manager - Stratégie & Contenu",
-    sectionId: "communication",
+    sectionId: "marque-audience",
     category: "Communication",
     tagline:
       "Donner une direction aux messages. Faire grandir l'influence de F-UNION.",
@@ -123,7 +123,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "charge-relations-presse",
     title: "Chargé·e de Relations Presse",
-    sectionId: "communication",
+    sectionId: "marque-audience",
     category: "Communication",
     tagline: "Faire entendre la voix de F-UNION. Porter ses idées dans les médias.",
     manager: "CEO F-UNION",
@@ -161,7 +161,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "graphic-designer-creation-visuelle",
     title: "Graphic Designer - Création Visuelle",
-    sectionId: "creation-visuelle",
+    sectionId: "marque-audience",
     category: "Créatif",
     tagline:
       "Donner une forme aux idées. Faire rayonner l'identité de F-UNION.",
@@ -201,7 +201,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "graphic-designer-motion-digital",
     title: "Graphic Designer - Motion & Digital",
-    sectionId: "creation-visuelle",
+    sectionId: "marque-audience",
     category: "Créatif",
     tagline: "Mettre les idées en mouvement. Capter l'attention autrement.",
     manager: "Community Manager - Stratégie & Contenu",
@@ -240,7 +240,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "data-analyst",
     title: "Data Analyst",
-    sectionId: "donnees-strategie",
+    sectionId: "production-summit",
     category: "Stratégique",
     tagline: "Lire les chiffres. Éclairer les choix. Renforcer l'impact de F-UNION.",
     manager: "CEO F-UNION",
@@ -278,7 +278,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "charge-relations-exterieures",
     title: "Chargé·e de Relations Extérieures & Business Development",
-    sectionId: "donnees-strategie",
+    sectionId: "revenus-partenariats",
     category: "Relations Extérieures",
     tagline: "Créer des connexions. Construire des alliances. Ouvrir de nouvelles perspectives.",
     manager: "CEO F-UNION",
@@ -316,7 +316,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "chef-projet-marketing-offres",
     title: "Chef de Projet Marketing & Offres",
-    sectionId: "donnees-strategie",
+    sectionId: "revenus-partenariats",
     category: "Marketing",
     tagline:
       "Concevoir les bonnes offres. Mobiliser les publics. Transformer l'intérêt en participation.",
@@ -355,7 +355,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "chef-projet-contenu-speakers",
     title: "Chef de Projet Contenu & Speakers",
-    sectionId: "programme",
+    sectionId: "production-summit",
     category: "Contenu & Programme",
     tagline:
       "Faire émerger les voix qui comptent. Construire un programme qui fait avancer les idées.",
@@ -398,7 +398,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "chef-projet-activations-experience",
     title: "Chef de Projet Activations & Expérience",
-    sectionId: "programme",
+    sectionId: "production-summit",
     category: "Expérience & Animation",
     tagline:
       "Créer les moments qui rapprochent. Faire du Summit une expérience mémorable.",
@@ -443,7 +443,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "responsable-logistique",
     title: "Responsable Logistique & Coordination Événementielle",
-    sectionId: "logistique-finances",
+    sectionId: "production-summit",
     category: "Opérationnel",
     tagline:
       "Anticiper les besoins. Coordonner les moyens. Rendre l'expérience possible.",
@@ -482,7 +482,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "charge-finances-douala",
     title: "Chargé·e de Finances - Terrain Douala",
-    sectionId: "logistique-finances",
+    sectionId: "finance-conformite",
     category: "Finance",
     tagline: "Suivre les dépenses. Sécuriser les paiements. Garder la maîtrise des chiffres.",
     manager: "CEO F-UNION et Data Analyst",
@@ -520,7 +520,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "responsable-juridique",
     title: "Responsable Juridique",
-    sectionId: "juridique-plaidoyer",
+    sectionId: "finance-conformite",
     category: "Juridique & Conformité",
     tagline:
       "Sécuriser les engagements. Anticiper les risques. Protéger la mission de F-UNION.",
@@ -560,7 +560,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   {
     slug: "charge-plaidoyer-cooperation",
     title: "Chargé·e de Plaidoyer & Coopération Internationale",
-    sectionId: "juridique-plaidoyer",
+    sectionId: "plaidoyer-cooperation",
     category: "Stratégique",
     tagline:
       "Porter les idées de F-UNION. Faire entendre ses positions. Construire des alliances durables.",

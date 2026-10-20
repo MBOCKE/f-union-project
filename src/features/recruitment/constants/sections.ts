@@ -2,53 +2,39 @@ import type { RecruitmentSection, RecruitmentSectionId } from "../types";
 
 export const recruitmentSections: RecruitmentSection[] = [
   {
-    id: "coordination",
-    label: "Coordination et pilotage",
+    id: "production-summit",
+    label: "Direction de production Summit",
     description:
-      "Un Summit réussi repose sur des équipes alignées et une capacité à anticiper les difficultés avant qu'elles ne deviennent des obstacles. Ces rôles orchestrent les pôles, suivent les engagements et maintiennent le cap jusqu'au jour J.",
+      "Ces missions coordonnent la production du Summit, son programme, son expérience sur place et le suivi de ses résultats.",
     order: 1,
   },
   {
-    id: "communication",
-    label: "Communication et contenus",
+    id: "revenus-partenariats",
+    label: "Business Development Senior & Ticketing / Sales Manager",
     description:
-      "Faire connaître le Summit, porter ses messages et faire grandir son influence demande une vision éditoriale claire et une présence média coordonnée. Ces rôles construisent la voix de F-UNION et la font rayonner auprès des bonnes audiences.",
+      "Ces missions développent les partenariats et les offres de billetterie pour soutenir les revenus et la participation au Summit.",
     order: 2,
   },
   {
-    id: "creation-visuelle",
-    label: "Création visuelle",
+    id: "marque-audience",
+    label: "Marque & Audience",
     description:
-      "Une identité forte permet à une initiative d'être reconnue et de marquer les esprits. Ces rôles donnent forme aux idées de F-UNION, du visuel statique au motion design, pour une communication cohérente et impactante.",
+      "Ces missions développent l'identité de F-UNION, animent ses communautés et renforcent sa visibilité auprès des publics et des médias.",
     order: 3,
   },
   {
-    id: "donnees-strategie",
-    label: "Données, stratégie et développement",
+    id: "finance-conformite",
+    label: "Finance & Conformité",
     description:
-      "Piloter un projet ambitieux suppose de confronter les intuitions aux données et de construire des alliances solides. Ces rôles éclairent les décisions, ouvrent des partenariats et structurent les offres qui rendent le Summit possible.",
+      "Ces missions assurent le suivi financier et contribuent à sécuriser les engagements et la conformité de F-UNION.",
     order: 4,
   },
   {
-    id: "programme",
-    label: "Programme et participantes",
+    id: "plaidoyer-cooperation",
+    label: "Plaidoyer & Coopération",
     description:
-      "Un programme de qualité crée des rencontres entre les idées, les expériences et les perspectives qui font évoluer les pratiques. Ces rôles construisent le contenu du Summit et l'expérience vécue par les participantes.",
+      "Cette mission porte les positions de F-UNION et développe ses coopérations institutionnelles et internationales.",
     order: 5,
-  },
-  {
-    id: "logistique-finances",
-    label: "Logistique et finances",
-    description:
-      "Derrière chaque événement fluide, il y a une organisation rigoureuse, des prestataires coordonnés et une gestion financière transparente. Ces rôles préparent les conditions matérielles et sécurisent les ressources du Summit.",
-    order: 6,
-  },
-  {
-    id: "juridique-plaidoyer",
-    label: "Juridique, plaidoyer et coopération internationale",
-    description:
-      "Développer une initiative ambitieuse suppose des engagements clairs et une parole institutionnelle crédible. Ces rôles sécurisent les partenariats et positionnent F-UNION dans les espaces qui comptent.",
-    order: 7,
   },
 ];
 

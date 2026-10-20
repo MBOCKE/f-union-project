@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
-import benevoleImage from "@/core/assets/image-benevole.jpeg";
 import { recruitmentRoles } from "../constants/roles";
 
 import { ApplicationModal } from "./ApplicationModal";
@@ -49,7 +48,7 @@ export const RecruitmentPage = () => {
   const [search, setSearch] = useState("");
   const [remainingTime, setRemainingTime] = useState<number | null>(null);
   const [selectedRole, setSelectedRole] = useState<RecruitmentRole | null>(null);
-  const deadline = new Date(2026, 9, 26, 23, 59, 59).getTime();
+  const deadline = new Date(2026, 9, 31, 23, 59, 59).getTime();
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -107,15 +106,8 @@ export const RecruitmentPage = () => {
       className="bg-[#faf9ff] text-summit-dark"
       data-recruitment-page
     >
-      <section className="relative overflow-hidden bg-[#2d0a54] text-white">
-        <div className="absolute inset-0 z-0 bg-black">
-          <img src={benevoleImage.src} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/40 z-10" />
-          <div className="absolute inset-y-0 right-0 w-[70%] bg-gradient-to-l from-[#3a2051]/40 to-transparent z-10" />
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#2d0a54] via-[#2d0a54]/90 to-transparent z-10" />
-        </div>
-
-        <Container className="relative z-10 pb-12 pt-28 md:pb-16 md:pt-32">
+      <section className="relative overflow-hidden bg-[linear-gradient(to_right,#2d0a54_0%,#2d0a54_50%,#ffffff_100%)] text-white">
+        <Container className="relative pb-12 pt-28 md:pb-16 md:pt-32">
           <div className="max-w-4xl">
             <p className="mb-5 text-sm font-black uppercase tracking-[0.28em] text-[#d9c8ff]">
               F-UNION AFRICA SUMMIT 2027
@@ -189,7 +181,7 @@ export const RecruitmentPage = () => {
                 Date limite de candidature
               </p>
               <p className="mt-1 text-xl font-black text-summit-dark">
-                26 octobre 2026
+                31 octobre 2026
               </p>
             </div>
             {remainingTime !== null && remainingTime === 0 ? (

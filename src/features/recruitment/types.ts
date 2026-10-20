@@ -1,11 +1,9 @@
 export type RecruitmentSectionId =
-  | "coordination"
-  | "communication"
-  | "creation-visuelle"
-  | "donnees-strategie"
-  | "programme"
-  | "logistique-finances"
-  | "juridique-plaidoyer";
+  | "production-summit"
+  | "revenus-partenariats"
+  | "marque-audience"
+  | "finance-conformite"
+  | "plaidoyer-cooperation";
 
 export interface RecruitmentSection {
   id: RecruitmentSectionId;
