@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
+  CheckCircle,
   Clock3,
   FileText,
   MapPin,
@@ -24,6 +25,7 @@ type RecruitmentRolePageProps = {
 
 export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isFilled = role.isFilled === true;
 
   return (
     <main className="bg-[#faf9ff] text-summit-dark">
@@ -46,6 +48,12 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
             <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/80 md:text-2xl">
               {role.tagline}
             </p>
+            {isFilled && (
+              <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-black text-white">
+                <CheckCircle className="h-4 w-4" />
+                Poste pourvu
+              </div>
+            )}
           </div>
         </Container>
       </section>
@@ -133,16 +141,28 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
                   {role.note}
                 </p>
               )}
-              <Button
-                type="button"
-                onClick={() => setIsModalOpen(true)}
-                variant="white"
-                size="lg"
-                className="mt-8 w-full"
-              >
-                Candidater pour ce poste
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              {!isFilled && (
+                <Button
+                  type="button"
+                  onClick={() => setIsModalOpen(true)}
+                  variant="white"
+                  size="lg"
+                  className="mt-8 w-full"
+                >
+                  Candidater pour ce poste
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              )}
+              {isFilled && (
+                <button
+                  type="button"
+                  disabled
+                  className="mt-8 w-full flex items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-bold uppercase tracking-wide text-gray-500 cursor-not-allowed"
+                >
+                  <CheckCircle className="mr-2 h-5 w-5" />
+                  Poste pourvu
+                </button>
+              )}
             </div>
 
             <div className="rounded-3xl border border-[#eadff9] bg-white p-7">
@@ -161,12 +181,14 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
           </aside>
         </div>
       </Container>
-      <ApplicationModal
-        key={isModalOpen ? role.slug : "closed"}
-        isOpen={isModalOpen}
-        role={role}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {!isFilled && (
+        <ApplicationModal
+          key={isModalOpen ? role.slug : "closed"}
+          isOpen={isModalOpen}
+          role={role}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </main>
   );
 };

@@ -122,7 +122,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "charge-relations-presse",
-    title: "Chargé·e de Relations Presse",
+    title: " Chargé·e de Relations Presse - Média",
     sectionId: "marque-audience",
     category: "Communication",
     tagline: "Faire entendre la voix de F-UNION. Porter ses idées dans les médias.",
@@ -159,7 +159,45 @@ export const recruitmentRoles: RecruitmentRole[] = [
     ],
   },
   {
-    slug: "graphic-designer-creation-visuelle",
+      slug: "charge-relations-presse-influence",
+      title: "Chargé·e de Relations Presse & Influence",
+      sectionId: "marque-audience",
+      category: "Communication",
+      tagline: "Mobiliser les créateurs. Amplifier la voix de F-UNION.",
+      manager: "CEO F-UNION",
+      collaborators:
+        "Chargé·e de Relations Presse, Community Manager - Stratégie & Contenu et Community Manager - Animation",
+      duration: "octobre 2026 à mai 2027",
+      commitment:
+        "3 à 4 heures par semaine, avec une mobilisation renforcée dans les deux mois précédant le Summit, ainsi que pendant et juste après l'événement",
+      format: "distanciel et Douala",
+      summary:
+        "Un événement prend une autre dimension lorsque les bonnes personnes s'en emparent, en parlent et donnent envie à leur communauté d'y participer. En tant que Chargé·e de Relations Presse & Influence, vous contribuez à faire rayonner F-UNION sur les réseaux sociaux en mobilisant des créateurs de contenu, des influenceurs et des communautés engagées. Votre mission : concevoir des activations digitales pertinentes pour faire connaître le Summit, susciter l'intérêt et prolonger son impact avant, pendant et après l'événement.",
+      responsibilities: [
+        "Identifier et approcher des influenceurs et créateurs de contenu en affinité avec F-UNION : femmes, culture, business, lifestyle, communautés afro et afro-diaspora, en Afrique, en France et au sein de la diaspora.",
+        "Concevoir des briefs de collaboration clairs, avec les messages clés, les angles éditoriaux, les formats attendus (Reels, stories, podcasts, lives…) et le calendrier de publication.",
+        "Coordonner les activations digitales en amont du Summit : teasing, séries de contenus, compte à rebours et contenus générés par la communauté (UGC).",
+        "Faciliter la couverture digitale pendant le Summit : contenus en temps réel, publications à chaud et coordination des créateurs présents sur place.",
+        "Développer des relais avec les médias digitaux et les pages communautaires susceptibles de toucher les publics de F-UNION, notamment les communautés de femmes africaines et de la diaspora.",
+        "Suivre les performances des activations à travers les indicateurs de portée, d'engagement et de conversion, puis contribuer au bilan post-Summit.",
+      ],
+      profile: [
+        "Vous connaissez les codes des réseaux sociaux et savez repérer les créateurs capables de mobiliser une communauté, au-delà du nombre d'abonnés. Vous comprenez les univers afro, les dynamiques de la diaspora et les sujets qui font écho auprès des publics que F-UNION souhaite engager.",
+        "Vous aimez prendre contact, créer des relations et imaginer des collaborations gagnant-gagnant, y compris lorsque les moyens financiers sont limités. Vous savez transformer une idée en brief concret, structurer une activation et avancer avec autonomie et réactivité.",
+        "Une sensibilité aux enjeux de visibilité, de leadership et d'influence des femmes africaines sera particulièrement appréciée.",
+      ],
+      engagement: [
+        "Durée : jusqu'au Summit 2027 et à son bilan post-événement.",
+        "Disponibilité indicative : 3 à 4 heures par semaine, avec une mobilisation renforcée à l'approche du Summit et pendant la période de l'événement.",
+        "Rattachement : Direction de la Communication.",
+        "Collaboration : pôle Communication, coordination du Summit et équipe Partenariats.",
+      ],
+      benefits: [
+        "Une expérience concrète en relations d'influence, en stratégie d'activation digitale et en mobilisation de communautés autour d'un événement panafricain. Vous développerez votre réseau auprès de créateurs, de médias digitaux et de professionnels engagés, tout en contribuant à une initiative qui place la visibilité des femmes au cœur de la transformation du continent.",
+      ],
+    },
+    {
+      slug: "graphic-designer-creation-visuelle",
     title: "Graphic Designer - Création Visuelle",
     sectionId: "marque-audience",
     category: "Créatif",
@@ -277,18 +315,18 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "charge-relations-exterieures",
-    title: "Chargé·e de Relations Extérieures & Business Development",
+    title: " Business Development Senior ",
     sectionId: "revenus-partenariats",
     category: "Relations Extérieures",
     tagline: "Créer des connexions. Construire des alliances. Ouvrir de nouvelles perspectives.",
     manager: "CEO F-UNION",
-    collaborators: "PMO Transformation et Responsable Juridique",
+    collaborators: "PMO Transformation et Juriste",
     duration: "octobre 2026 à mai 2027",
     commitment:
       "4 à 6 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit",
     format: "distanciel et Douala, avec des déplacements possibles",
     summary:
-      "Les ambitions de F-UNION prennent de l'ampleur lorsque les bonnes personnes, les bonnes organisations et les bonnes ressources se rencontrent. En tant que Chargé·e de Relations Extérieures & Business Development, vous contribuez à développer les partenariats de F-UNION en identifiant les acteurs qui partagent sa vision, en ouvrant le dialogue et en transformant les opportunités en engagements concrets.",
+      "Les ambitions de F-UNION prennent de l'ampleur lorsque les bonnes personnes, les bonnes organisations et les bonnes ressources se rencontrent. En tant que  Business Development Senior , vous contribuez à développer les partenariats de F-UNION en identifiant les acteurs qui partagent sa vision, en ouvrant le dialogue et en transformant les opportunités en engagements concrets.",
     responsibilities: [
       "Identifier des partenaires potentiels en cohérence avec les ambitions de F-UNION : entreprises, institutions et fondations.",
       "Préparer et transmettre les dossiers de partenariat, assurer les relances et suivre les discussions jusqu'à la formalisation des engagements.",
@@ -307,7 +345,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Disponibilité indicative : 4 à 6 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit.",
       "Format : distanciel et Douala, avec des déplacements possibles.",
       "Rattachement : CEO F-UNION.",
-      "Collaboration : PMO Transformation et Responsable Juridique.",
+      "Collaboration : PMO Transformation et Juriste.",
     ],
     benefits: [
       "Une expérience en développement de partenariats et en négociation, l'élargissement de votre réseau professionnel et l'opportunité de contribuer à la mobilisation de ressources pour une initiative panafricaine.",
@@ -315,7 +353,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "chef-projet-marketing-offres",
-    title: "Chef de Projet Marketing & Offres",
+    title: " Ticketing & Sales Manager",
     sectionId: "revenus-partenariats",
     category: "Marketing",
     tagline:
@@ -328,7 +366,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "4 à 6 heures par semaine, avec une mobilisation renforcée à partir de 60 jours avant le Summit",
     format: "distanciel et Douala",
     summary:
-      "Un événement rassemble les bonnes personnes lorsqu'il propose des offres adaptées à leurs besoins et leur donne des raisons concrètes de participer. En tant que Chef de Projet Marketing & Offres, vous pilotez la conception et le déploiement des offres de F-UNION, de la billetterie aux packages partenaires, avec un objectif : faciliter la participation et soutenir le développement du Summit.",
+      "Un événement rassemble les bonnes personnes lorsqu'il propose des offres adaptées à leurs besoins et leur donne des raisons concrètes de participer. En tant que  Ticketing & Sales Manager, vous pilotez la conception et le déploiement des offres de F-UNION, de la billetterie aux packages partenaires, avec un objectif : faciliter la participation et soutenir le développement du Summit.",
     responsibilities: [
       "Finaliser la structure des offres de billetterie et leurs argumentaires commerciaux.",
       "Mettre en place et gérer la plateforme d'inscription et de billetterie.",
@@ -394,7 +432,8 @@ export const recruitmentRoles: RecruitmentRole[] = [
     benefits: [
       "Une expérience en conception de programme, en gestion d'intervenantes et en programmation événementielle, ainsi que la possibilité de contribuer à des échanges qui valorisent les parcours et les idées des femmes africaines.",
     ],
-  },
+      isFilled: true,
+    },
   {
     slug: "chef-projet-activations-experience",
     title: "Chef de Projet Activations & Expérience",
@@ -481,7 +520,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "charge-finances-douala",
-    title: "Chargé·e de Finances - Terrain Douala",
+    title: "Chargé·e de Finances",
     sectionId: "finance-conformite",
     category: "Finance",
     tagline: "Suivre les dépenses. Sécuriser les paiements. Garder la maîtrise des chiffres.",
@@ -519,7 +558,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
   },
   {
     slug: "responsable-juridique",
-    title: "Responsable Juridique",
+    title: "Juriste",
     sectionId: "finance-conformite",
     category: "Juridique & Conformité",
     tagline:
@@ -532,7 +571,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "2 à 4 heures par semaine, avec des pics d'activité lors des signatures et en cas de difficulté juridique",
     format: "distanciel et Douala",
     summary:
-      "Développer une initiative ambitieuse suppose de pouvoir s'appuyer sur des engagements clairs, des contrats solides et une bonne compréhension des obligations juridiques. En tant que Responsable Juridique, vous accompagnez F-UNION dans la sécurisation de ses partenariats, de ses prestations et de son organisation, tout en contribuant à anticiper les risques liés à la préparation du Summit.",
+      "Développer une initiative ambitieuse suppose de pouvoir s'appuyer sur des engagements clairs, des contrats solides et une bonne compréhension des obligations juridiques. En tant que Juriste, vous accompagnez F-UNION dans la sécurisation de ses partenariats, de ses prestations et de son organisation, tout en contribuant à anticiper les risques liés à la préparation du Summit.",
     responsibilities: [
       "Relire et valider les contrats de partenariat, de prestation et les conventions de F-UNION.",
       "Conseiller la CEO sur les questions de statut associatif, de responsabilité et de conformité en droit camerounais et OHADA.",
@@ -566,7 +605,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Porter les idées de F-UNION. Faire entendre ses positions. Construire des alliances durables.",
     manager: "CEO F-UNION",
     collaborators:
-      "Relations Extérieures, Responsable Juridique et PMO Transformation",
+      "Relations Extérieures, Juriste et PMO Transformation",
     duration: "octobre 2026 à mai 2027",
     commitment: "3 à 5 heures par semaine",
     format: "distanciel, avec collaboration avec les équipes concernées",
@@ -590,7 +629,7 @@ export const recruitmentRoles: RecruitmentRole[] = [
       "Disponibilité indicative : 3 à 5 heures par semaine.",
       "Format : distanciel, avec collaboration avec les équipes concernées.",
       "Rattachement : CEO F-UNION.",
-      "Collaboration : Relations Extérieures, Responsable Juridique et PMO Transformation.",
+      "Collaboration : Relations Extérieures, Juriste et PMO Transformation.",
     ],
     benefits: [
       "Une expérience en plaidoyer, en rédaction institutionnelle et en coopération internationale, ainsi que l'opportunité de contribuer au positionnement d'une initiative panafricaine consacrée au leadership et à la visibilité des femmes.",

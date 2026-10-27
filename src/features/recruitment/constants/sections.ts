@@ -10,7 +10,7 @@ export const recruitmentSections: RecruitmentSection[] = [
   },
   {
     id: "revenus-partenariats",
-    label: "Business Development Senior & Ticketing / Sales Manager",
+    label: "Revenus & Partenariats",
     description:
       "Ces missions développent les partenariats et les offres de billetterie pour soutenir les revenus et la participation au Summit.",
     order: 2,

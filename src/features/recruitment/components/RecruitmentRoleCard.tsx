@@ -41,38 +41,52 @@ type RecruitmentRoleCardProps = {
   onApply: (role: RecruitmentRole) => void;
 };
 
-const RecruitmentRoleCard = ({ role, onApply }: RecruitmentRoleCardProps) => (
-  <article className="group flex min-h-[420px] flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
-    <div className="relative h-[220px] w-full shrink-0 overflow-hidden">
-      <Image
-        src={roleImageMapping[role.slug] ? roleImageMapping[role.slug].src : photo40}
-        alt={role.title}
-        fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
+const RecruitmentRoleCard = ({ role, onApply }: RecruitmentRoleCardProps) => {
+  const isFilled = role.isFilled === true;
 
-    <div className="flex flex-1 flex-col bg-white">
-      <div className="flex-1 px-6 pb-4 pt-6">
-        <h3 className="text-lg font-bold leading-snug text-summit-dark">
-          {role.title}
-        </h3>
-        <p className="mt-2 line-clamp-2 text-sm text-gray-600">
-          {role.tagline}
-        </p>
+  return (
+    <article className="group flex min-h-[420px] flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
+      <div className="relative h-[220px] w-full shrink-0 overflow-hidden">
+        <Image
+          src={roleImageMapping[role.slug] ? roleImageMapping[role.slug].src : photo40}
+          alt={role.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
       </div>
-      <div className="px-6 pb-6 text-center">
-        <button
-          type="button"
-          onClick={() => onApply(role)}
-          className="flex w-full items-center justify-center rounded-lg border border-summit-purple/20 bg-summit-purple px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-summit-purple/90"
-        >
-          Postuler
-        </button>
+
+      <div className="flex flex-1 flex-col bg-white">
+        <div className="flex-1 px-6 pb-4 pt-6">
+          <h3 className="text-lg font-bold leading-snug text-summit-dark">
+            {role.title}
+          </h3>
+          <p className="mt-2 line-clamp-2 text-sm text-gray-600">
+            {role.tagline}
+          </p>
+        </div>
+        <div className="px-6 pb-6 text-center">
+          {isFilled ? (
+            <button
+              type="button"
+              disabled
+              className="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-gray-500 cursor-not-allowed"
+            >
+              Poste pourvu
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => onApply(role)}
+              className="flex w-full items-center justify-center rounded-lg border border-summit-purple/20 bg-summit-purple px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-summit-purple/90"
+            >
+              Postuler
+            </button>
+          )}
+        </div>
       </div>
-    </div>
-  </article>
-);
+    </article>
+  );
+};
 
 export default RecruitmentRoleCard;

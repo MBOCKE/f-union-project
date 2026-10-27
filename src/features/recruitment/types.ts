@@ -30,6 +30,7 @@ export type RecruitmentRole = {
   benefits: string[];
   notFor?: string[];
   note?: string;
+  isFilled?: boolean;
 };
 
 export type ApplicationFormData = {
