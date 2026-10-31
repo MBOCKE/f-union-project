@@ -9,6 +9,7 @@ type SectionAccordionProps = {
   roles: RecruitmentRole[];
   onApply: (role: RecruitmentRole) => void;
   defaultOpen?: boolean;
+  isRecruitmentClosed?: boolean;
 };
 
 const SectionAccordion = ({
@@ -16,6 +17,7 @@ const SectionAccordion = ({
   roles,
   onApply,
   defaultOpen = false,
+  isRecruitmentClosed = false,
 }: SectionAccordionProps) => {
   return (
     <details
@@ -56,6 +58,7 @@ const SectionAccordion = ({
               key={role.slug}
               role={role}
               onApply={onApply}
+              isRecruitmentClosed={isRecruitmentClosed}
             />
           ))}
         </div>

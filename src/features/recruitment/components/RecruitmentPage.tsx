@@ -11,6 +11,7 @@ import {
 import { Button } from "@/core/components/Button";
 import { Container } from "@/core/components/Container";
 import { recruitmentRoles } from "../constants/roles";
+import { getRecruitmentDeadline } from "../constants/recruitment";
 
 import { ApplicationModal } from "./ApplicationModal";
 import type { RecruitmentRole } from "../types";
@@ -48,7 +49,7 @@ export const RecruitmentPage = () => {
   const [search, setSearch] = useState("");
   const [remainingTime, setRemainingTime] = useState<number | null>(null);
   const [selectedRole, setSelectedRole] = useState<RecruitmentRole | null>(null);
-  const deadline = new Date(2026, 9, 31, 23, 59, 59).getTime();
+  const deadline = getRecruitmentDeadline();
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -59,6 +60,8 @@ export const RecruitmentPage = () => {
     const intervalId = window.setInterval(updateCountdown, 1000);
     return () => window.clearInterval(intervalId);
   }, [deadline]);
+
+  const isRecruitmentClosed = remainingTime === 0;
 
   const filteredRoles = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
@@ -184,7 +187,7 @@ export const RecruitmentPage = () => {
                 31 octobre 2026
               </p>
             </div>
-            {remainingTime !== null && remainingTime === 0 ? (
+            {isRecruitmentClosed ? (
               <div className="sm:text-right">
                 <p className="font-bold text-summit-dark">
                   Les candidatures sont désormais closes.
@@ -236,6 +239,7 @@ export const RecruitmentPage = () => {
                       roles={sectionRoles}
                       onApply={setSelectedRole}
                       defaultOpen={filtersActive && sectionRoles.length > 0}
+                      isRecruitmentClosed={isRecruitmentClosed}
                     />
                   );
                 })}

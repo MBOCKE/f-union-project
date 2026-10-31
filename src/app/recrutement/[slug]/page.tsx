@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { RecruitmentRolePage } from "@/features/recruitment/components/RecruitmentRolePage";
+import { isRecruitmentClosed } from "@/features/recruitment/constants/recruitment";
 import {
   getRecruitmentRole,
   recruitmentRoles,
@@ -21,5 +22,5 @@ export default async function RecruitmentRoleRoute({
     notFound();
   }
 
-  return <RecruitmentRolePage role={role} />;
+  return <RecruitmentRolePage role={role} isRecruitmentClosed={isRecruitmentClosed()} />;
 }

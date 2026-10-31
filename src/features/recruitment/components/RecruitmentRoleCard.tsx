@@ -39,10 +39,16 @@ const roleImageMapping: Record<string, { src: string }> = {
 type RecruitmentRoleCardProps = {
   role: RecruitmentRole;
   onApply: (role: RecruitmentRole) => void;
+  isRecruitmentClosed?: boolean;
 };
 
-const RecruitmentRoleCard = ({ role, onApply }: RecruitmentRoleCardProps) => {
+const RecruitmentRoleCard = ({
+  role,
+  onApply,
+  isRecruitmentClosed = false,
+}: RecruitmentRoleCardProps) => {
   const isFilled = role.isFilled === true;
+  const isClosed = isFilled || isRecruitmentClosed;
 
   return (
     <article className="group flex min-h-[420px] flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
@@ -66,7 +72,7 @@ const RecruitmentRoleCard = ({ role, onApply }: RecruitmentRoleCardProps) => {
           </p>
         </div>
         <div className="px-6 pb-6 text-center">
-          {isFilled ? (
+          {isClosed ? (
             <button
               type="button"
               disabled

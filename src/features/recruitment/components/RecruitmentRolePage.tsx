@@ -21,11 +21,15 @@ import type { RecruitmentRole } from "../types";
 
 type RecruitmentRolePageProps = {
   role: RecruitmentRole;
+  isRecruitmentClosed?: boolean;
 };
 
-export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
+export const RecruitmentRolePage = ({
+  role,
+  isRecruitmentClosed = false,
+}: RecruitmentRolePageProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isFilled = role.isFilled === true;
+  const isClosed = role.isFilled === true || isRecruitmentClosed === true;
 
   return (
     <main className="bg-[#faf9ff] text-summit-dark">
@@ -48,7 +52,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
             <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/80 md:text-2xl">
               {role.tagline}
             </p>
-            {isFilled && (
+            {isClosed && (
               <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-black text-white">
                 <CheckCircle className="h-4 w-4" />
                 Poste pourvu
@@ -141,7 +145,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
                   {role.note}
                 </p>
               )}
-              {!isFilled && (
+              {!isClosed && (
                 <Button
                   type="button"
                   onClick={() => setIsModalOpen(true)}
@@ -153,7 +157,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               )}
-              {isFilled && (
+              {isClosed && (
                 <button
                   type="button"
                   disabled
@@ -181,7 +185,7 @@ export const RecruitmentRolePage = ({ role }: RecruitmentRolePageProps) => {
           </aside>
         </div>
       </Container>
-      {!isFilled && (
+      {!isClosed && (
         <ApplicationModal
           key={isModalOpen ? role.slug : "closed"}
           isOpen={isModalOpen}
